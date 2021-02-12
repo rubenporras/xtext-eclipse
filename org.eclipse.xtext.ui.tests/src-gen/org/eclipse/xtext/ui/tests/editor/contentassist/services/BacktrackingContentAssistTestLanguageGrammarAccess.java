@@ -31,11 +31,12 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cContextsAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cContextsContextDeclParserRuleCall_1_0 = (RuleCall)cContextsAssignment_1.eContents().get(0);
 		
-		//Document:
-		//	(packages+=PackageDeclaration | contexts+=ContextDecl)*;
+		//Document :
+		//	(packages+=PackageDeclaration | contexts+=ContextDecl)*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(packages+=PackageDeclaration | contexts+=ContextDecl)*
+		//	(packages+=PackageDeclaration | contexts+=ContextDecl)*
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//packages+=PackageDeclaration
@@ -44,7 +45,7 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//PackageDeclaration
 		public RuleCall getPackagesPackageDeclarationParserRuleCall_0_0() { return cPackagesPackageDeclarationParserRuleCall_0_0; }
 		
-		//contexts+=ContextDecl
+		// contexts+=ContextDecl
 		public Assignment getContextsAssignment_1() { return cContextsAssignment_1; }
 		
 		//ContextDecl
@@ -61,25 +62,26 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cExpressionExpressionParserRuleCall_3_0 = (RuleCall)cExpressionAssignment_3.eContents().get(0);
 		
 		//Body:
-		//	'body' constraintName=Identifier? ':' expression=Expression;
+		//	'body' (constraintName=Identifier)? ':' expression=Expression
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'body' constraintName=Identifier? ':' expression=Expression
+		//	'body' (constraintName=Identifier)? ':' expression=Expression
 		public Group getGroup() { return cGroup; }
 		
-		//'body'
+		//	'body'
 		public Keyword getBodyKeyword_0() { return cBodyKeyword_0; }
 		
-		//constraintName=Identifier?
+		// (constraintName=Identifier)?
 		public Assignment getConstraintNameAssignment_1() { return cConstraintNameAssignment_1; }
 		
 		//Identifier
 		public RuleCall getConstraintNameIdentifierParserRuleCall_1_0() { return cConstraintNameIdentifierParserRuleCall_1_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//expression=Expression
+		// expression=Expression
 		public Assignment getExpressionAssignment_3() { return cExpressionAssignment_3; }
 		
 		//Expression
@@ -102,16 +104,19 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cDefinitionsDefinitionParserRuleCall_3_1_0 = (RuleCall)cDefinitionsAssignment_3_1.eContents().get(0);
 		
 		//ClassifierContextDecl:
-		//	'context' (selfName=Identifier ':')? classifier=ClassifierRef (invariants+=Invariant | definitions+=Definition)*;
+		//	'context' (selfName=Identifier ':' )? classifier=ClassifierRef
+		//		(invariants+=Invariant | definitions+=Definition)*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'context' (selfName=Identifier ':')? classifier=ClassifierRef (invariants+=Invariant | definitions+=Definition)*
+		//	'context' (selfName=Identifier ':' )? classifier=ClassifierRef
+		//		(invariants+=Invariant | definitions+=Definition)*
 		public Group getGroup() { return cGroup; }
 		
-		//'context'
+		//	'context'
 		public Keyword getContextKeyword_0() { return cContextKeyword_0; }
 		
-		//(selfName=Identifier ':')?
+		// (selfName=Identifier ':' )?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//selfName=Identifier
@@ -120,16 +125,16 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//Identifier
 		public RuleCall getSelfNameIdentifierParserRuleCall_1_0_0() { return cSelfNameIdentifierParserRuleCall_1_0_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
 		
-		//classifier=ClassifierRef
+		// classifier=ClassifierRef
 		public Assignment getClassifierAssignment_2() { return cClassifierAssignment_2; }
 		
 		//ClassifierRef
 		public RuleCall getClassifierClassifierRefParserRuleCall_2_0() { return cClassifierClassifierRefParserRuleCall_2_0; }
 		
-		//(invariants+=Invariant | definitions+=Definition)*
+		//		(invariants+=Invariant | definitions+=Definition)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
 		//invariants+=Invariant
@@ -138,7 +143,7 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//Invariant
 		public RuleCall getInvariantsInvariantParserRuleCall_3_0_0() { return cInvariantsInvariantParserRuleCall_3_0_0; }
 		
-		//definitions+=Definition
+		// definitions+=Definition
 		public Assignment getDefinitionsAssignment_3_1() { return cDefinitionsAssignment_3_1; }
 		
 		//Definition
@@ -151,16 +156,17 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cSimpleClassifierRefParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//ClassifierRef:
-		//	QualifiedClassifierRef | SimpleClassifierRef;
+		//	QualifiedClassifierRef | SimpleClassifierRef
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//QualifiedClassifierRef | SimpleClassifierRef
+		//	QualifiedClassifierRef | SimpleClassifierRef
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//QualifiedClassifierRef
+		//	QualifiedClassifierRef
 		public RuleCall getQualifiedClassifierRefParserRuleCall_0() { return cQualifiedClassifierRefParserRuleCall_0; }
 		
-		//SimpleClassifierRef
+		// SimpleClassifierRef
 		public RuleCall getSimpleClassifierRefParserRuleCall_1() { return cSimpleClassifierRefParserRuleCall_1; }
 	}
 	public class ContextDeclElements extends AbstractParserRuleElementFinder {
@@ -172,22 +178,23 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		
 		//ContextDecl:
 		//	PropertyContextDecl
-		//	| ClassifierContextDecl
-		//	| OperationContextDecl;
+		//|	ClassifierContextDecl
+		//|	OperationContextDecl
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//PropertyContextDecl
-		//| ClassifierContextDecl
-		//| OperationContextDecl
+		//	PropertyContextDecl
+		//|	ClassifierContextDecl
+		//|	OperationContextDecl
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//PropertyContextDecl
+		//	PropertyContextDecl
 		public RuleCall getPropertyContextDeclParserRuleCall_0() { return cPropertyContextDeclParserRuleCall_0; }
 		
-		//ClassifierContextDecl
+		//	ClassifierContextDecl
 		public RuleCall getClassifierContextDeclParserRuleCall_1() { return cClassifierContextDeclParserRuleCall_1; }
 		
-		//OperationContextDecl
+		//	OperationContextDecl
 		public RuleCall getOperationContextDeclParserRuleCall_2() { return cOperationContextDeclParserRuleCall_2; }
 	}
 	public class DefinitionElements extends AbstractParserRuleElementFinder {
@@ -219,47 +226,48 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cExpressionExpressionParserRuleCall_9_0 = (RuleCall)cExpressionAssignment_9.eContents().get(0);
 		
 		//Definition:
-		//	static?='static'? 'def' constraintName=Identifier? ':' constrainedName=Identifier ('(' (parameters+=Parameter (','
-		//	parameters+=Parameter)*)? ')')?
-		//	':' type=TypeExp? '=' expression=Expression;
+		//	(static?='static')? 'def' (constraintName=Identifier)? ':' constrainedName=Identifier
+		//	('(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')')?
+		//	':' (type=TypeExp)? '=' expression=Expression
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//static?='static'? 'def' constraintName=Identifier? ':' constrainedName=Identifier ('(' (parameters+=Parameter (','
-		//parameters+=Parameter)*)? ')')?
-		//':' type=TypeExp? '=' expression=Expression
+		//	(static?='static')? 'def' (constraintName=Identifier)? ':' constrainedName=Identifier
+		//	('(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')')?
+		//	':' (type=TypeExp)? '=' expression=Expression
 		public Group getGroup() { return cGroup; }
 		
-		//static?='static'?
+		//	(static?='static')?
 		public Assignment getStaticAssignment_0() { return cStaticAssignment_0; }
 		
 		//'static'
 		public Keyword getStaticStaticKeyword_0_0() { return cStaticStaticKeyword_0_0; }
 		
-		//'def'
+		// 'def'
 		public Keyword getDefKeyword_1() { return cDefKeyword_1; }
 		
-		//constraintName=Identifier?
+		// (constraintName=Identifier)?
 		public Assignment getConstraintNameAssignment_2() { return cConstraintNameAssignment_2; }
 		
 		//Identifier
 		public RuleCall getConstraintNameIdentifierParserRuleCall_2_0() { return cConstraintNameIdentifierParserRuleCall_2_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 		
-		//constrainedName=Identifier
+		// constrainedName=Identifier
 		public Assignment getConstrainedNameAssignment_4() { return cConstrainedNameAssignment_4; }
 		
 		//Identifier
 		public RuleCall getConstrainedNameIdentifierParserRuleCall_4_0() { return cConstrainedNameIdentifierParserRuleCall_4_0; }
 		
-		//('(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')')?
+		//	('(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')')?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_5_0() { return cLeftParenthesisKeyword_5_0; }
 		
-		//(parameters+=Parameter (',' parameters+=Parameter)*)?
+		// (parameters+=Parameter (',' parameters+=Parameter)*)?
 		public Group getGroup_5_1() { return cGroup_5_1; }
 		
 		//parameters+=Parameter
@@ -268,34 +276,34 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//Parameter
 		public RuleCall getParametersParameterParserRuleCall_5_1_0_0() { return cParametersParameterParserRuleCall_5_1_0_0; }
 		
-		//(',' parameters+=Parameter)*
+		// (',' parameters+=Parameter)*
 		public Group getGroup_5_1_1() { return cGroup_5_1_1; }
 		
 		//','
 		public Keyword getCommaKeyword_5_1_1_0() { return cCommaKeyword_5_1_1_0; }
 		
-		//parameters+=Parameter
+		// parameters+=Parameter
 		public Assignment getParametersAssignment_5_1_1_1() { return cParametersAssignment_5_1_1_1; }
 		
 		//Parameter
 		public RuleCall getParametersParameterParserRuleCall_5_1_1_1_0() { return cParametersParameterParserRuleCall_5_1_1_1_0; }
 		
-		//')'
+		// ')'
 		public Keyword getRightParenthesisKeyword_5_2() { return cRightParenthesisKeyword_5_2; }
 		
-		//':'
+		//	':'
 		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
-		//type=TypeExp?
+		// (type=TypeExp)?
 		public Assignment getTypeAssignment_7() { return cTypeAssignment_7; }
 		
 		//TypeExp
 		public RuleCall getTypeTypeExpParserRuleCall_7_0() { return cTypeTypeExpParserRuleCall_7_0; }
 		
-		//'='
+		// '='
 		public Keyword getEqualsSignKeyword_8() { return cEqualsSignKeyword_8; }
 		
-		//expression=Expression
+		// expression=Expression
 		public Assignment getExpressionAssignment_9() { return cExpressionAssignment_9; }
 		
 		//Expression
@@ -310,19 +318,20 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cExpressionExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
 		
 		//Der:
-		//	'derive' ':' expression=Expression;
+		//	'derive' ':' expression=Expression
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'derive' ':' expression=Expression
+		//	'derive' ':' expression=Expression
 		public Group getGroup() { return cGroup; }
 		
-		//'derive'
+		//	'derive'
 		public Keyword getDeriveKeyword_0() { return cDeriveKeyword_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//expression=Expression
+		// expression=Expression
 		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
 		
 		//Expression
@@ -337,19 +346,20 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cExpressionExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
 		
 		//Init:
-		//	'init' ':' expression=Expression;
+		//	'init' ':' expression=Expression
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'init' ':' expression=Expression
+		//	'init' ':' expression=Expression
 		public Group getGroup() { return cGroup; }
 		
-		//'init'
+		//	'init'
 		public Keyword getInitKeyword_0() { return cInitKeyword_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//expression=Expression
+		// expression=Expression
 		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
 		
 		//Expression
@@ -366,25 +376,26 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cExpressionExpressionParserRuleCall_3_0 = (RuleCall)cExpressionAssignment_3.eContents().get(0);
 		
 		//Invariant:
-		//	'inv' constraintName=Identifier? ':' expression=Expression;
+		//	'inv' (constraintName=Identifier)? ':' expression=Expression
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'inv' constraintName=Identifier? ':' expression=Expression
+		//	'inv' (constraintName=Identifier)? ':' expression=Expression
 		public Group getGroup() { return cGroup; }
 		
-		//'inv'
+		//	'inv'
 		public Keyword getInvKeyword_0() { return cInvKeyword_0; }
 		
-		//constraintName=Identifier?
+		// (constraintName=Identifier)?
 		public Assignment getConstraintNameAssignment_1() { return cConstraintNameAssignment_1; }
 		
 		//Identifier
 		public RuleCall getConstraintNameIdentifierParserRuleCall_1_0() { return cConstraintNameIdentifierParserRuleCall_1_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//expression=Expression
+		// expression=Expression
 		public Assignment getExpressionAssignment_3() { return cExpressionAssignment_3; }
 		
 		//Expression
@@ -417,27 +428,32 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cBodiesBodyParserRuleCall_7_2_0 = (RuleCall)cBodiesAssignment_7_2.eContents().get(0);
 		
 		//OperationContextDecl:
-		//	'context' operation=OperationRef '(' (parameters+=Parameter (',' parameters+=Parameter)*)?
-		//	')' ':' type=TypeExp? (pres+=Pre | posts+=Post | bodies+=Body)*;
+		//	'context' operation=OperationRef '('
+		//	(parameters+=Parameter (',' parameters+=Parameter)*)?
+		//	')' ':' (type=TypeExp)?
+		//	((pres+=Pre) | (posts+=Post) | (bodies+=Body))*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'context' operation=OperationRef '(' (parameters+=Parameter (',' parameters+=Parameter)*)?
-		//')' ':' type=TypeExp? (pres+=Pre | posts+=Post | bodies+=Body)*
+		//	'context' operation=OperationRef '('
+		//	(parameters+=Parameter (',' parameters+=Parameter)*)?
+		//	')' ':' (type=TypeExp)?
+		//	((pres+=Pre) | (posts+=Post) | (bodies+=Body))*
 		public Group getGroup() { return cGroup; }
 		
-		//'context'
+		//	'context'
 		public Keyword getContextKeyword_0() { return cContextKeyword_0; }
 		
-		//operation=OperationRef
+		// operation=OperationRef
 		public Assignment getOperationAssignment_1() { return cOperationAssignment_1; }
 		
 		//OperationRef
 		public RuleCall getOperationOperationRefParserRuleCall_1_0() { return cOperationOperationRefParserRuleCall_1_0; }
 		
-		//'('
+		// '('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//(parameters+=Parameter (',' parameters+=Parameter)*)?
+		//	(parameters+=Parameter (',' parameters+=Parameter)*)?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//parameters+=Parameter
@@ -446,46 +462,46 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//Parameter
 		public RuleCall getParametersParameterParserRuleCall_3_0_0() { return cParametersParameterParserRuleCall_3_0_0; }
 		
-		//(',' parameters+=Parameter)*
+		// (',' parameters+=Parameter)*
 		public Group getGroup_3_1() { return cGroup_3_1; }
 		
 		//','
 		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
 		
-		//parameters+=Parameter
+		// parameters+=Parameter
 		public Assignment getParametersAssignment_3_1_1() { return cParametersAssignment_3_1_1; }
 		
 		//Parameter
 		public RuleCall getParametersParameterParserRuleCall_3_1_1_0() { return cParametersParameterParserRuleCall_3_1_1_0; }
 		
-		//')'
+		//	')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
 		
-		//type=TypeExp?
+		// (type=TypeExp)?
 		public Assignment getTypeAssignment_6() { return cTypeAssignment_6; }
 		
 		//TypeExp
 		public RuleCall getTypeTypeExpParserRuleCall_6_0() { return cTypeTypeExpParserRuleCall_6_0; }
 		
-		//(pres+=Pre | posts+=Post | bodies+=Body)*
+		//	((pres+=Pre) | (posts+=Post) | (bodies+=Body))*
 		public Alternatives getAlternatives_7() { return cAlternatives_7; }
 		
-		//pres+=Pre
+		//(pres+=Pre)
 		public Assignment getPresAssignment_7_0() { return cPresAssignment_7_0; }
 		
 		//Pre
 		public RuleCall getPresPreParserRuleCall_7_0_0() { return cPresPreParserRuleCall_7_0_0; }
 		
-		//posts+=Post
+		// (posts+=Post)
 		public Assignment getPostsAssignment_7_1() { return cPostsAssignment_7_1; }
 		
 		//Post
 		public RuleCall getPostsPostParserRuleCall_7_1_0() { return cPostsPostParserRuleCall_7_1_0; }
 		
-		//bodies+=Body
+		// (bodies+=Body)
 		public Assignment getBodiesAssignment_7_2() { return cBodiesAssignment_7_2; }
 		
 		//Body
@@ -498,16 +514,17 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cSimpleOperationRefParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//OperationRef:
-		//	QualifiedOperationRef | SimpleOperationRef;
+		//	QualifiedOperationRef | SimpleOperationRef
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//QualifiedOperationRef | SimpleOperationRef
+		//	QualifiedOperationRef | SimpleOperationRef
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//QualifiedOperationRef
+		//	QualifiedOperationRef
 		public RuleCall getQualifiedOperationRefParserRuleCall_0() { return cQualifiedOperationRefParserRuleCall_0; }
 		
-		//SimpleOperationRef
+		// SimpleOperationRef
 		public RuleCall getSimpleOperationRefParserRuleCall_1() { return cSimpleOperationRefParserRuleCall_1; }
 	}
 	public class PackageDeclarationElements extends AbstractParserRuleElementFinder {
@@ -520,29 +537,30 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cContextsContextDeclParserRuleCall_2_0 = (RuleCall)cContextsAssignment_2.eContents().get(0);
 		private final Keyword cEndpackageKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//PackageDeclaration:
-		//	'package' package=PackageRef contexts+=ContextDecl* 'endpackage';
+		//PackageDeclaration :
+		//	'package' package=PackageRef (contexts+=ContextDecl)* 'endpackage'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'package' package=PackageRef contexts+=ContextDecl* 'endpackage'
+		//	'package' package=PackageRef (contexts+=ContextDecl)* 'endpackage'
 		public Group getGroup() { return cGroup; }
 		
-		//'package'
+		//	'package'
 		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
 		
-		//package=PackageRef
+		// package=PackageRef
 		public Assignment getPackageAssignment_1() { return cPackageAssignment_1; }
 		
 		//PackageRef
 		public RuleCall getPackagePackageRefParserRuleCall_1_0() { return cPackagePackageRefParserRuleCall_1_0; }
 		
-		//contexts+=ContextDecl*
+		// (contexts+=ContextDecl)*
 		public Assignment getContextsAssignment_2() { return cContextsAssignment_2; }
 		
 		//ContextDecl
 		public RuleCall getContextsContextDeclParserRuleCall_2_0() { return cContextsContextDeclParserRuleCall_2_0; }
 		
-		//'endpackage'
+		// 'endpackage'
 		public Keyword getEndpackageKeyword_3() { return cEndpackageKeyword_3; }
 	}
 	public class PackageRefElements extends AbstractParserRuleElementFinder {
@@ -552,16 +570,17 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cSimplePackageRefParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//PackageRef:
-		//	QualifiedPackageRef | SimplePackageRef;
+		//	QualifiedPackageRef | SimplePackageRef
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//QualifiedPackageRef | SimplePackageRef
+		//	QualifiedPackageRef | SimplePackageRef
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//QualifiedPackageRef
+		//	QualifiedPackageRef
 		public RuleCall getQualifiedPackageRefParserRuleCall_0() { return cQualifiedPackageRefParserRuleCall_0; }
 		
-		//SimplePackageRef
+		// SimplePackageRef
 		public RuleCall getSimplePackageRefParserRuleCall_1() { return cSimplePackageRefParserRuleCall_1; }
 	}
 	public class ParameterElements extends AbstractParserRuleElementFinder {
@@ -575,13 +594,14 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cTypeTypeExpParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
 		
 		//Parameter:
-		//	(name=Identifier ':')? type=TypeExp;
+		//	(name=Identifier ':')? type=TypeExp
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(name=Identifier ':')? type=TypeExp
+		//	(name=Identifier ':')? type=TypeExp
 		public Group getGroup() { return cGroup; }
 		
-		//(name=Identifier ':')?
+		//	(name=Identifier ':')?
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//name=Identifier
@@ -590,10 +610,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//Identifier
 		public RuleCall getNameIdentifierParserRuleCall_0_0_0() { return cNameIdentifierParserRuleCall_0_0_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_0_1() { return cColonKeyword_0_1; }
 		
-		//type=TypeExp
+		// type=TypeExp
 		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 		
 		//TypeExp
@@ -610,25 +630,26 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cExpressionExpressionParserRuleCall_3_0 = (RuleCall)cExpressionAssignment_3.eContents().get(0);
 		
 		//Post:
-		//	'post' constraintName=Identifier? ':' expression=Expression;
+		//	'post' (constraintName=Identifier)? ':' expression=Expression
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'post' constraintName=Identifier? ':' expression=Expression
+		//	'post' (constraintName=Identifier)? ':' expression=Expression
 		public Group getGroup() { return cGroup; }
 		
-		//'post'
+		//	'post'
 		public Keyword getPostKeyword_0() { return cPostKeyword_0; }
 		
-		//constraintName=Identifier?
+		// (constraintName=Identifier)?
 		public Assignment getConstraintNameAssignment_1() { return cConstraintNameAssignment_1; }
 		
 		//Identifier
 		public RuleCall getConstraintNameIdentifierParserRuleCall_1_0() { return cConstraintNameIdentifierParserRuleCall_1_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//expression=Expression
+		// expression=Expression
 		public Assignment getExpressionAssignment_3() { return cExpressionAssignment_3; }
 		
 		//Expression
@@ -645,25 +666,26 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cExpressionExpressionParserRuleCall_3_0 = (RuleCall)cExpressionAssignment_3.eContents().get(0);
 		
 		//Pre:
-		//	'pre' constraintName=Identifier? ':' expression=Expression;
+		//	'pre' (constraintName=Identifier)? ':' expression=Expression
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'pre' constraintName=Identifier? ':' expression=Expression
+		//	'pre' (constraintName=Identifier)? ':' expression=Expression
 		public Group getGroup() { return cGroup; }
 		
-		//'pre'
+		//	'pre'
 		public Keyword getPreKeyword_0() { return cPreKeyword_0; }
 		
-		//constraintName=Identifier?
+		// (constraintName=Identifier)?
 		public Assignment getConstraintNameAssignment_1() { return cConstraintNameAssignment_1; }
 		
 		//Identifier
 		public RuleCall getConstraintNameIdentifierParserRuleCall_1_0() { return cConstraintNameIdentifierParserRuleCall_1_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//expression=Expression
+		// expression=Expression
 		public Assignment getExpressionAssignment_3() { return cExpressionAssignment_3; }
 		
 		//Expression
@@ -691,34 +713,37 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cInitInitParserRuleCall_4_1_1_0 = (RuleCall)cInitAssignment_4_1_1.eContents().get(0);
 		
 		//PropertyContextDecl:
-		//	'context' property=PropertyRef ':' type=TypeExp ((init=Init der=Der?)? | der=Der init=Init?);
+		//	'context' property=PropertyRef ':' type=TypeExp
+		//	((init=Init (der=Der)?)? | (der=Der (init=Init)?))
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'context' property=PropertyRef ':' type=TypeExp ((init=Init der=Der?)? | der=Der init=Init?)
+		//	'context' property=PropertyRef ':' type=TypeExp
+		//	((init=Init (der=Der)?)? | (der=Der (init=Init)?))
 		public Group getGroup() { return cGroup; }
 		
-		//'context'
+		//	'context'
 		public Keyword getContextKeyword_0() { return cContextKeyword_0; }
 		
-		//property=PropertyRef
+		// property=PropertyRef
 		public Assignment getPropertyAssignment_1() { return cPropertyAssignment_1; }
 		
 		//PropertyRef
 		public RuleCall getPropertyPropertyRefParserRuleCall_1_0() { return cPropertyPropertyRefParserRuleCall_1_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//type=TypeExp
+		// type=TypeExp
 		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 		
 		//TypeExp
 		public RuleCall getTypeTypeExpParserRuleCall_3_0() { return cTypeTypeExpParserRuleCall_3_0; }
 		
-		//((init=Init der=Der?)? | der=Der init=Init?)
+		//	((init=Init (der=Der)?)? | (der=Der (init=Init)?))
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 		
-		//(init=Init der=Der?)?
+		//(init=Init (der=Der)?)?
 		public Group getGroup_4_0() { return cGroup_4_0; }
 		
 		//init=Init
@@ -727,13 +752,13 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//Init
 		public RuleCall getInitInitParserRuleCall_4_0_0_0() { return cInitInitParserRuleCall_4_0_0_0; }
 		
-		//der=Der?
+		// (der=Der)?
 		public Assignment getDerAssignment_4_0_1() { return cDerAssignment_4_0_1; }
 		
 		//Der
 		public RuleCall getDerDerParserRuleCall_4_0_1_0() { return cDerDerParserRuleCall_4_0_1_0; }
 		
-		//der=Der init=Init?
+		// (der=Der (init=Init)?)
 		public Group getGroup_4_1() { return cGroup_4_1; }
 		
 		//der=Der
@@ -742,7 +767,7 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//Der
 		public RuleCall getDerDerParserRuleCall_4_1_0_0() { return cDerDerParserRuleCall_4_1_0_0; }
 		
-		//init=Init?
+		// (init=Init)?
 		public Assignment getInitAssignment_4_1_1() { return cInitAssignment_4_1_1; }
 		
 		//Init
@@ -755,16 +780,17 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cSimplePropertyRefParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//PropertyRef:
-		//	QualifiedPropertyRef | SimplePropertyRef;
+		//	QualifiedPropertyRef | SimplePropertyRef
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//QualifiedPropertyRef | SimplePropertyRef
+		//	QualifiedPropertyRef | SimplePropertyRef
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//QualifiedPropertyRef
+		//	QualifiedPropertyRef
 		public RuleCall getQualifiedPropertyRefParserRuleCall_0() { return cQualifiedPropertyRefParserRuleCall_0; }
 		
-		//SimplePropertyRef
+		// SimplePropertyRef
 		public RuleCall getSimplePropertyRefParserRuleCall_1() { return cSimplePropertyRefParserRuleCall_1; }
 	}
 	public class QualifiedClassifierRefElements extends AbstractParserRuleElementFinder {
@@ -778,23 +804,24 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		
 		//QualifiedClassifierRef:
 		//	namespace=Identifier
-		//	'::' element=ClassifierRef;
+		//	'::' element=ClassifierRef
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//namespace=Identifier
-		//'::' element=ClassifierRef
+		//	namespace=Identifier
+		//	'::' element=ClassifierRef
 		public Group getGroup() { return cGroup; }
 		
-		//namespace=Identifier
+		//	namespace=Identifier
 		public Assignment getNamespaceAssignment_0() { return cNamespaceAssignment_0; }
 		
 		//Identifier
 		public RuleCall getNamespaceIdentifierParserRuleCall_0_0() { return cNamespaceIdentifierParserRuleCall_0_0; }
 		
-		//'::'
+		//	'::'
 		public Keyword getColonColonKeyword_1() { return cColonColonKeyword_1; }
 		
-		//element=ClassifierRef
+		// element=ClassifierRef
 		public Assignment getElementAssignment_2() { return cElementAssignment_2; }
 		
 		//ClassifierRef
@@ -809,25 +836,26 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cElementOperationRefParserRuleCall_2_0 = (RuleCall)cElementAssignment_2.eContents().get(0);
 		
-		//QualifiedOperationRef:
+		//QualifiedOperationRef :
 		//	namespace=Identifier
-		//	'::' element=OperationRef;
+		//	'::' element=OperationRef
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//namespace=Identifier
-		//'::' element=OperationRef
+		//	namespace=Identifier
+		//	'::' element=OperationRef
 		public Group getGroup() { return cGroup; }
 		
-		//namespace=Identifier
+		//	namespace=Identifier
 		public Assignment getNamespaceAssignment_0() { return cNamespaceAssignment_0; }
 		
 		//Identifier
 		public RuleCall getNamespaceIdentifierParserRuleCall_0_0() { return cNamespaceIdentifierParserRuleCall_0_0; }
 		
-		//'::'
+		//	'::'
 		public Keyword getColonColonKeyword_1() { return cColonColonKeyword_1; }
 		
-		//element=OperationRef
+		// element=OperationRef
 		public Assignment getElementAssignment_2() { return cElementAssignment_2; }
 		
 		//OperationRef
@@ -842,25 +870,26 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cElementPropertyRefParserRuleCall_2_0 = (RuleCall)cElementAssignment_2.eContents().get(0);
 		
-		//QualifiedPropertyRef:
+		//QualifiedPropertyRef :
 		//	namespace=Identifier
-		//	'::' element=PropertyRef;
+		//	'::' element=PropertyRef
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//namespace=Identifier
-		//'::' element=PropertyRef
+		//	namespace=Identifier
+		//	'::' element=PropertyRef
 		public Group getGroup() { return cGroup; }
 		
-		//namespace=Identifier
+		//	namespace=Identifier
 		public Assignment getNamespaceAssignment_0() { return cNamespaceAssignment_0; }
 		
 		//Identifier
 		public RuleCall getNamespaceIdentifierParserRuleCall_0_0() { return cNamespaceIdentifierParserRuleCall_0_0; }
 		
-		//'::'
+		//	'::'
 		public Keyword getColonColonKeyword_1() { return cColonColonKeyword_1; }
 		
-		//element=PropertyRef
+		// element=PropertyRef
 		public Assignment getElementAssignment_2() { return cElementAssignment_2; }
 		
 		//PropertyRef
@@ -875,25 +904,26 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cElementPackageRefParserRuleCall_2_0 = (RuleCall)cElementAssignment_2.eContents().get(0);
 		
-		//QualifiedPackageRef:
+		//QualifiedPackageRef :
 		//	namespace=Identifier
-		//	'::' element=PackageRef;
+		//	'::' element=PackageRef
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//namespace=Identifier
-		//'::' element=PackageRef
+		//	namespace=Identifier
+		//	'::' element=PackageRef
 		public Group getGroup() { return cGroup; }
 		
-		//namespace=Identifier
+		//	namespace=Identifier
 		public Assignment getNamespaceAssignment_0() { return cNamespaceAssignment_0; }
 		
 		//Identifier
 		public RuleCall getNamespaceIdentifierParserRuleCall_0_0() { return cNamespaceIdentifierParserRuleCall_0_0; }
 		
-		//'::'
+		//	'::'
 		public Keyword getColonColonKeyword_1() { return cColonColonKeyword_1; }
 		
-		//element=PackageRef
+		// element=PackageRef
 		public Assignment getElementAssignment_2() { return cElementAssignment_2; }
 		
 		//PackageRef
@@ -904,11 +934,12 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cClassifierAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cClassifierIdentifierParserRuleCall_0 = (RuleCall)cClassifierAssignment.eContents().get(0);
 		
-		//SimpleClassifierRef:
-		//	classifier=Identifier;
+		//SimpleClassifierRef :
+		//	classifier=Identifier
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//classifier=Identifier
+		//	classifier=Identifier
 		public Assignment getClassifierAssignment() { return cClassifierAssignment; }
 		
 		//Identifier
@@ -919,11 +950,12 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cOperationAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cOperationIdentifierParserRuleCall_0 = (RuleCall)cOperationAssignment.eContents().get(0);
 		
-		//SimpleOperationRef:
-		//	operation=Identifier;
+		//SimpleOperationRef :
+		//	operation=Identifier
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//operation=Identifier
+		//	operation=Identifier
 		public Assignment getOperationAssignment() { return cOperationAssignment; }
 		
 		//Identifier
@@ -934,11 +966,12 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cPackageAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cPackageIdentifierParserRuleCall_0 = (RuleCall)cPackageAssignment.eContents().get(0);
 		
-		//SimplePackageRef:
-		//	package=Identifier;
+		//SimplePackageRef :
+		//	package=Identifier
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//package=Identifier
+		//	package=Identifier
 		public Assignment getPackageAssignment() { return cPackageAssignment; }
 		
 		//Identifier
@@ -949,11 +982,12 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cFeatureAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cFeatureIdentifierParserRuleCall_0 = (RuleCall)cFeatureAssignment.eContents().get(0);
 		
-		//SimplePropertyRef:
-		//	feature=Identifier;
+		//SimplePropertyRef :
+		//	feature=Identifier
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//feature=Identifier
+		//	feature=Identifier
 		public Assignment getFeatureAssignment() { return cFeatureAssignment; }
 		
 		//Identifier
@@ -993,35 +1027,44 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		////---------------------------------------------------------------------------------
 		////	EssentialOCL overrides
 		////---------------------------------------------------------------------------------
-		//NavigationExp Expression:
-		//	SubNavigationExp ({InfixExp.source=current} op=('.' | '->') argument=NavigatingExp | {OclMessage.source=current} op=
-		//	('^^' | '^') messageName=Identifier
-		//	'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')?;
+		//NavigationExp returns Expression:
+		//	SubNavigationExp
+		//	(
+		//		({InfixExp.source=current} op=('.'|'->') argument=NavigatingExp)
+		//	|	({OclMessage.source=current} op=('^^'|'^') messageName=Identifier
+		//			'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')
+		//	)?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//SubNavigationExp ({InfixExp.source=current} op=('.' | '->') argument=NavigatingExp | {OclMessage.source=current} op=
-		//('^^' | '^') messageName=Identifier
-		//'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')?
+		//	SubNavigationExp
+		//	(
+		//		({InfixExp.source=current} op=('.'|'->') argument=NavigatingExp)
+		//	|	({OclMessage.source=current} op=('^^'|'^') messageName=Identifier
+		//			'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')
+		//	)?
 		public Group getGroup() { return cGroup; }
 		
-		//SubNavigationExp
+		//	SubNavigationExp
 		public RuleCall getSubNavigationExpParserRuleCall_0() { return cSubNavigationExpParserRuleCall_0; }
 		
-		//({InfixExp.source=current} op=('.' | '->') argument=NavigatingExp | {OclMessage.source=current} op=('^^' | '^')
-		//messageName=Identifier
-		//'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')?
+		//	(
+		//		({InfixExp.source=current} op=('.'|'->') argument=NavigatingExp)
+		//	|	({OclMessage.source=current} op=('^^'|'^') messageName=Identifier
+		//			'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')
+		//	)?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//{InfixExp.source=current} op=('.' | '->') argument=NavigatingExp
+		//		({InfixExp.source=current} op=('.'|'->') argument=NavigatingExp)
 		public Group getGroup_1_0() { return cGroup_1_0; }
 		
 		//{InfixExp.source=current}
 		public Action getInfixExpSourceAction_1_0_0() { return cInfixExpSourceAction_1_0_0; }
 		
-		//op=('.' | '->')
+		// op=('.'|'->')
 		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
 		
-		//('.' | '->')
+		//('.'|'->')
 		public Alternatives getOpAlternatives_1_0_1_0() { return cOpAlternatives_1_0_1_0; }
 		
 		//'.'
@@ -1030,23 +1073,23 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'->'
 		public Keyword getOpHyphenMinusGreaterThanSignKeyword_1_0_1_0_1() { return cOpHyphenMinusGreaterThanSignKeyword_1_0_1_0_1; }
 		
-		//argument=NavigatingExp
+		// argument=NavigatingExp
 		public Assignment getArgumentAssignment_1_0_2() { return cArgumentAssignment_1_0_2; }
 		
 		//NavigatingExp
 		public RuleCall getArgumentNavigatingExpParserRuleCall_1_0_2_0() { return cArgumentNavigatingExpParserRuleCall_1_0_2_0; }
 		
-		//{OclMessage.source=current} op=('^^' | '^') messageName=Identifier
-		//'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')'
+		//	({OclMessage.source=current} op=('^^'|'^') messageName=Identifier
+		//			'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//{OclMessage.source=current}
 		public Action getOclMessageSourceAction_1_1_0() { return cOclMessageSourceAction_1_1_0; }
 		
-		//op=('^^' | '^')
+		// op=('^^'|'^')
 		public Assignment getOpAssignment_1_1_1() { return cOpAssignment_1_1_1; }
 		
-		//('^^' | '^')
+		//('^^'|'^')
 		public Alternatives getOpAlternatives_1_1_1_0() { return cOpAlternatives_1_1_1_0; }
 		
 		//'^^'
@@ -1055,16 +1098,16 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'^'
 		public Keyword getOpCircumflexAccentKeyword_1_1_1_0_1() { return cOpCircumflexAccentKeyword_1_1_1_0_1; }
 		
-		//messageName=Identifier
+		// messageName=Identifier
 		public Assignment getMessageNameAssignment_1_1_2() { return cMessageNameAssignment_1_1_2; }
 		
 		//Identifier
 		public RuleCall getMessageNameIdentifierParserRuleCall_1_1_2_0() { return cMessageNameIdentifierParserRuleCall_1_1_2_0; }
 		
-		//'('
+		//			'('
 		public Keyword getLeftParenthesisKeyword_1_1_3() { return cLeftParenthesisKeyword_1_1_3; }
 		
-		//(arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)?
+		// (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)?
 		public Group getGroup_1_1_4() { return cGroup_1_1_4; }
 		
 		//arguments+=OclMessageArg
@@ -1073,19 +1116,19 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//OclMessageArg
 		public RuleCall getArgumentsOclMessageArgParserRuleCall_1_1_4_0_0() { return cArgumentsOclMessageArgParserRuleCall_1_1_4_0_0; }
 		
-		//(',' arguments+=OclMessageArg)*
+		// (',' arguments+=OclMessageArg)*
 		public Group getGroup_1_1_4_1() { return cGroup_1_1_4_1; }
 		
 		//','
 		public Keyword getCommaKeyword_1_1_4_1_0() { return cCommaKeyword_1_1_4_1_0; }
 		
-		//arguments+=OclMessageArg
+		// arguments+=OclMessageArg
 		public Assignment getArgumentsAssignment_1_1_4_1_1() { return cArgumentsAssignment_1_1_4_1_1; }
 		
 		//OclMessageArg
 		public RuleCall getArgumentsOclMessageArgParserRuleCall_1_1_4_1_1_0() { return cArgumentsOclMessageArgParserRuleCall_1_1_4_1_1_0; }
 		
-		//')'
+		// ')'
 		public Keyword getRightParenthesisKeyword_1_1_5() { return cRightParenthesisKeyword_1_1_5; }
 	}
 	public class NavigatingExpElements extends AbstractParserRuleElementFinder {
@@ -1120,35 +1163,44 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Keyword cRightParenthesisKeyword_1_1_5 = (Keyword)cGroup_1_1.eContents().get(5);
 		
 		//// Follows ., ->, ^
-		//NavigatingExp:
-		//	SubNavigatingExp ({InfixExp.source=current} op=('.' | '->') argument=NavigatingExp | {OclMessage.source=current} op=
-		//	('^^' | '^') messageName=Identifier
-		//	'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')?;
+		//NavigatingExp :
+		//	SubNavigatingExp
+		//	(
+		//		({InfixExp.source=current} op=('.'|'->') argument=NavigatingExp)
+		//	|	({OclMessage.source=current} op=('^^'|'^') messageName=Identifier
+		//			'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')
+		//	)?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//SubNavigatingExp ({InfixExp.source=current} op=('.' | '->') argument=NavigatingExp | {OclMessage.source=current} op=
-		//('^^' | '^') messageName=Identifier
-		//'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')?
+		//	SubNavigatingExp
+		//	(
+		//		({InfixExp.source=current} op=('.'|'->') argument=NavigatingExp)
+		//	|	({OclMessage.source=current} op=('^^'|'^') messageName=Identifier
+		//			'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')
+		//	)?
 		public Group getGroup() { return cGroup; }
 		
-		//SubNavigatingExp
+		//	SubNavigatingExp
 		public RuleCall getSubNavigatingExpParserRuleCall_0() { return cSubNavigatingExpParserRuleCall_0; }
 		
-		//({InfixExp.source=current} op=('.' | '->') argument=NavigatingExp | {OclMessage.source=current} op=('^^' | '^')
-		//messageName=Identifier
-		//'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')?
+		//	(
+		//		({InfixExp.source=current} op=('.'|'->') argument=NavigatingExp)
+		//	|	({OclMessage.source=current} op=('^^'|'^') messageName=Identifier
+		//			'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')
+		//	)?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//{InfixExp.source=current} op=('.' | '->') argument=NavigatingExp
+		//		({InfixExp.source=current} op=('.'|'->') argument=NavigatingExp)
 		public Group getGroup_1_0() { return cGroup_1_0; }
 		
 		//{InfixExp.source=current}
 		public Action getInfixExpSourceAction_1_0_0() { return cInfixExpSourceAction_1_0_0; }
 		
-		//op=('.' | '->')
+		// op=('.'|'->')
 		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
 		
-		//('.' | '->')
+		//('.'|'->')
 		public Alternatives getOpAlternatives_1_0_1_0() { return cOpAlternatives_1_0_1_0; }
 		
 		//'.'
@@ -1157,23 +1209,23 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'->'
 		public Keyword getOpHyphenMinusGreaterThanSignKeyword_1_0_1_0_1() { return cOpHyphenMinusGreaterThanSignKeyword_1_0_1_0_1; }
 		
-		//argument=NavigatingExp
+		// argument=NavigatingExp
 		public Assignment getArgumentAssignment_1_0_2() { return cArgumentAssignment_1_0_2; }
 		
 		//NavigatingExp
 		public RuleCall getArgumentNavigatingExpParserRuleCall_1_0_2_0() { return cArgumentNavigatingExpParserRuleCall_1_0_2_0; }
 		
-		//{OclMessage.source=current} op=('^^' | '^') messageName=Identifier
-		//'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')'
+		//	({OclMessage.source=current} op=('^^'|'^') messageName=Identifier
+		//			'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//{OclMessage.source=current}
 		public Action getOclMessageSourceAction_1_1_0() { return cOclMessageSourceAction_1_1_0; }
 		
-		//op=('^^' | '^')
+		// op=('^^'|'^')
 		public Assignment getOpAssignment_1_1_1() { return cOpAssignment_1_1_1; }
 		
-		//('^^' | '^')
+		//('^^'|'^')
 		public Alternatives getOpAlternatives_1_1_1_0() { return cOpAlternatives_1_1_1_0; }
 		
 		//'^^'
@@ -1182,16 +1234,16 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'^'
 		public Keyword getOpCircumflexAccentKeyword_1_1_1_0_1() { return cOpCircumflexAccentKeyword_1_1_1_0_1; }
 		
-		//messageName=Identifier
+		// messageName=Identifier
 		public Assignment getMessageNameAssignment_1_1_2() { return cMessageNameAssignment_1_1_2; }
 		
 		//Identifier
 		public RuleCall getMessageNameIdentifierParserRuleCall_1_1_2_0() { return cMessageNameIdentifierParserRuleCall_1_1_2_0; }
 		
-		//'('
+		//			'('
 		public Keyword getLeftParenthesisKeyword_1_1_3() { return cLeftParenthesisKeyword_1_1_3; }
 		
-		//(arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)?
+		// (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)?
 		public Group getGroup_1_1_4() { return cGroup_1_1_4; }
 		
 		//arguments+=OclMessageArg
@@ -1200,19 +1252,19 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//OclMessageArg
 		public RuleCall getArgumentsOclMessageArgParserRuleCall_1_1_4_0_0() { return cArgumentsOclMessageArgParserRuleCall_1_1_4_0_0; }
 		
-		//(',' arguments+=OclMessageArg)*
+		// (',' arguments+=OclMessageArg)*
 		public Group getGroup_1_1_4_1() { return cGroup_1_1_4_1; }
 		
 		//','
 		public Keyword getCommaKeyword_1_1_4_1_0() { return cCommaKeyword_1_1_4_1_0; }
 		
-		//arguments+=OclMessageArg
+		// arguments+=OclMessageArg
 		public Assignment getArgumentsAssignment_1_1_4_1_1() { return cArgumentsAssignment_1_1_4_1_1; }
 		
 		//OclMessageArg
 		public RuleCall getArgumentsOclMessageArgParserRuleCall_1_1_4_1_1_0() { return cArgumentsOclMessageArgParserRuleCall_1_1_4_1_1_0; }
 		
-		//')'
+		// ')'
 		public Keyword getRightParenthesisKeyword_1_1_5() { return cRightParenthesisKeyword_1_1_5; }
 	}
 	public class OclMessageArgElements extends AbstractParserRuleElementFinder {
@@ -1228,14 +1280,17 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//// FIXME @pre
-		//OclMessageArg:
-		//	{OclMessageArg} '?' (':' type=TypeExp)? | Expression;
+		//OclMessageArg :
+		//	({OclMessageArg}'?' (':' type=TypeExp)?)
+		//|	Expression
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{OclMessageArg} '?' (':' type=TypeExp)? | Expression
+		//	({OclMessageArg}'?' (':' type=TypeExp)?)
+		//|	Expression
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{OclMessageArg} '?' (':' type=TypeExp)?
+		//	({OclMessageArg}'?' (':' type=TypeExp)?)
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//{OclMessageArg}
@@ -1244,19 +1299,19 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'?'
 		public Keyword getQuestionMarkKeyword_0_1() { return cQuestionMarkKeyword_0_1; }
 		
-		//(':' type=TypeExp)?
+		// (':' type=TypeExp)?
 		public Group getGroup_0_2() { return cGroup_0_2; }
 		
 		//':'
 		public Keyword getColonKeyword_0_2_0() { return cColonKeyword_0_2_0; }
 		
-		//type=TypeExp
+		// type=TypeExp
 		public Assignment getTypeAssignment_0_2_1() { return cTypeAssignment_0_2_1; }
 		
 		//TypeExp
 		public RuleCall getTypeTypeExpParserRuleCall_0_2_1_0() { return cTypeTypeExpParserRuleCall_0_2_1_0; }
 		
-		//Expression
+		//	Expression
 		public RuleCall getExpressionParserRuleCall_1() { return cExpressionParserRuleCall_1; }
 	}
 	public class NUMBER_LITERALElements extends AbstractParserRuleElementFinder {
@@ -1276,28 +1331,29 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cINTTerminalRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
 		
 		//NUMBER_LITERAL:
-		//	INT ('.' INT)? (('e' | 'E') ('+' | '-')? INT)?;
+		//	INT ('.' INT)? (('e'|'E') ('+'|'-')? INT)?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//INT ('.' INT)? (('e' | 'E') ('+' | '-')? INT)?
+		//	INT ('.' INT)? (('e'|'E') ('+'|'-')? INT)?
 		public Group getGroup() { return cGroup; }
 		
-		//INT
+		//	INT
 		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
 		
-		//('.' INT)?
+		// ('.' INT)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 		
-		//INT
+		// INT
 		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
 		
-		//(('e' | 'E') ('+' | '-')? INT)?
+		// (('e'|'E') ('+'|'-')? INT)?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//('e' | 'E')
+		//('e'|'E')
 		public Alternatives getAlternatives_2_0() { return cAlternatives_2_0; }
 		
 		//'e'
@@ -1306,7 +1362,7 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'E'
 		public Keyword getEKeyword_2_0_1() { return cEKeyword_2_0_1; }
 		
-		//('+' | '-')?
+		// ('+'|'-')?
 		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
 		
 		//'+'
@@ -1315,7 +1371,7 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'-'
 		public Keyword getHyphenMinusKeyword_2_1_1() { return cHyphenMinusKeyword_2_1_1; }
 		
-		//INT
+		// INT
 		public RuleCall getINTTerminalRuleCall_2_2() { return cINTTerminalRuleCall_2_2; }
 	}
 	public class EssentialOCLRestrictedKeywordsElements extends AbstractParserRuleElementFinder {
@@ -1326,28 +1382,30 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		
 		//EssentialOCLRestrictedKeywords:
 		//	'e'
-		//	| 'E';
+		//|	'E'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'e'
-		//| 'E'
+		//	'e'
+		//|	'E'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'e'
+		//	'e'
 		public Keyword getEKeyword_0() { return cEKeyword_0; }
 		
-		//'E'
+		//	'E'
 		public Keyword getEKeyword_1() { return cEKeyword_1; }
 	}
 	public class RestrictedKeywordsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.xtext.ui.tests.editor.contentassist.BacktrackingContentAssistTestLanguage.RestrictedKeywords");
 		private final RuleCall cEssentialOCLRestrictedKeywordsParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//RestrictedKeywords:
-		//	EssentialOCLRestrictedKeywords;
+		//RestrictedKeywords:					// Intended to be overridden
+		//	EssentialOCLRestrictedKeywords
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//// Intended to be overridden
+		//					// Intended to be overridden
 		//	EssentialOCLRestrictedKeywords
 		public RuleCall getEssentialOCLRestrictedKeywordsParserRuleCall() { return cEssentialOCLRestrictedKeywordsParserRuleCall; }
 	}
@@ -1359,17 +1417,18 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		
 		//Identifier:
 		//	ID
-		//	| RestrictedKeywords;
+		//|	RestrictedKeywords
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ID
-		//| RestrictedKeywords
+		//	ID
+		//|	RestrictedKeywords
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//ID
+		//	ID
 		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
 		
-		//RestrictedKeywords
+		//	RestrictedKeywords
 		public RuleCall getRestrictedKeywordsParserRuleCall_1() { return cRestrictedKeywordsParserRuleCall_1; }
 	}
 	public class StringLiteralElements extends AbstractParserRuleElementFinder {
@@ -1377,10 +1436,11 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//StringLiteral:
-		//	STRING;
+		//	STRING
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//STRING
+		//	STRING
 		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
 	}
 	public class SimpleNameElements extends AbstractParserRuleElementFinder {
@@ -1388,10 +1448,11 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cIdentifierParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//SimpleName:
-		//	Identifier;
+		//	Identifier
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Identifier
+		//	Identifier
 		public RuleCall getIdentifierParserRuleCall() { return cIdentifierParserRuleCall; }
 	}
 	public class PrimitiveTypeIdentifierElements extends AbstractParserRuleElementFinder {
@@ -1408,47 +1469,48 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		
 		//PrimitiveTypeIdentifier:
 		//	'Boolean'
-		//	| 'Integer'
-		//	| 'Real'
-		//	| 'String'
-		//	| 'UnlimitedNatural'
-		//	| 'OclAny'
-		//	| 'OclInvalid'
-		//	| 'OclVoid';
+		//|	'Integer'
+		//|	'Real'
+		//|	'String'
+		//|	'UnlimitedNatural'
+		//|	'OclAny'
+		//|	'OclInvalid'
+		//|	'OclVoid'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Boolean'
-		//| 'Integer'
-		//| 'Real'
-		//| 'String'
-		//| 'UnlimitedNatural'
-		//| 'OclAny'
-		//| 'OclInvalid'
-		//| 'OclVoid'
+		//	'Boolean'
+		//|	'Integer'
+		//|	'Real'
+		//|	'String'
+		//|	'UnlimitedNatural'
+		//|	'OclAny'
+		//|	'OclInvalid'
+		//|	'OclVoid'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'Boolean'
+		//	'Boolean'
 		public Keyword getBooleanKeyword_0() { return cBooleanKeyword_0; }
 		
-		//'Integer'
+		//	'Integer'
 		public Keyword getIntegerKeyword_1() { return cIntegerKeyword_1; }
 		
-		//'Real'
+		//	'Real'
 		public Keyword getRealKeyword_2() { return cRealKeyword_2; }
 		
-		//'String'
+		//	'String'
 		public Keyword getStringKeyword_3() { return cStringKeyword_3; }
 		
-		//'UnlimitedNatural'
+		//	'UnlimitedNatural'
 		public Keyword getUnlimitedNaturalKeyword_4() { return cUnlimitedNaturalKeyword_4; }
 		
-		//'OclAny'
+		//	'OclAny'
 		public Keyword getOclAnyKeyword_5() { return cOclAnyKeyword_5; }
 		
-		//'OclInvalid'
+		//	'OclInvalid'
 		public Keyword getOclInvalidKeyword_6() { return cOclInvalidKeyword_6; }
 		
-		//'OclVoid'
+		//	'OclVoid'
 		public Keyword getOclVoidKeyword_7() { return cOclVoidKeyword_7; }
 	}
 	public class PrimitiveTypeElements extends AbstractParserRuleElementFinder {
@@ -1456,11 +1518,12 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cNamePrimitiveTypeIdentifierParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
-		//PrimitiveType:
-		//	name=PrimitiveTypeIdentifier;
+		//PrimitiveType :
+		//	name=PrimitiveTypeIdentifier
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=PrimitiveTypeIdentifier
+		//	name=PrimitiveTypeIdentifier
 		public Assignment getNameAssignment() { return cNameAssignment; }
 		
 		//PrimitiveTypeIdentifier
@@ -1477,32 +1540,33 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		
 		//CollectionTypeIdentifier:
 		//	'Set'
-		//	| 'Bag'
-		//	| 'Sequence'
-		//	| 'Collection'
-		//	| 'OrderedSet';
+		//|	'Bag'
+		//|	'Sequence'
+		//|	'Collection'
+		//|	'OrderedSet'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Set'
-		//| 'Bag'
-		//| 'Sequence'
-		//| 'Collection'
-		//| 'OrderedSet'
+		//	'Set'
+		//|	'Bag'
+		//|	'Sequence'
+		//|	'Collection'
+		//|	'OrderedSet'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'Set'
+		//	'Set'
 		public Keyword getSetKeyword_0() { return cSetKeyword_0; }
 		
-		//'Bag'
+		//	'Bag'
 		public Keyword getBagKeyword_1() { return cBagKeyword_1; }
 		
-		//'Sequence'
+		//	'Sequence'
 		public Keyword getSequenceKeyword_2() { return cSequenceKeyword_2; }
 		
-		//'Collection'
+		//	'Collection'
 		public Keyword getCollectionKeyword_3() { return cCollectionKeyword_3; }
 		
-		//'OrderedSet'
+		//	'OrderedSet'
 		public Keyword getOrderedSetKeyword_4() { return cOrderedSetKeyword_4; }
 	}
 	public class TypeExpElements extends AbstractParserRuleElementFinder {
@@ -1515,27 +1579,28 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		
 		//TypeExp:
 		//	PrimitiveType
-		//	| NameExp
-		//	| CollectionType
-		//	| TupleType;
+		//|	NameExp
+		//|	CollectionType
+		//|	TupleType
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//PrimitiveType
-		//| NameExp
-		//| CollectionType
-		//| TupleType
+		//	PrimitiveType
+		//|	NameExp
+		//|	CollectionType
+		//|	TupleType
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//PrimitiveType
+		//	PrimitiveType
 		public RuleCall getPrimitiveTypeParserRuleCall_0() { return cPrimitiveTypeParserRuleCall_0; }
 		
-		//NameExp
+		//	NameExp
 		public RuleCall getNameExpParserRuleCall_1() { return cNameExpParserRuleCall_1; }
 		
-		//CollectionType
+		//	CollectionType
 		public RuleCall getCollectionTypeParserRuleCall_2() { return cCollectionTypeParserRuleCall_2; }
 		
-		//TupleType
+		//	TupleType
 		public RuleCall getTupleTypeParserRuleCall_3() { return cTupleTypeParserRuleCall_3; }
 	}
 	public class CollectionTypeElements extends AbstractParserRuleElementFinder {
@@ -1550,31 +1615,32 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//CollectionType:
-		//	typeIdentifier=CollectionTypeIdentifier ('(' type=TypeExp ')')?;
+		//	typeIdentifier=CollectionTypeIdentifier ('(' type=TypeExp ')')?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//typeIdentifier=CollectionTypeIdentifier ('(' type=TypeExp ')')?
+		//	typeIdentifier=CollectionTypeIdentifier ('(' type=TypeExp ')')?
 		public Group getGroup() { return cGroup; }
 		
-		//typeIdentifier=CollectionTypeIdentifier
+		//	typeIdentifier=CollectionTypeIdentifier
 		public Assignment getTypeIdentifierAssignment_0() { return cTypeIdentifierAssignment_0; }
 		
 		//CollectionTypeIdentifier
 		public RuleCall getTypeIdentifierCollectionTypeIdentifierParserRuleCall_0_0() { return cTypeIdentifierCollectionTypeIdentifierParserRuleCall_0_0; }
 		
-		//('(' type=TypeExp ')')?
+		// ('(' type=TypeExp ')')?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
 		
-		//type=TypeExp
+		// type=TypeExp
 		public Assignment getTypeAssignment_1_1() { return cTypeAssignment_1_1; }
 		
 		//TypeExp
 		public RuleCall getTypeTypeExpParserRuleCall_1_1_0() { return cTypeTypeExpParserRuleCall_1_1_0; }
 		
-		//')'
+		// ')'
 		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
 	}
 	public class TupleTypeElements extends AbstractParserRuleElementFinder {
@@ -1593,22 +1659,23 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//TupleType:
-		//	name='Tuple' '(' (part+=tuplePart (',' part+=tuplePart)*)? ')';
+		//	name='Tuple' '(' (part+=tuplePart (',' part+=tuplePart)*)? ')'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name='Tuple' '(' (part+=tuplePart (',' part+=tuplePart)*)? ')'
+		//	name='Tuple' '(' (part+=tuplePart (',' part+=tuplePart)*)? ')'
 		public Group getGroup() { return cGroup; }
 		
-		//name='Tuple'
+		//	name='Tuple'
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//'Tuple'
 		public Keyword getNameTupleKeyword_0_0() { return cNameTupleKeyword_0_0; }
 		
-		//'('
+		// '('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//(part+=tuplePart (',' part+=tuplePart)*)?
+		// (part+=tuplePart (',' part+=tuplePart)*)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//part+=tuplePart
@@ -1617,19 +1684,19 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//tuplePart
 		public RuleCall getPartTuplePartParserRuleCall_2_0_0() { return cPartTuplePartParserRuleCall_2_0_0; }
 		
-		//(',' part+=tuplePart)*
+		// (',' part+=tuplePart)*
 		public Group getGroup_2_1() { return cGroup_2_1; }
 		
 		//','
 		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
 		
-		//part+=tuplePart
+		// part+=tuplePart
 		public Assignment getPartAssignment_2_1_1() { return cPartAssignment_2_1_1; }
 		
 		//tuplePart
 		public RuleCall getPartTuplePartParserRuleCall_2_1_1_0() { return cPartTuplePartParserRuleCall_2_1_1_0; }
 		
-		//')'
+		// ')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 	public class TuplePartElements extends AbstractParserRuleElementFinder {
@@ -1642,22 +1709,23 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cTypeTypeExpParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		
 		//tuplePart:
-		//	name=Identifier ':' type=TypeExp;
+		//	name=Identifier ':' type=TypeExp
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=Identifier ':' type=TypeExp
+		//	name=Identifier ':' type=TypeExp
 		public Group getGroup() { return cGroup; }
 		
-		//name=Identifier
+		//	name=Identifier
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//Identifier
 		public RuleCall getNameIdentifierParserRuleCall_0_0() { return cNameIdentifierParserRuleCall_0_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//type=TypeExp
+		// type=TypeExp
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 		
 		//TypeExp
@@ -1679,32 +1747,36 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cCollectionLiteralPartsCollectionLiteralPartParserRuleCall_1_2_1_1_0 = (RuleCall)cCollectionLiteralPartsAssignment_1_2_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		
-		//CollectionLiteralExp:
-		//	CollectionType ({CollectionLiteralExp.type=current} '{' (collectionLiteralParts+=CollectionLiteralPart (','
-		//	collectionLiteralParts+=CollectionLiteralPart)*)?
-		//	'}')?;
+		//CollectionLiteralExp :
+		//	CollectionType
+		//	({CollectionLiteralExp.type=current} '{' (collectionLiteralParts+=CollectionLiteralPart
+		//	 (',' collectionLiteralParts+=CollectionLiteralPart)*)?
+		//	 '}')?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//CollectionType ({CollectionLiteralExp.type=current} '{' (collectionLiteralParts+=CollectionLiteralPart (','
-		//collectionLiteralParts+=CollectionLiteralPart)*)?
-		//'}')?
+		//	CollectionType
+		//	({CollectionLiteralExp.type=current} '{' (collectionLiteralParts+=CollectionLiteralPart
+		//	 (',' collectionLiteralParts+=CollectionLiteralPart)*)?
+		//	 '}')?
 		public Group getGroup() { return cGroup; }
 		
-		//CollectionType
+		//	CollectionType
 		public RuleCall getCollectionTypeParserRuleCall_0() { return cCollectionTypeParserRuleCall_0; }
 		
-		//({CollectionLiteralExp.type=current} '{' (collectionLiteralParts+=CollectionLiteralPart (','
-		//collectionLiteralParts+=CollectionLiteralPart)*)?
-		//'}')?
+		//	({CollectionLiteralExp.type=current} '{' (collectionLiteralParts+=CollectionLiteralPart
+		//	 (',' collectionLiteralParts+=CollectionLiteralPart)*)?
+		//	 '}')?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{CollectionLiteralExp.type=current}
 		public Action getCollectionLiteralExpTypeAction_1_0() { return cCollectionLiteralExpTypeAction_1_0; }
 		
-		//'{'
+		// '{'
 		public Keyword getLeftCurlyBracketKeyword_1_1() { return cLeftCurlyBracketKeyword_1_1; }
 		
-		//(collectionLiteralParts+=CollectionLiteralPart (',' collectionLiteralParts+=CollectionLiteralPart)*)?
+		// (collectionLiteralParts+=CollectionLiteralPart
+		//	 (',' collectionLiteralParts+=CollectionLiteralPart)*)?
 		public Group getGroup_1_2() { return cGroup_1_2; }
 		
 		//collectionLiteralParts+=CollectionLiteralPart
@@ -1713,19 +1785,19 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//CollectionLiteralPart
 		public RuleCall getCollectionLiteralPartsCollectionLiteralPartParserRuleCall_1_2_0_0() { return cCollectionLiteralPartsCollectionLiteralPartParserRuleCall_1_2_0_0; }
 		
-		//(',' collectionLiteralParts+=CollectionLiteralPart)*
+		//	 (',' collectionLiteralParts+=CollectionLiteralPart)*
 		public Group getGroup_1_2_1() { return cGroup_1_2_1; }
 		
 		//','
 		public Keyword getCommaKeyword_1_2_1_0() { return cCommaKeyword_1_2_1_0; }
 		
-		//collectionLiteralParts+=CollectionLiteralPart
+		// collectionLiteralParts+=CollectionLiteralPart
 		public Assignment getCollectionLiteralPartsAssignment_1_2_1_1() { return cCollectionLiteralPartsAssignment_1_2_1_1; }
 		
 		//CollectionLiteralPart
 		public RuleCall getCollectionLiteralPartsCollectionLiteralPartParserRuleCall_1_2_1_1_0() { return cCollectionLiteralPartsCollectionLiteralPartParserRuleCall_1_2_1_1_0; }
 		
-		//'}'
+		//	 '}'
 		public Keyword getRightCurlyBracketKeyword_1_3() { return cRightCurlyBracketKeyword_1_3; }
 	}
 	public class CollectionLiteralPartElements extends AbstractParserRuleElementFinder {
@@ -1739,25 +1811,26 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cLastExpressionExpressionParserRuleCall_1_1_0 = (RuleCall)cLastExpressionAssignment_1_1.eContents().get(0);
 		
 		//CollectionLiteralPart:
-		//	expression=Expression ('..' lastExpression=Expression)?;
+		//	expression=Expression ('..' lastExpression=Expression)?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//expression=Expression ('..' lastExpression=Expression)?
+		//	expression=Expression ('..' lastExpression=Expression)?
 		public Group getGroup() { return cGroup; }
 		
-		//expression=Expression
+		//	expression=Expression
 		public Assignment getExpressionAssignment_0() { return cExpressionAssignment_0; }
 		
 		//Expression
 		public RuleCall getExpressionExpressionParserRuleCall_0_0() { return cExpressionExpressionParserRuleCall_0_0; }
 		
-		//('..' lastExpression=Expression)?
+		// ('..' lastExpression=Expression)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'..'
 		public Keyword getFullStopFullStopKeyword_1_0() { return cFullStopFullStopKeyword_1_0; }
 		
-		//lastExpression=Expression
+		// lastExpression=Expression
 		public Assignment getLastExpressionAssignment_1_1() { return cLastExpressionAssignment_1_1; }
 		
 		//Expression
@@ -1774,32 +1847,33 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		
 		//PrimitiveLiteralExp:
 		//	NumberLiteralExp
-		//	| StringLiteralExp
-		//	| BooleanLiteralExp
-		//	| InvalidLiteralExp
-		//	| NullLiteralExp;
+		//|	StringLiteralExp
+		//|	BooleanLiteralExp
+		//|	InvalidLiteralExp
+		//|	NullLiteralExp
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//NumberLiteralExp
-		//| StringLiteralExp
-		//| BooleanLiteralExp
-		//| InvalidLiteralExp
-		//| NullLiteralExp
+		//	NumberLiteralExp
+		//|	StringLiteralExp
+		//|	BooleanLiteralExp
+		//|	InvalidLiteralExp
+		//|	NullLiteralExp
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//NumberLiteralExp
+		//	NumberLiteralExp
 		public RuleCall getNumberLiteralExpParserRuleCall_0() { return cNumberLiteralExpParserRuleCall_0; }
 		
-		//StringLiteralExp
+		//	StringLiteralExp
 		public RuleCall getStringLiteralExpParserRuleCall_1() { return cStringLiteralExpParserRuleCall_1; }
 		
-		//BooleanLiteralExp
+		//	BooleanLiteralExp
 		public RuleCall getBooleanLiteralExpParserRuleCall_2() { return cBooleanLiteralExpParserRuleCall_2; }
 		
-		//InvalidLiteralExp
+		//	InvalidLiteralExp
 		public RuleCall getInvalidLiteralExpParserRuleCall_3() { return cInvalidLiteralExpParserRuleCall_3; }
 		
-		//NullLiteralExp
+		//	NullLiteralExp
 		public RuleCall getNullLiteralExpParserRuleCall_4() { return cNullLiteralExpParserRuleCall_4; }
 	}
 	public class TupleLiteralExpElements extends AbstractParserRuleElementFinder {
@@ -1818,43 +1892,44 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Keyword cRightCurlyBracketKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		
 		//TupleLiteralExp:
-		//	{TupleLiteralExp} 'Tuple' ('{' part+=TupleLiteralPart (',' part+=TupleLiteralPart)* '}')?;
+		//	{TupleLiteralExp} 'Tuple' ('{' part+=TupleLiteralPart (',' part+=TupleLiteralPart)* '}')?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TupleLiteralExp} 'Tuple' ('{' part+=TupleLiteralPart (',' part+=TupleLiteralPart)* '}')?
+		//	{TupleLiteralExp} 'Tuple' ('{' part+=TupleLiteralPart (',' part+=TupleLiteralPart)* '}')?
 		public Group getGroup() { return cGroup; }
 		
-		//{TupleLiteralExp}
+		//	{TupleLiteralExp}
 		public Action getTupleLiteralExpAction_0() { return cTupleLiteralExpAction_0; }
 		
-		//'Tuple'
+		// 'Tuple'
 		public Keyword getTupleKeyword_1() { return cTupleKeyword_1; }
 		
-		//('{' part+=TupleLiteralPart (',' part+=TupleLiteralPart)* '}')?
+		// ('{' part+=TupleLiteralPart (',' part+=TupleLiteralPart)* '}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
-		//part+=TupleLiteralPart
+		// part+=TupleLiteralPart
 		public Assignment getPartAssignment_2_1() { return cPartAssignment_2_1; }
 		
 		//TupleLiteralPart
 		public RuleCall getPartTupleLiteralPartParserRuleCall_2_1_0() { return cPartTupleLiteralPartParserRuleCall_2_1_0; }
 		
-		//(',' part+=TupleLiteralPart)*
+		// (',' part+=TupleLiteralPart)*
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//','
 		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
 		
-		//part+=TupleLiteralPart
+		// part+=TupleLiteralPart
 		public Assignment getPartAssignment_2_2_1() { return cPartAssignment_2_2_1; }
 		
 		//TupleLiteralPart
 		public RuleCall getPartTupleLiteralPartParserRuleCall_2_2_1_0() { return cPartTupleLiteralPartParserRuleCall_2_2_1_0; }
 		
-		//'}'
+		// '}'
 		public Keyword getRightCurlyBracketKeyword_2_3() { return cRightCurlyBracketKeyword_2_3; }
 	}
 	public class TupleLiteralPartElements extends AbstractParserRuleElementFinder {
@@ -1870,35 +1945,36 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cInitExpressionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cInitExpressionExpressionParserRuleCall_3_0 = (RuleCall)cInitExpressionAssignment_3.eContents().get(0);
 		
-		//TupleLiteralPart:
-		//	name=Identifier (':' type=TypeExp)? '=' initExpression=Expression;
+		//TupleLiteralPart :
+		//	name=Identifier (':' type=TypeExp)? '=' initExpression=Expression
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=Identifier (':' type=TypeExp)? '=' initExpression=Expression
+		//	name=Identifier (':' type=TypeExp)? '=' initExpression=Expression
 		public Group getGroup() { return cGroup; }
 		
-		//name=Identifier
+		//	name=Identifier
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//Identifier
 		public RuleCall getNameIdentifierParserRuleCall_0_0() { return cNameIdentifierParserRuleCall_0_0; }
 		
-		//(':' type=TypeExp)?
+		// (':' type=TypeExp)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//':'
 		public Keyword getColonKeyword_1_0() { return cColonKeyword_1_0; }
 		
-		//type=TypeExp
+		// type=TypeExp
 		public Assignment getTypeAssignment_1_1() { return cTypeAssignment_1_1; }
 		
 		//TypeExp
 		public RuleCall getTypeTypeExpParserRuleCall_1_1_0() { return cTypeTypeExpParserRuleCall_1_1_0; }
 		
-		//'='
+		// '='
 		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 		
-		//initExpression=Expression
+		// initExpression=Expression
 		public Assignment getInitExpressionAssignment_3() { return cInitExpressionAssignment_3; }
 		
 		//Expression
@@ -1910,10 +1986,11 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cNameNUMBER_LITERALParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
 		//NumberLiteralExp:
-		//	name=NUMBER_LITERAL;
+		//	name=NUMBER_LITERAL
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=NUMBER_LITERAL
+		//	name=NUMBER_LITERAL
 		public Assignment getNameAssignment() { return cNameAssignment; }
 		
 		//NUMBER_LITERAL
@@ -1925,10 +2002,11 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cValuesStringLiteralParserRuleCall_0 = (RuleCall)cValuesAssignment.eContents().get(0);
 		
 		//StringLiteralExp:
-		//	values+=StringLiteral+;
+		//	values+=StringLiteral+
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//values+=StringLiteral+
+		//	values+=StringLiteral+
 		public Assignment getValuesAssignment() { return cValuesAssignment; }
 		
 		//StringLiteral
@@ -1944,19 +2022,21 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Keyword cFalseKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		
 		//BooleanLiteralExp:
-		//	{BooleanLiteralExp} (isTrue?='true'
-		//	| 'false');
+		//	{BooleanLiteralExp}
+		//		(isTrue?='true'
+		//	|	'false');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{BooleanLiteralExp} (isTrue?='true'
-		//| 'false')
+		//	{BooleanLiteralExp}
+		//		(isTrue?='true'
+		//	|	'false')
 		public Group getGroup() { return cGroup; }
 		
-		//{BooleanLiteralExp}
+		//	{BooleanLiteralExp}
 		public Action getBooleanLiteralExpAction_0() { return cBooleanLiteralExpAction_0; }
 		
-		//(isTrue?='true'
-		//| 'false')
+		//		(isTrue?='true'
+		//	|	'false')
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//isTrue?='true'
@@ -1965,7 +2045,7 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'true'
 		public Keyword getIsTrueTrueKeyword_1_0_0() { return cIsTrueTrueKeyword_1_0_0; }
 		
-		//'false'
+		//	'false'
 		public Keyword getFalseKeyword_1_1() { return cFalseKeyword_1_1; }
 	}
 	public class InvalidLiteralExpElements extends AbstractParserRuleElementFinder {
@@ -1975,16 +2055,17 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Keyword cInvalidKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//InvalidLiteralExp:
-		//	{InvalidLiteralExp} 'invalid';
+		//	{InvalidLiteralExp} 'invalid'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{InvalidLiteralExp} 'invalid'
+		//	{InvalidLiteralExp} 'invalid'
 		public Group getGroup() { return cGroup; }
 		
-		//{InvalidLiteralExp}
+		//	{InvalidLiteralExp}
 		public Action getInvalidLiteralExpAction_0() { return cInvalidLiteralExpAction_0; }
 		
-		//'invalid'
+		// 'invalid'
 		public Keyword getInvalidKeyword_1() { return cInvalidKeyword_1; }
 	}
 	public class NullLiteralExpElements extends AbstractParserRuleElementFinder {
@@ -1994,16 +2075,17 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Keyword cNullKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//NullLiteralExp:
-		//	{NullLiteralExp} 'null';
+		//	{NullLiteralExp} 'null'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{NullLiteralExp} 'null'
+		//	{NullLiteralExp} 'null'
 		public Group getGroup() { return cGroup; }
 		
-		//{NullLiteralExp}
+		//	{NullLiteralExp}
 		public Action getNullLiteralExpAction_0() { return cNullLiteralExpAction_0; }
 		
-		//'null'
+		// 'null'
 		public Keyword getNullKeyword_1() { return cNullKeyword_1; }
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
@@ -2014,17 +2096,18 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		
 		//Expression:
 		//	implies
-		//	| LetExp;
+		//|	LetExp
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//implies
-		//| LetExp
+		//	implies
+		//|	LetExp
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//implies
+		//	implies
 		public RuleCall getImpliesParserRuleCall_0() { return cImpliesParserRuleCall_0; }
 		
-		//LetExp
+		//	LetExp
 		public RuleCall getLetExpParserRuleCall_1() { return cLetExpParserRuleCall_1; }
 	}
 	public class ImpliesElements extends AbstractParserRuleElementFinder {
@@ -2040,32 +2123,35 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cArgumentXorParserRuleCall_1_2_0_0 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(0);
 		private final RuleCall cArgumentLetExpParserRuleCall_1_2_0_1 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(1);
 		
-		//implies Expression:
-		//	xor ({InfixExp.source=current} op='implies' argument=(xor | LetExp))*;
+		//implies returns Expression:
+		//	xor
+		//	({InfixExp.source=current} op='implies' argument=(xor|LetExp))*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//xor ({InfixExp.source=current} op='implies' argument=(xor | LetExp))*
+		//	xor
+		//	({InfixExp.source=current} op='implies' argument=(xor|LetExp))*
 		public Group getGroup() { return cGroup; }
 		
-		//xor
+		//	xor
 		public RuleCall getXorParserRuleCall_0() { return cXorParserRuleCall_0; }
 		
-		//({InfixExp.source=current} op='implies' argument=(xor | LetExp))*
+		//	({InfixExp.source=current} op='implies' argument=(xor|LetExp))*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{InfixExp.source=current}
 		public Action getInfixExpSourceAction_1_0() { return cInfixExpSourceAction_1_0; }
 		
-		//op='implies'
+		// op='implies'
 		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 		
 		//'implies'
 		public Keyword getOpImpliesKeyword_1_1_0() { return cOpImpliesKeyword_1_1_0; }
 		
-		//argument=(xor | LetExp)
+		// argument=(xor|LetExp)
 		public Assignment getArgumentAssignment_1_2() { return cArgumentAssignment_1_2; }
 		
-		//(xor | LetExp)
+		//(xor|LetExp)
 		public Alternatives getArgumentAlternatives_1_2_0() { return cArgumentAlternatives_1_2_0; }
 		
 		//xor
@@ -2087,32 +2173,35 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cArgumentOrParserRuleCall_1_2_0_0 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(0);
 		private final RuleCall cArgumentLetExpParserRuleCall_1_2_0_1 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(1);
 		
-		//xor Expression:
-		//	or ({InfixExp.source=current} op='xor' argument=(or | LetExp))*;
+		//xor returns Expression:
+		//	or
+		//	({InfixExp.source=current} op='xor' argument=(or|LetExp))*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//or ({InfixExp.source=current} op='xor' argument=(or | LetExp))*
+		//	or
+		//	({InfixExp.source=current} op='xor' argument=(or|LetExp))*
 		public Group getGroup() { return cGroup; }
 		
-		//or
+		//	or
 		public RuleCall getOrParserRuleCall_0() { return cOrParserRuleCall_0; }
 		
-		//({InfixExp.source=current} op='xor' argument=(or | LetExp))*
+		//	({InfixExp.source=current} op='xor' argument=(or|LetExp))*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{InfixExp.source=current}
 		public Action getInfixExpSourceAction_1_0() { return cInfixExpSourceAction_1_0; }
 		
-		//op='xor'
+		// op='xor'
 		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 		
 		//'xor'
 		public Keyword getOpXorKeyword_1_1_0() { return cOpXorKeyword_1_1_0; }
 		
-		//argument=(or | LetExp)
+		// argument=(or|LetExp)
 		public Assignment getArgumentAssignment_1_2() { return cArgumentAssignment_1_2; }
 		
-		//(or | LetExp)
+		//(or|LetExp)
 		public Alternatives getArgumentAlternatives_1_2_0() { return cArgumentAlternatives_1_2_0; }
 		
 		//or
@@ -2134,32 +2223,35 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cArgumentAndParserRuleCall_1_2_0_0 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(0);
 		private final RuleCall cArgumentLetExpParserRuleCall_1_2_0_1 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(1);
 		
-		//or Expression:
-		//	and ({InfixExp.source=current} op='or' argument=(and | LetExp))*;
+		//or returns Expression:
+		//	and
+		//	({InfixExp.source=current} op='or' argument=(and|LetExp))*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//and ({InfixExp.source=current} op='or' argument=(and | LetExp))*
+		//	and
+		//	({InfixExp.source=current} op='or' argument=(and|LetExp))*
 		public Group getGroup() { return cGroup; }
 		
-		//and
+		//	and
 		public RuleCall getAndParserRuleCall_0() { return cAndParserRuleCall_0; }
 		
-		//({InfixExp.source=current} op='or' argument=(and | LetExp))*
+		//	({InfixExp.source=current} op='or' argument=(and|LetExp))*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{InfixExp.source=current}
 		public Action getInfixExpSourceAction_1_0() { return cInfixExpSourceAction_1_0; }
 		
-		//op='or'
+		// op='or'
 		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 		
 		//'or'
 		public Keyword getOpOrKeyword_1_1_0() { return cOpOrKeyword_1_1_0; }
 		
-		//argument=(and | LetExp)
+		// argument=(and|LetExp)
 		public Assignment getArgumentAssignment_1_2() { return cArgumentAssignment_1_2; }
 		
-		//(and | LetExp)
+		//(and|LetExp)
 		public Alternatives getArgumentAlternatives_1_2_0() { return cArgumentAlternatives_1_2_0; }
 		
 		//and
@@ -2181,32 +2273,35 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cArgumentEqualityParserRuleCall_1_2_0_0 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(0);
 		private final RuleCall cArgumentLetExpParserRuleCall_1_2_0_1 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(1);
 		
-		//and Expression:
-		//	equality ({InfixExp.source=current} op='and' argument=(equality | LetExp))*;
+		//and returns Expression:
+		//	equality
+		//	({InfixExp.source=current} op='and' argument=(equality|LetExp))*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//equality ({InfixExp.source=current} op='and' argument=(equality | LetExp))*
+		//	equality
+		//	({InfixExp.source=current} op='and' argument=(equality|LetExp))*
 		public Group getGroup() { return cGroup; }
 		
-		//equality
+		//	equality
 		public RuleCall getEqualityParserRuleCall_0() { return cEqualityParserRuleCall_0; }
 		
-		//({InfixExp.source=current} op='and' argument=(equality | LetExp))*
+		//	({InfixExp.source=current} op='and' argument=(equality|LetExp))*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{InfixExp.source=current}
 		public Action getInfixExpSourceAction_1_0() { return cInfixExpSourceAction_1_0; }
 		
-		//op='and'
+		// op='and'
 		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 		
 		//'and'
 		public Keyword getOpAndKeyword_1_1_0() { return cOpAndKeyword_1_1_0; }
 		
-		//argument=(equality | LetExp)
+		// argument=(equality|LetExp)
 		public Assignment getArgumentAssignment_1_2() { return cArgumentAssignment_1_2; }
 		
-		//(equality | LetExp)
+		//(equality|LetExp)
 		public Alternatives getArgumentAlternatives_1_2_0() { return cArgumentAlternatives_1_2_0; }
 		
 		//equality
@@ -2230,26 +2325,29 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cArgumentRelationalParserRuleCall_1_2_0_0 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(0);
 		private final RuleCall cArgumentLetExpParserRuleCall_1_2_0_1 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(1);
 		
-		//equality Expression:
-		//	relational ({InfixExp.source=current} op=('=' | '<>') argument=(relational | LetExp))*;
+		//equality returns Expression:
+		//	relational
+		//	({InfixExp.source=current} op=('='|'<>') argument=(relational|LetExp))*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//relational ({InfixExp.source=current} op=('=' | '<>') argument=(relational | LetExp))*
+		//	relational
+		//	({InfixExp.source=current} op=('='|'<>') argument=(relational|LetExp))*
 		public Group getGroup() { return cGroup; }
 		
-		//relational
+		//	relational
 		public RuleCall getRelationalParserRuleCall_0() { return cRelationalParserRuleCall_0; }
 		
-		//({InfixExp.source=current} op=('=' | '<>') argument=(relational | LetExp))*
+		//	({InfixExp.source=current} op=('='|'<>') argument=(relational|LetExp))*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{InfixExp.source=current}
 		public Action getInfixExpSourceAction_1_0() { return cInfixExpSourceAction_1_0; }
 		
-		//op=('=' | '<>')
+		// op=('='|'<>')
 		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 		
-		//('=' | '<>')
+		//('='|'<>')
 		public Alternatives getOpAlternatives_1_1_0() { return cOpAlternatives_1_1_0; }
 		
 		//'='
@@ -2258,10 +2356,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'<>'
 		public Keyword getOpLessThanSignGreaterThanSignKeyword_1_1_0_1() { return cOpLessThanSignGreaterThanSignKeyword_1_1_0_1; }
 		
-		//argument=(relational | LetExp)
+		// argument=(relational|LetExp)
 		public Assignment getArgumentAssignment_1_2() { return cArgumentAssignment_1_2; }
 		
-		//(relational | LetExp)
+		//(relational|LetExp)
 		public Alternatives getArgumentAlternatives_1_2_0() { return cArgumentAlternatives_1_2_0; }
 		
 		//relational
@@ -2287,26 +2385,29 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cArgumentAdditiveParserRuleCall_1_2_0_0 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(0);
 		private final RuleCall cArgumentLetExpParserRuleCall_1_2_0_1 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(1);
 		
-		//relational Expression:
-		//	additive ({InfixExp.source=current} op=('>' | '<' | '>=' | '<=') argument=(additive | LetExp))*;
+		//relational returns Expression:
+		//	additive
+		//	({InfixExp.source=current} op=('>'|'<'|'>='|'<=') argument=(additive|LetExp))*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//additive ({InfixExp.source=current} op=('>' | '<' | '>=' | '<=') argument=(additive | LetExp))*
+		//	additive
+		//	({InfixExp.source=current} op=('>'|'<'|'>='|'<=') argument=(additive|LetExp))*
 		public Group getGroup() { return cGroup; }
 		
-		//additive
+		//	additive
 		public RuleCall getAdditiveParserRuleCall_0() { return cAdditiveParserRuleCall_0; }
 		
-		//({InfixExp.source=current} op=('>' | '<' | '>=' | '<=') argument=(additive | LetExp))*
+		//	({InfixExp.source=current} op=('>'|'<'|'>='|'<=') argument=(additive|LetExp))*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{InfixExp.source=current}
 		public Action getInfixExpSourceAction_1_0() { return cInfixExpSourceAction_1_0; }
 		
-		//op=('>' | '<' | '>=' | '<=')
+		// op=('>'|'<'|'>='|'<=')
 		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 		
-		//('>' | '<' | '>=' | '<=')
+		//('>'|'<'|'>='|'<=')
 		public Alternatives getOpAlternatives_1_1_0() { return cOpAlternatives_1_1_0; }
 		
 		//'>'
@@ -2321,10 +2422,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'<='
 		public Keyword getOpLessThanSignEqualsSignKeyword_1_1_0_3() { return cOpLessThanSignEqualsSignKeyword_1_1_0_3; }
 		
-		//argument=(additive | LetExp)
+		// argument=(additive|LetExp)
 		public Assignment getArgumentAssignment_1_2() { return cArgumentAssignment_1_2; }
 		
-		//(additive | LetExp)
+		//(additive|LetExp)
 		public Alternatives getArgumentAlternatives_1_2_0() { return cArgumentAlternatives_1_2_0; }
 		
 		//additive
@@ -2348,26 +2449,29 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cArgumentMultiplicativeParserRuleCall_1_2_0_0 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(0);
 		private final RuleCall cArgumentLetExpParserRuleCall_1_2_0_1 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(1);
 		
-		//additive Expression:
-		//	multiplicative ({InfixExp.source=current} op=('+' | '-') argument=(multiplicative | LetExp))*;
+		//additive returns Expression:
+		//	multiplicative
+		//	({InfixExp.source=current} op=('+'|'-') argument=(multiplicative|LetExp))*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//multiplicative ({InfixExp.source=current} op=('+' | '-') argument=(multiplicative | LetExp))*
+		//	multiplicative
+		//	({InfixExp.source=current} op=('+'|'-') argument=(multiplicative|LetExp))*
 		public Group getGroup() { return cGroup; }
 		
-		//multiplicative
+		//	multiplicative
 		public RuleCall getMultiplicativeParserRuleCall_0() { return cMultiplicativeParserRuleCall_0; }
 		
-		//({InfixExp.source=current} op=('+' | '-') argument=(multiplicative | LetExp))*
+		//	({InfixExp.source=current} op=('+'|'-') argument=(multiplicative|LetExp))*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{InfixExp.source=current}
 		public Action getInfixExpSourceAction_1_0() { return cInfixExpSourceAction_1_0; }
 		
-		//op=('+' | '-')
+		// op=('+'|'-')
 		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 		
-		//('+' | '-')
+		//('+'|'-')
 		public Alternatives getOpAlternatives_1_1_0() { return cOpAlternatives_1_1_0; }
 		
 		//'+'
@@ -2376,10 +2480,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'-'
 		public Keyword getOpHyphenMinusKeyword_1_1_0_1() { return cOpHyphenMinusKeyword_1_1_0_1; }
 		
-		//argument=(multiplicative | LetExp)
+		// argument=(multiplicative|LetExp)
 		public Assignment getArgumentAssignment_1_2() { return cArgumentAssignment_1_2; }
 		
-		//(multiplicative | LetExp)
+		//(multiplicative|LetExp)
 		public Alternatives getArgumentAlternatives_1_2_0() { return cArgumentAlternatives_1_2_0; }
 		
 		//multiplicative
@@ -2403,26 +2507,29 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cArgumentUnaryParserRuleCall_1_2_0_0 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(0);
 		private final RuleCall cArgumentLetExpParserRuleCall_1_2_0_1 = (RuleCall)cArgumentAlternatives_1_2_0.eContents().get(1);
 		
-		//multiplicative Expression:
-		//	unary ({InfixExp.source=current} op=('*' | '/') argument=(unary | LetExp))*;
+		//multiplicative returns Expression:
+		//	unary
+		//	({InfixExp.source=current} op=('*'|'/') argument=(unary|LetExp))*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//unary ({InfixExp.source=current} op=('*' | '/') argument=(unary | LetExp))*
+		//	unary
+		//	({InfixExp.source=current} op=('*'|'/') argument=(unary|LetExp))*
 		public Group getGroup() { return cGroup; }
 		
-		//unary
+		//	unary
 		public RuleCall getUnaryParserRuleCall_0() { return cUnaryParserRuleCall_0; }
 		
-		//({InfixExp.source=current} op=('*' | '/') argument=(unary | LetExp))*
+		//	({InfixExp.source=current} op=('*'|'/') argument=(unary|LetExp))*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{InfixExp.source=current}
 		public Action getInfixExpSourceAction_1_0() { return cInfixExpSourceAction_1_0; }
 		
-		//op=('*' | '/')
+		// op=('*'|'/')
 		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 		
-		//('*' | '/')
+		//('*'|'/')
 		public Alternatives getOpAlternatives_1_1_0() { return cOpAlternatives_1_1_0; }
 		
 		//'*'
@@ -2431,10 +2538,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'/'
 		public Keyword getOpSolidusKeyword_1_1_0_1() { return cOpSolidusKeyword_1_1_0_1; }
 		
-		//argument=(unary | LetExp)
+		// argument=(unary|LetExp)
 		public Assignment getArgumentAssignment_1_2() { return cArgumentAssignment_1_2; }
 		
-		//(unary | LetExp)
+		//(unary|LetExp)
 		public Alternatives getArgumentAlternatives_1_2_0() { return cArgumentAlternatives_1_2_0; }
 		
 		//unary
@@ -2456,28 +2563,29 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cSourceAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cSourceUnaryParserRuleCall_1_2_0 = (RuleCall)cSourceAssignment_1_2.eContents().get(0);
 		
-		//unary Expression:
+		//unary returns Expression:
 		//	NavigationExp
-		//	| {PrefixExp} op=('-' | 'not') source=unary;
+		//|	({PrefixExp} op=('-'|'not') source=unary)
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//NavigationExp
-		//| {PrefixExp} op=('-' | 'not') source=unary
+		//	NavigationExp
+		//|	({PrefixExp} op=('-'|'not') source=unary)
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//NavigationExp
+		//	NavigationExp
 		public RuleCall getNavigationExpParserRuleCall_0() { return cNavigationExpParserRuleCall_0; }
 		
-		//{PrefixExp} op=('-' | 'not') source=unary
+		//	({PrefixExp} op=('-'|'not') source=unary)
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{PrefixExp}
 		public Action getPrefixExpAction_1_0() { return cPrefixExpAction_1_0; }
 		
-		//op=('-' | 'not')
+		// op=('-'|'not')
 		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 		
-		//('-' | 'not')
+		//('-'|'not')
 		public Alternatives getOpAlternatives_1_1_0() { return cOpAlternatives_1_1_0; }
 		
 		//'-'
@@ -2486,7 +2594,7 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//'not'
 		public Keyword getOpNotKeyword_1_1_0_1() { return cOpNotKeyword_1_1_0_1; }
 		
-		//source=unary
+		// source=unary
 		public Assignment getSourceAssignment_1_2() { return cSourceAssignment_1_2; }
 		
 		//unary
@@ -2511,74 +2619,75 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cSourceExpressionParserRuleCall_9_2_0 = (RuleCall)cSourceAssignment_9_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_9_3 = (Keyword)cGroup_9.eContents().get(3);
 		
-		//SubNavigationExp Expression:
+		//SubNavigationExp returns Expression:
 		//	RoundBracketExp
-		//	| SquareBracketExp
-		//	| SelfExp
-		//	| PrimitiveLiteralExp
-		//	| TupleLiteralExp
-		//	| CollectionLiteralExp
-		//	| PreExp
-		//	| TypeExp
-		//	| IfExp
-		//	| '(' {NestedExp} source=Expression ')';
+		//|	SquareBracketExp
+		//|	SelfExp
+		//|	PrimitiveLiteralExp
+		//|	TupleLiteralExp
+		//|	CollectionLiteralExp
+		//|	PreExp
+		//|	TypeExp
+		//|	IfExp
+		//|	'('{NestedExp} source=Expression ')'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//RoundBracketExp
-		//| SquareBracketExp
-		//| SelfExp
-		//| PrimitiveLiteralExp
-		//| TupleLiteralExp
-		//| CollectionLiteralExp
-		//| PreExp
-		//| TypeExp
-		//| IfExp
-		//| '(' {NestedExp} source=Expression ')'
+		//	RoundBracketExp
+		//|	SquareBracketExp
+		//|	SelfExp
+		//|	PrimitiveLiteralExp
+		//|	TupleLiteralExp
+		//|	CollectionLiteralExp
+		//|	PreExp
+		//|	TypeExp
+		//|	IfExp
+		//|	'('{NestedExp} source=Expression ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//RoundBracketExp
+		//	RoundBracketExp
 		public RuleCall getRoundBracketExpParserRuleCall_0() { return cRoundBracketExpParserRuleCall_0; }
 		
-		//SquareBracketExp
+		//	SquareBracketExp
 		public RuleCall getSquareBracketExpParserRuleCall_1() { return cSquareBracketExpParserRuleCall_1; }
 		
-		//SelfExp
+		//	SelfExp
 		public RuleCall getSelfExpParserRuleCall_2() { return cSelfExpParserRuleCall_2; }
 		
-		//PrimitiveLiteralExp
+		//	PrimitiveLiteralExp
 		public RuleCall getPrimitiveLiteralExpParserRuleCall_3() { return cPrimitiveLiteralExpParserRuleCall_3; }
 		
-		//TupleLiteralExp
+		//	TupleLiteralExp
 		public RuleCall getTupleLiteralExpParserRuleCall_4() { return cTupleLiteralExpParserRuleCall_4; }
 		
-		//CollectionLiteralExp
+		//	CollectionLiteralExp
 		public RuleCall getCollectionLiteralExpParserRuleCall_5() { return cCollectionLiteralExpParserRuleCall_5; }
 		
-		//PreExp
+		//	PreExp
 		public RuleCall getPreExpParserRuleCall_6() { return cPreExpParserRuleCall_6; }
 		
-		//TypeExp
+		//	TypeExp
 		public RuleCall getTypeExpParserRuleCall_7() { return cTypeExpParserRuleCall_7; }
 		
-		//IfExp
+		//	IfExp
 		public RuleCall getIfExpParserRuleCall_8() { return cIfExpParserRuleCall_8; }
 		
-		//'(' {NestedExp} source=Expression ')'
+		//	'('{NestedExp} source=Expression ')'
 		public Group getGroup_9() { return cGroup_9; }
 		
-		//'('
+		//	'('
 		public Keyword getLeftParenthesisKeyword_9_0() { return cLeftParenthesisKeyword_9_0; }
 		
 		//{NestedExp}
 		public Action getNestedExpAction_9_1() { return cNestedExpAction_9_1; }
 		
-		//source=Expression
+		// source=Expression
 		public Assignment getSourceAssignment_9_2() { return cSourceAssignment_9_2; }
 		
 		//Expression
 		public RuleCall getSourceExpressionParserRuleCall_9_2_0() { return cSourceExpressionParserRuleCall_9_2_0; }
 		
-		//')'
+		// ')'
 		public Keyword getRightParenthesisKeyword_9_3() { return cRightParenthesisKeyword_9_3; }
 	}
 	public class SubNavigatingExpElements extends AbstractParserRuleElementFinder {
@@ -2589,29 +2698,30 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cPreExpParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cNameExpParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
-		//SubNavigatingExp Expression:
+		//SubNavigatingExp returns Expression:
 		//	RoundBracketExp
-		//	| SquareBracketExp
-		//	| PreExp
-		//	| NameExp;
+		//|	SquareBracketExp
+		//|	PreExp
+		//|	NameExp
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//RoundBracketExp
-		//| SquareBracketExp
-		//| PreExp
-		//| NameExp
+		//	RoundBracketExp
+		//|	SquareBracketExp
+		//|	PreExp
+		//|	NameExp
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//RoundBracketExp
+		//	RoundBracketExp
 		public RuleCall getRoundBracketExpParserRuleCall_0() { return cRoundBracketExpParserRuleCall_0; }
 		
-		//SquareBracketExp
+		//	SquareBracketExp
 		public RuleCall getSquareBracketExpParserRuleCall_1() { return cSquareBracketExpParserRuleCall_1; }
 		
-		//PreExp
+		//	PreExp
 		public RuleCall getPreExpParserRuleCall_2() { return cPreExpParserRuleCall_2; }
 		
-		//NameExp
+		//	NameExp
 		public RuleCall getNameExpParserRuleCall_3() { return cNameExpParserRuleCall_3; }
 	}
 	public class IteratorVariableElements extends AbstractParserRuleElementFinder {
@@ -2624,26 +2734,27 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cTypeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cTypeTypeExpParserRuleCall_1_1_0 = (RuleCall)cTypeAssignment_1_1.eContents().get(0);
 		
-		//iteratorVariable:
-		//	name=Identifier (':' type=TypeExp)?;
+		//iteratorVariable :
+		//	name=Identifier (':' type=TypeExp)?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=Identifier (':' type=TypeExp)?
+		//	name=Identifier (':' type=TypeExp)?
 		public Group getGroup() { return cGroup; }
 		
-		//name=Identifier
+		//	name=Identifier
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//Identifier
 		public RuleCall getNameIdentifierParserRuleCall_0_0() { return cNameIdentifierParserRuleCall_0_0; }
 		
-		//(':' type=TypeExp)?
+		// (':' type=TypeExp)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//':'
 		public Keyword getColonKeyword_1_0() { return cColonKeyword_1_0; }
 		
-		//type=TypeExp
+		// type=TypeExp
 		public Assignment getTypeAssignment_1_1() { return cTypeAssignment_1_1; }
 		
 		//TypeExp
@@ -2661,32 +2772,33 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cInitExpressionAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cInitExpressionExpressionParserRuleCall_4_0 = (RuleCall)cInitExpressionAssignment_4.eContents().get(0);
 		
-		//iteratorAccumulator:
-		//	name=Identifier ':' type=TypeExp '=' initExpression=Expression;
+		//iteratorAccumulator :
+		//	name=Identifier ':' type=TypeExp '=' initExpression=Expression
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=Identifier ':' type=TypeExp '=' initExpression=Expression
+		//	name=Identifier ':' type=TypeExp '=' initExpression=Expression
 		public Group getGroup() { return cGroup; }
 		
-		//name=Identifier
+		//	name=Identifier
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//Identifier
 		public RuleCall getNameIdentifierParserRuleCall_0_0() { return cNameIdentifierParserRuleCall_0_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//type=TypeExp
+		// type=TypeExp
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 		
 		//TypeExp
 		public RuleCall getTypeTypeExpParserRuleCall_2_0() { return cTypeTypeExpParserRuleCall_2_0; }
 		
-		//'='
+		// '='
 		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
 		
-		//initExpression=Expression
+		// initExpression=Expression
 		public Assignment getInitExpressionAssignment_4() { return cInitExpressionAssignment_4; }
 		
 		//Expression
@@ -2724,42 +2836,51 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cArgumentsExpressionParserRuleCall_4_1_1_0 = (RuleCall)cArgumentsAssignment_4_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//RoundBracketExp:
-		//	name=NameExp ('@' pre?='pre')? '(' (variable1=iteratorVariable (',' variable2=iteratorVariable | ';'
-		//	variable2=iteratorAccumulator)?
-		//	'|')? (arguments+=Expression (',' arguments+=Expression)*)?
-		//	')';
+		//RoundBracketExp :
+		//	name=NameExp ('@' pre?='pre')? '('
+		//		(variable1=iteratorVariable
+		//	        ((',' variable2=iteratorVariable)
+		//	        |(';' variable2=iteratorAccumulator))?
+		//	        '|')?
+		//	    (arguments+=Expression (',' arguments+=Expression)*)?
+		//	')'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=NameExp ('@' pre?='pre')? '(' (variable1=iteratorVariable (',' variable2=iteratorVariable | ';'
-		//variable2=iteratorAccumulator)?
-		//'|')? (arguments+=Expression (',' arguments+=Expression)*)?
-		//')'
+		//	name=NameExp ('@' pre?='pre')? '('
+		//		(variable1=iteratorVariable
+		//	        ((',' variable2=iteratorVariable)
+		//	        |(';' variable2=iteratorAccumulator))?
+		//	        '|')?
+		//	    (arguments+=Expression (',' arguments+=Expression)*)?
+		//	')'
 		public Group getGroup() { return cGroup; }
 		
-		//name=NameExp
+		//	name=NameExp
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//NameExp
 		public RuleCall getNameNameExpParserRuleCall_0_0() { return cNameNameExpParserRuleCall_0_0; }
 		
-		//('@' pre?='pre')?
+		// ('@' pre?='pre')?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'@'
 		public Keyword getCommercialAtKeyword_1_0() { return cCommercialAtKeyword_1_0; }
 		
-		//pre?='pre'
+		// pre?='pre'
 		public Assignment getPreAssignment_1_1() { return cPreAssignment_1_1; }
 		
 		//'pre'
 		public Keyword getPrePreKeyword_1_1_0() { return cPrePreKeyword_1_1_0; }
 		
-		//'('
+		// '('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//(variable1=iteratorVariable (',' variable2=iteratorVariable | ';' variable2=iteratorAccumulator)?
-		//'|')?
+		//		(variable1=iteratorVariable
+		//	        ((',' variable2=iteratorVariable)
+		//	        |(';' variable2=iteratorAccumulator))?
+		//	        '|')?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//variable1=iteratorVariable
@@ -2768,37 +2889,38 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//iteratorVariable
 		public RuleCall getVariable1IteratorVariableParserRuleCall_3_0_0() { return cVariable1IteratorVariableParserRuleCall_3_0_0; }
 		
-		//(',' variable2=iteratorVariable | ';' variable2=iteratorAccumulator)?
+		//	        ((',' variable2=iteratorVariable)
+		//	        |(';' variable2=iteratorAccumulator))?
 		public Alternatives getAlternatives_3_1() { return cAlternatives_3_1; }
 		
-		//',' variable2=iteratorVariable
+		//(',' variable2=iteratorVariable)
 		public Group getGroup_3_1_0() { return cGroup_3_1_0; }
 		
 		//','
 		public Keyword getCommaKeyword_3_1_0_0() { return cCommaKeyword_3_1_0_0; }
 		
-		//variable2=iteratorVariable
+		// variable2=iteratorVariable
 		public Assignment getVariable2Assignment_3_1_0_1() { return cVariable2Assignment_3_1_0_1; }
 		
 		//iteratorVariable
 		public RuleCall getVariable2IteratorVariableParserRuleCall_3_1_0_1_0() { return cVariable2IteratorVariableParserRuleCall_3_1_0_1_0; }
 		
-		//';' variable2=iteratorAccumulator
+		//(';' variable2=iteratorAccumulator)
 		public Group getGroup_3_1_1() { return cGroup_3_1_1; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_3_1_1_0() { return cSemicolonKeyword_3_1_1_0; }
 		
-		//variable2=iteratorAccumulator
+		// variable2=iteratorAccumulator
 		public Assignment getVariable2Assignment_3_1_1_1() { return cVariable2Assignment_3_1_1_1; }
 		
 		//iteratorAccumulator
 		public RuleCall getVariable2IteratorAccumulatorParserRuleCall_3_1_1_1_0() { return cVariable2IteratorAccumulatorParserRuleCall_3_1_1_1_0; }
 		
-		//'|'
+		//	        '|'
 		public Keyword getVerticalLineKeyword_3_2() { return cVerticalLineKeyword_3_2; }
 		
-		//(arguments+=Expression (',' arguments+=Expression)*)?
+		//	    (arguments+=Expression (',' arguments+=Expression)*)?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//arguments+=Expression
@@ -2807,19 +2929,19 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//Expression
 		public RuleCall getArgumentsExpressionParserRuleCall_4_0_0() { return cArgumentsExpressionParserRuleCall_4_0_0; }
 		
-		//(',' arguments+=Expression)*
+		// (',' arguments+=Expression)*
 		public Group getGroup_4_1() { return cGroup_4_1; }
 		
 		//','
 		public Keyword getCommaKeyword_4_1_0() { return cCommaKeyword_4_1_0; }
 		
-		//arguments+=Expression
+		// arguments+=Expression
 		public Assignment getArgumentsAssignment_4_1_1() { return cArgumentsAssignment_4_1_1; }
 		
 		//Expression
 		public RuleCall getArgumentsExpressionParserRuleCall_4_1_1_0() { return cArgumentsExpressionParserRuleCall_4_1_1_0; }
 		
-		//')'
+		//	')'
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 	public class SquareBracketExpElements extends AbstractParserRuleElementFinder {
@@ -2840,50 +2962,51 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cPreAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
 		private final Keyword cPrePreKeyword_5_1_0 = (Keyword)cPreAssignment_5_1.eContents().get(0);
 		
-		//SquareBracketExp:
-		//	name=NameExp '[' arguments+=Expression (',' arguments+=Expression)* ']' ('@' pre?='pre')?;
+		//SquareBracketExp :
+		//	name=NameExp '[' arguments+=Expression (',' arguments+=Expression)* ']' ('@' pre?='pre')?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=NameExp '[' arguments+=Expression (',' arguments+=Expression)* ']' ('@' pre?='pre')?
+		//	name=NameExp '[' arguments+=Expression (',' arguments+=Expression)* ']' ('@' pre?='pre')?
 		public Group getGroup() { return cGroup; }
 		
-		//name=NameExp
+		//	name=NameExp
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//NameExp
 		public RuleCall getNameNameExpParserRuleCall_0_0() { return cNameNameExpParserRuleCall_0_0; }
 		
-		//'['
+		// '['
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 		
-		//arguments+=Expression
+		// arguments+=Expression
 		public Assignment getArgumentsAssignment_2() { return cArgumentsAssignment_2; }
 		
 		//Expression
 		public RuleCall getArgumentsExpressionParserRuleCall_2_0() { return cArgumentsExpressionParserRuleCall_2_0; }
 		
-		//(',' arguments+=Expression)*
+		// (',' arguments+=Expression)*
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//','
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
 		
-		//arguments+=Expression
+		// arguments+=Expression
 		public Assignment getArgumentsAssignment_3_1() { return cArgumentsAssignment_3_1; }
 		
 		//Expression
 		public RuleCall getArgumentsExpressionParserRuleCall_3_1_0() { return cArgumentsExpressionParserRuleCall_3_1_0; }
 		
-		//']'
+		// ']'
 		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
 		
-		//('@' pre?='pre')?
+		// ('@' pre?='pre')?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//'@'
 		public Keyword getCommercialAtKeyword_5_0() { return cCommercialAtKeyword_5_0; }
 		
-		//pre?='pre'
+		// pre?='pre'
 		public Assignment getPreAssignment_5_1() { return cPreAssignment_5_1; }
 		
 		//'pre'
@@ -2897,23 +3020,24 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Keyword cCommercialAtKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cPreKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//PreExp:
-		//	name=NameExp '@' 'pre';
+		//PreExp :
+		//	name=NameExp '@' 'pre'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=NameExp '@' 'pre'
+		//	name=NameExp '@' 'pre'
 		public Group getGroup() { return cGroup; }
 		
-		//name=NameExp
+		//	name=NameExp
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//NameExp
 		public RuleCall getNameNameExpParserRuleCall_0_0() { return cNameNameExpParserRuleCall_0_0; }
 		
-		//'@'
+		// '@'
 		public Keyword getCommercialAtKeyword_1() { return cCommercialAtKeyword_1; }
 		
-		//'pre'
+		// 'pre'
 		public Keyword getPreKeyword_2() { return cPreKeyword_2; }
 	}
 	public class SelfExpElements extends AbstractParserRuleElementFinder {
@@ -2922,17 +3046,18 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Action cSelfExpAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cSelfKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//SelfExp:
-		//	{SelfExp} 'self';
+		//SelfExp :
+		//	{SelfExp} 'self'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{SelfExp} 'self'
+		//	{SelfExp} 'self'
 		public Group getGroup() { return cGroup; }
 		
-		//{SelfExp}
+		//	{SelfExp}
 		public Action getSelfExpAction_0() { return cSelfExpAction_0; }
 		
-		//'self'
+		// 'self'
 		public Keyword getSelfKeyword_1() { return cSelfKeyword_1; }
 	}
 	public class NameExpElements extends AbstractParserRuleElementFinder {
@@ -2941,17 +3066,18 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cPathNameExpParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cSimpleNameExpParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//NameExp:
-		//	PathNameExp | SimpleNameExp;
+		//NameExp :
+		//	PathNameExp | SimpleNameExp
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//PathNameExp | SimpleNameExp
+		//	PathNameExp | SimpleNameExp
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//PathNameExp
+		//	PathNameExp
 		public RuleCall getPathNameExpParserRuleCall_0() { return cPathNameExpParserRuleCall_0; }
 		
-		//SimpleNameExp
+		// SimpleNameExp
 		public RuleCall getSimpleNameExpParserRuleCall_1() { return cSimpleNameExpParserRuleCall_1; }
 	}
 	public class PathNameExpElements extends AbstractParserRuleElementFinder {
@@ -2963,23 +3089,24 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cElementNameExpParserRuleCall_2_0 = (RuleCall)cElementAssignment_2.eContents().get(0);
 		
-		//PathNameExp:
-		//	namespace=Identifier '::' element=NameExp;
+		//PathNameExp :
+		//	namespace=Identifier '::' element=NameExp
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//namespace=Identifier '::' element=NameExp
+		//	namespace=Identifier '::' element=NameExp
 		public Group getGroup() { return cGroup; }
 		
-		//namespace=Identifier
+		//	namespace=Identifier
 		public Assignment getNamespaceAssignment_0() { return cNamespaceAssignment_0; }
 		
 		//Identifier
 		public RuleCall getNamespaceIdentifierParserRuleCall_0_0() { return cNamespaceIdentifierParserRuleCall_0_0; }
 		
-		//'::'
+		// '::'
 		public Keyword getColonColonKeyword_1() { return cColonColonKeyword_1; }
 		
-		//element=NameExp
+		// element=NameExp
 		public Assignment getElementAssignment_2() { return cElementAssignment_2; }
 		
 		//NameExp
@@ -2990,11 +3117,12 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final Assignment cElementAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cElementIdentifierParserRuleCall_0 = (RuleCall)cElementAssignment.eContents().get(0);
 		
-		//SimpleNameExp:
-		//	element=Identifier;
+		//SimpleNameExp :
+		//	element=Identifier
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//element=Identifier
+		//	element=Identifier
 		public Assignment getElementAssignment() { return cElementAssignment; }
 		
 		//Identifier
@@ -3018,43 +3146,44 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//	'if' condition=Expression
 		//	'then' thenExpression=Expression
 		//	'else' elseExpression=Expression
-		//	'endif';
+		//	'endif'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'if' condition=Expression
-		//'then' thenExpression=Expression
-		//'else' elseExpression=Expression
-		//'endif'
+		//	'if' condition=Expression
+		//	'then' thenExpression=Expression
+		//	'else' elseExpression=Expression
+		//	'endif'
 		public Group getGroup() { return cGroup; }
 		
-		//'if'
+		//	'if'
 		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
 		
-		//condition=Expression
+		// condition=Expression
 		public Assignment getConditionAssignment_1() { return cConditionAssignment_1; }
 		
 		//Expression
 		public RuleCall getConditionExpressionParserRuleCall_1_0() { return cConditionExpressionParserRuleCall_1_0; }
 		
-		//'then'
+		//	'then'
 		public Keyword getThenKeyword_2() { return cThenKeyword_2; }
 		
-		//thenExpression=Expression
+		// thenExpression=Expression
 		public Assignment getThenExpressionAssignment_3() { return cThenExpressionAssignment_3; }
 		
 		//Expression
 		public RuleCall getThenExpressionExpressionParserRuleCall_3_0() { return cThenExpressionExpressionParserRuleCall_3_0; }
 		
-		//'else'
+		//	'else'
 		public Keyword getElseKeyword_4() { return cElseKeyword_4; }
 		
-		//elseExpression=Expression
+		// elseExpression=Expression
 		public Assignment getElseExpressionAssignment_5() { return cElseExpressionAssignment_5; }
 		
 		//Expression
 		public RuleCall getElseExpressionExpressionParserRuleCall_5_0() { return cElseExpressionExpressionParserRuleCall_5_0; }
 		
-		//'endif'
+		//	'endif'
 		public Keyword getEndifKeyword_6() { return cEndifKeyword_6; }
 	}
 	public class LetExpElements extends AbstractParserRuleElementFinder {
@@ -3074,39 +3203,40 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		//LetExp:
 		//	'let'
 		//	variable+=LetVariable (',' variable+=LetVariable)*
-		//	'in' in=Expression;
+		//	'in' in=Expression
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'let'
-		//variable+=LetVariable (',' variable+=LetVariable)*
-		//'in' in=Expression
+		//	'let'
+		//	variable+=LetVariable (',' variable+=LetVariable)*
+		//	'in' in=Expression
 		public Group getGroup() { return cGroup; }
 		
-		//'let'
+		//	'let'
 		public Keyword getLetKeyword_0() { return cLetKeyword_0; }
 		
-		//variable+=LetVariable
+		//	variable+=LetVariable
 		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
 		
 		//LetVariable
 		public RuleCall getVariableLetVariableParserRuleCall_1_0() { return cVariableLetVariableParserRuleCall_1_0; }
 		
-		//(',' variable+=LetVariable)*
+		// (',' variable+=LetVariable)*
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//','
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 		
-		//variable+=LetVariable
+		// variable+=LetVariable
 		public Assignment getVariableAssignment_2_1() { return cVariableAssignment_2_1; }
 		
 		//LetVariable
 		public RuleCall getVariableLetVariableParserRuleCall_2_1_0() { return cVariableLetVariableParserRuleCall_2_1_0; }
 		
-		//'in'
+		//	'in'
 		public Keyword getInKeyword_3() { return cInKeyword_3; }
 		
-		//in=Expression
+		// in=Expression
 		public Assignment getInAssignment_4() { return cInAssignment_4; }
 		
 		//Expression
@@ -3125,31 +3255,32 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		private final RuleCall cInitExpressionExpressionParserRuleCall_4_0 = (RuleCall)cInitExpressionAssignment_4.eContents().get(0);
 		
 		//LetVariable:
-		//	name=Identifier ':' type=TypeExp '=' initExpression=Expression;
+		//	name=Identifier ':' type=TypeExp '=' initExpression=Expression
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=Identifier ':' type=TypeExp '=' initExpression=Expression
+		//	name=Identifier ':' type=TypeExp '=' initExpression=Expression
 		public Group getGroup() { return cGroup; }
 		
-		//name=Identifier
+		//	name=Identifier
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//Identifier
 		public RuleCall getNameIdentifierParserRuleCall_0_0() { return cNameIdentifierParserRuleCall_0_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//type=TypeExp
+		// type=TypeExp
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 		
 		//TypeExp
 		public RuleCall getTypeTypeExpParserRuleCall_2_0() { return cTypeTypeExpParserRuleCall_2_0; }
 		
-		//'='
+		// '='
 		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
 		
-		//initExpression=Expression
+		// initExpression=Expression
 		public Assignment getInitExpressionAssignment_4() { return cInitExpressionAssignment_4; }
 		
 		//Expression
@@ -3348,8 +3479,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 
 	
-	//Document:
-	//	(packages+=PackageDeclaration | contexts+=ContextDecl)*;
+	//Document :
+	//	(packages+=PackageDeclaration | contexts+=ContextDecl)*
+	//;
 	public DocumentElements getDocumentAccess() {
 		return pDocument;
 	}
@@ -3359,7 +3491,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//Body:
-	//	'body' constraintName=Identifier? ':' expression=Expression;
+	//	'body' (constraintName=Identifier)? ':' expression=Expression
+	//;
 	public BodyElements getBodyAccess() {
 		return pBody;
 	}
@@ -3369,7 +3502,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//ClassifierContextDecl:
-	//	'context' (selfName=Identifier ':')? classifier=ClassifierRef (invariants+=Invariant | definitions+=Definition)*;
+	//	'context' (selfName=Identifier ':' )? classifier=ClassifierRef
+	//		(invariants+=Invariant | definitions+=Definition)*
+	//;
 	public ClassifierContextDeclElements getClassifierContextDeclAccess() {
 		return pClassifierContextDecl;
 	}
@@ -3379,7 +3514,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//ClassifierRef:
-	//	QualifiedClassifierRef | SimpleClassifierRef;
+	//	QualifiedClassifierRef | SimpleClassifierRef
+	//;
 	public ClassifierRefElements getClassifierRefAccess() {
 		return pClassifierRef;
 	}
@@ -3390,8 +3526,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	
 	//ContextDecl:
 	//	PropertyContextDecl
-	//	| ClassifierContextDecl
-	//	| OperationContextDecl;
+	//|	ClassifierContextDecl
+	//|	OperationContextDecl
+	//;
 	public ContextDeclElements getContextDeclAccess() {
 		return pContextDecl;
 	}
@@ -3401,9 +3538,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//Definition:
-	//	static?='static'? 'def' constraintName=Identifier? ':' constrainedName=Identifier ('(' (parameters+=Parameter (','
-	//	parameters+=Parameter)*)? ')')?
-	//	':' type=TypeExp? '=' expression=Expression;
+	//	(static?='static')? 'def' (constraintName=Identifier)? ':' constrainedName=Identifier
+	//	('(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')')?
+	//	':' (type=TypeExp)? '=' expression=Expression
+	//;
 	public DefinitionElements getDefinitionAccess() {
 		return pDefinition;
 	}
@@ -3413,7 +3551,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//Der:
-	//	'derive' ':' expression=Expression;
+	//	'derive' ':' expression=Expression
+	//;
 	public DerElements getDerAccess() {
 		return pDer;
 	}
@@ -3423,7 +3562,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//Init:
-	//	'init' ':' expression=Expression;
+	//	'init' ':' expression=Expression
+	//;
 	public InitElements getInitAccess() {
 		return pInit;
 	}
@@ -3433,7 +3573,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//Invariant:
-	//	'inv' constraintName=Identifier? ':' expression=Expression;
+	//	'inv' (constraintName=Identifier)? ':' expression=Expression
+	//;
 	public InvariantElements getInvariantAccess() {
 		return pInvariant;
 	}
@@ -3443,8 +3584,11 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//OperationContextDecl:
-	//	'context' operation=OperationRef '(' (parameters+=Parameter (',' parameters+=Parameter)*)?
-	//	')' ':' type=TypeExp? (pres+=Pre | posts+=Post | bodies+=Body)*;
+	//	'context' operation=OperationRef '('
+	//	(parameters+=Parameter (',' parameters+=Parameter)*)?
+	//	')' ':' (type=TypeExp)?
+	//	((pres+=Pre) | (posts+=Post) | (bodies+=Body))*
+	//;
 	public OperationContextDeclElements getOperationContextDeclAccess() {
 		return pOperationContextDecl;
 	}
@@ -3454,7 +3598,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//OperationRef:
-	//	QualifiedOperationRef | SimpleOperationRef;
+	//	QualifiedOperationRef | SimpleOperationRef
+	//;
 	public OperationRefElements getOperationRefAccess() {
 		return pOperationRef;
 	}
@@ -3463,8 +3608,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getOperationRefAccess().getRule();
 	}
 	
-	//PackageDeclaration:
-	//	'package' package=PackageRef contexts+=ContextDecl* 'endpackage';
+	//PackageDeclaration :
+	//	'package' package=PackageRef (contexts+=ContextDecl)* 'endpackage'
+	//;
 	public PackageDeclarationElements getPackageDeclarationAccess() {
 		return pPackageDeclaration;
 	}
@@ -3474,7 +3620,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//PackageRef:
-	//	QualifiedPackageRef | SimplePackageRef;
+	//	QualifiedPackageRef | SimplePackageRef
+	//;
 	public PackageRefElements getPackageRefAccess() {
 		return pPackageRef;
 	}
@@ -3484,7 +3631,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//Parameter:
-	//	(name=Identifier ':')? type=TypeExp;
+	//	(name=Identifier ':')? type=TypeExp
+	//;
 	public ParameterElements getParameterAccess() {
 		return pParameter;
 	}
@@ -3494,7 +3642,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//Post:
-	//	'post' constraintName=Identifier? ':' expression=Expression;
+	//	'post' (constraintName=Identifier)? ':' expression=Expression
+	//;
 	public PostElements getPostAccess() {
 		return pPost;
 	}
@@ -3504,7 +3653,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//Pre:
-	//	'pre' constraintName=Identifier? ':' expression=Expression;
+	//	'pre' (constraintName=Identifier)? ':' expression=Expression
+	//;
 	public PreElements getPreAccess() {
 		return pPre;
 	}
@@ -3514,7 +3664,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//PropertyContextDecl:
-	//	'context' property=PropertyRef ':' type=TypeExp ((init=Init der=Der?)? | der=Der init=Init?);
+	//	'context' property=PropertyRef ':' type=TypeExp
+	//	((init=Init (der=Der)?)? | (der=Der (init=Init)?))
+	//;
 	public PropertyContextDeclElements getPropertyContextDeclAccess() {
 		return pPropertyContextDecl;
 	}
@@ -3524,7 +3676,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//PropertyRef:
-	//	QualifiedPropertyRef | SimplePropertyRef;
+	//	QualifiedPropertyRef | SimplePropertyRef
+	//;
 	public PropertyRefElements getPropertyRefAccess() {
 		return pPropertyRef;
 	}
@@ -3535,7 +3688,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	
 	//QualifiedClassifierRef:
 	//	namespace=Identifier
-	//	'::' element=ClassifierRef;
+	//	'::' element=ClassifierRef
+	//;
 	public QualifiedClassifierRefElements getQualifiedClassifierRefAccess() {
 		return pQualifiedClassifierRef;
 	}
@@ -3544,9 +3698,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getQualifiedClassifierRefAccess().getRule();
 	}
 	
-	//QualifiedOperationRef:
+	//QualifiedOperationRef :
 	//	namespace=Identifier
-	//	'::' element=OperationRef;
+	//	'::' element=OperationRef
+	//;
 	public QualifiedOperationRefElements getQualifiedOperationRefAccess() {
 		return pQualifiedOperationRef;
 	}
@@ -3555,9 +3710,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getQualifiedOperationRefAccess().getRule();
 	}
 	
-	//QualifiedPropertyRef:
+	//QualifiedPropertyRef :
 	//	namespace=Identifier
-	//	'::' element=PropertyRef;
+	//	'::' element=PropertyRef
+	//;
 	public QualifiedPropertyRefElements getQualifiedPropertyRefAccess() {
 		return pQualifiedPropertyRef;
 	}
@@ -3566,9 +3722,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getQualifiedPropertyRefAccess().getRule();
 	}
 	
-	//QualifiedPackageRef:
+	//QualifiedPackageRef :
 	//	namespace=Identifier
-	//	'::' element=PackageRef;
+	//	'::' element=PackageRef
+	//;
 	public QualifiedPackageRefElements getQualifiedPackageRefAccess() {
 		return pQualifiedPackageRef;
 	}
@@ -3577,8 +3734,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getQualifiedPackageRefAccess().getRule();
 	}
 	
-	//SimpleClassifierRef:
-	//	classifier=Identifier;
+	//SimpleClassifierRef :
+	//	classifier=Identifier
+	//;
 	public SimpleClassifierRefElements getSimpleClassifierRefAccess() {
 		return pSimpleClassifierRef;
 	}
@@ -3587,8 +3745,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getSimpleClassifierRefAccess().getRule();
 	}
 	
-	//SimpleOperationRef:
-	//	operation=Identifier;
+	//SimpleOperationRef :
+	//	operation=Identifier
+	//;
 	public SimpleOperationRefElements getSimpleOperationRefAccess() {
 		return pSimpleOperationRef;
 	}
@@ -3597,8 +3756,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getSimpleOperationRefAccess().getRule();
 	}
 	
-	//SimplePackageRef:
-	//	package=Identifier;
+	//SimplePackageRef :
+	//	package=Identifier
+	//;
 	public SimplePackageRefElements getSimplePackageRefAccess() {
 		return pSimplePackageRef;
 	}
@@ -3607,8 +3767,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getSimplePackageRefAccess().getRule();
 	}
 	
-	//SimplePropertyRef:
-	//	feature=Identifier;
+	//SimplePropertyRef :
+	//	feature=Identifier
+	//;
 	public SimplePropertyRefElements getSimplePropertyRefAccess() {
 		return pSimplePropertyRef;
 	}
@@ -3620,10 +3781,14 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	////---------------------------------------------------------------------------------
 	////	EssentialOCL overrides
 	////---------------------------------------------------------------------------------
-	//NavigationExp Expression:
-	//	SubNavigationExp ({InfixExp.source=current} op=('.' | '->') argument=NavigatingExp | {OclMessage.source=current} op=
-	//	('^^' | '^') messageName=Identifier
-	//	'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')?;
+	//NavigationExp returns Expression:
+	//	SubNavigationExp
+	//	(
+	//		({InfixExp.source=current} op=('.'|'->') argument=NavigatingExp)
+	//	|	({OclMessage.source=current} op=('^^'|'^') messageName=Identifier
+	//			'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')
+	//	)?
+	//;
 	public NavigationExpElements getNavigationExpAccess() {
 		return pNavigationExp;
 	}
@@ -3633,10 +3798,14 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//// Follows ., ->, ^
-	//NavigatingExp:
-	//	SubNavigatingExp ({InfixExp.source=current} op=('.' | '->') argument=NavigatingExp | {OclMessage.source=current} op=
-	//	('^^' | '^') messageName=Identifier
-	//	'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')?;
+	//NavigatingExp :
+	//	SubNavigatingExp
+	//	(
+	//		({InfixExp.source=current} op=('.'|'->') argument=NavigatingExp)
+	//	|	({OclMessage.source=current} op=('^^'|'^') messageName=Identifier
+	//			'(' (arguments+=OclMessageArg (',' arguments+=OclMessageArg)*)? ')')
+	//	)?
+	//;
 	public NavigatingExpElements getNavigatingExpAccess() {
 		return pNavigatingExp;
 	}
@@ -3646,8 +3815,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//// FIXME @pre
-	//OclMessageArg:
-	//	{OclMessageArg} '?' (':' type=TypeExp)? | Expression;
+	//OclMessageArg :
+	//	({OclMessageArg}'?' (':' type=TypeExp)?)
+	//|	Expression
+	//;
 	public OclMessageArgElements getOclMessageArgAccess() {
 		return pOclMessageArg;
 	}
@@ -3657,7 +3828,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//NUMBER_LITERAL:
-	//	INT ('.' INT)? (('e' | 'E') ('+' | '-')? INT)?;
+	//	INT ('.' INT)? (('e'|'E') ('+'|'-')? INT)?
+	//;
 	public NUMBER_LITERALElements getNUMBER_LITERALAccess() {
 		return pNUMBER_LITERAL;
 	}
@@ -3668,7 +3840,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	
 	//EssentialOCLRestrictedKeywords:
 	//	'e'
-	//	| 'E';
+	//|	'E'
+	//;
 	public EssentialOCLRestrictedKeywordsElements getEssentialOCLRestrictedKeywordsAccess() {
 		return pEssentialOCLRestrictedKeywords;
 	}
@@ -3677,8 +3850,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getEssentialOCLRestrictedKeywordsAccess().getRule();
 	}
 	
-	//RestrictedKeywords:
-	//	EssentialOCLRestrictedKeywords;
+	//RestrictedKeywords:					// Intended to be overridden
+	//	EssentialOCLRestrictedKeywords
+	//;
 	public RestrictedKeywordsElements getRestrictedKeywordsAccess() {
 		return pRestrictedKeywords;
 	}
@@ -3689,7 +3863,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	
 	//Identifier:
 	//	ID
-	//	| RestrictedKeywords;
+	//|	RestrictedKeywords
+	//;
 	public IdentifierElements getIdentifierAccess() {
 		return pIdentifier;
 	}
@@ -3699,7 +3874,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//StringLiteral:
-	//	STRING;
+	//	STRING
+	//;
 	public StringLiteralElements getStringLiteralAccess() {
 		return pStringLiteral;
 	}
@@ -3709,7 +3885,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//SimpleName:
-	//	Identifier;
+	//	Identifier
+	//;
 	public SimpleNameElements getSimpleNameAccess() {
 		return pSimpleName;
 	}
@@ -3720,13 +3897,14 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	
 	//PrimitiveTypeIdentifier:
 	//	'Boolean'
-	//	| 'Integer'
-	//	| 'Real'
-	//	| 'String'
-	//	| 'UnlimitedNatural'
-	//	| 'OclAny'
-	//	| 'OclInvalid'
-	//	| 'OclVoid';
+	//|	'Integer'
+	//|	'Real'
+	//|	'String'
+	//|	'UnlimitedNatural'
+	//|	'OclAny'
+	//|	'OclInvalid'
+	//|	'OclVoid'
+	//;
 	public PrimitiveTypeIdentifierElements getPrimitiveTypeIdentifierAccess() {
 		return pPrimitiveTypeIdentifier;
 	}
@@ -3735,8 +3913,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getPrimitiveTypeIdentifierAccess().getRule();
 	}
 	
-	//PrimitiveType:
-	//	name=PrimitiveTypeIdentifier;
+	//PrimitiveType :
+	//	name=PrimitiveTypeIdentifier
+	//;
 	public PrimitiveTypeElements getPrimitiveTypeAccess() {
 		return pPrimitiveType;
 	}
@@ -3747,10 +3926,11 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	
 	//CollectionTypeIdentifier:
 	//	'Set'
-	//	| 'Bag'
-	//	| 'Sequence'
-	//	| 'Collection'
-	//	| 'OrderedSet';
+	//|	'Bag'
+	//|	'Sequence'
+	//|	'Collection'
+	//|	'OrderedSet'
+	//;
 	public CollectionTypeIdentifierElements getCollectionTypeIdentifierAccess() {
 		return pCollectionTypeIdentifier;
 	}
@@ -3761,9 +3941,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	
 	//TypeExp:
 	//	PrimitiveType
-	//	| NameExp
-	//	| CollectionType
-	//	| TupleType;
+	//|	NameExp
+	//|	CollectionType
+	//|	TupleType
+	//;
 	public TypeExpElements getTypeExpAccess() {
 		return pTypeExp;
 	}
@@ -3773,7 +3954,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//CollectionType:
-	//	typeIdentifier=CollectionTypeIdentifier ('(' type=TypeExp ')')?;
+	//	typeIdentifier=CollectionTypeIdentifier ('(' type=TypeExp ')')?
+	//;
 	public CollectionTypeElements getCollectionTypeAccess() {
 		return pCollectionType;
 	}
@@ -3783,7 +3965,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//TupleType:
-	//	name='Tuple' '(' (part+=tuplePart (',' part+=tuplePart)*)? ')';
+	//	name='Tuple' '(' (part+=tuplePart (',' part+=tuplePart)*)? ')'
+	//;
 	public TupleTypeElements getTupleTypeAccess() {
 		return pTupleType;
 	}
@@ -3793,7 +3976,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//tuplePart:
-	//	name=Identifier ':' type=TypeExp;
+	//	name=Identifier ':' type=TypeExp
+	//;
 	public TuplePartElements getTuplePartAccess() {
 		return pTuplePart;
 	}
@@ -3802,10 +3986,12 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getTuplePartAccess().getRule();
 	}
 	
-	//CollectionLiteralExp:
-	//	CollectionType ({CollectionLiteralExp.type=current} '{' (collectionLiteralParts+=CollectionLiteralPart (','
-	//	collectionLiteralParts+=CollectionLiteralPart)*)?
-	//	'}')?;
+	//CollectionLiteralExp :
+	//	CollectionType
+	//	({CollectionLiteralExp.type=current} '{' (collectionLiteralParts+=CollectionLiteralPart
+	//	 (',' collectionLiteralParts+=CollectionLiteralPart)*)?
+	//	 '}')?
+	//;
 	public CollectionLiteralExpElements getCollectionLiteralExpAccess() {
 		return pCollectionLiteralExp;
 	}
@@ -3815,7 +4001,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//CollectionLiteralPart:
-	//	expression=Expression ('..' lastExpression=Expression)?;
+	//	expression=Expression ('..' lastExpression=Expression)?
+	//;
 	public CollectionLiteralPartElements getCollectionLiteralPartAccess() {
 		return pCollectionLiteralPart;
 	}
@@ -3826,10 +4013,11 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	
 	//PrimitiveLiteralExp:
 	//	NumberLiteralExp
-	//	| StringLiteralExp
-	//	| BooleanLiteralExp
-	//	| InvalidLiteralExp
-	//	| NullLiteralExp;
+	//|	StringLiteralExp
+	//|	BooleanLiteralExp
+	//|	InvalidLiteralExp
+	//|	NullLiteralExp
+	//;
 	public PrimitiveLiteralExpElements getPrimitiveLiteralExpAccess() {
 		return pPrimitiveLiteralExp;
 	}
@@ -3839,7 +4027,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//TupleLiteralExp:
-	//	{TupleLiteralExp} 'Tuple' ('{' part+=TupleLiteralPart (',' part+=TupleLiteralPart)* '}')?;
+	//	{TupleLiteralExp} 'Tuple' ('{' part+=TupleLiteralPart (',' part+=TupleLiteralPart)* '}')?
+	//;
 	public TupleLiteralExpElements getTupleLiteralExpAccess() {
 		return pTupleLiteralExp;
 	}
@@ -3848,8 +4037,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getTupleLiteralExpAccess().getRule();
 	}
 	
-	//TupleLiteralPart:
-	//	name=Identifier (':' type=TypeExp)? '=' initExpression=Expression;
+	//TupleLiteralPart :
+	//	name=Identifier (':' type=TypeExp)? '=' initExpression=Expression
+	//;
 	public TupleLiteralPartElements getTupleLiteralPartAccess() {
 		return pTupleLiteralPart;
 	}
@@ -3859,7 +4049,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//NumberLiteralExp:
-	//	name=NUMBER_LITERAL;
+	//	name=NUMBER_LITERAL
+	//;
 	public NumberLiteralExpElements getNumberLiteralExpAccess() {
 		return pNumberLiteralExp;
 	}
@@ -3869,7 +4060,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//StringLiteralExp:
-	//	values+=StringLiteral+;
+	//	values+=StringLiteral+
+	//;
 	public StringLiteralExpElements getStringLiteralExpAccess() {
 		return pStringLiteralExp;
 	}
@@ -3879,8 +4071,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//BooleanLiteralExp:
-	//	{BooleanLiteralExp} (isTrue?='true'
-	//	| 'false');
+	//	{BooleanLiteralExp}
+	//		(isTrue?='true'
+	//	|	'false');
 	public BooleanLiteralExpElements getBooleanLiteralExpAccess() {
 		return pBooleanLiteralExp;
 	}
@@ -3890,7 +4083,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//InvalidLiteralExp:
-	//	{InvalidLiteralExp} 'invalid';
+	//	{InvalidLiteralExp} 'invalid'
+	//;
 	public InvalidLiteralExpElements getInvalidLiteralExpAccess() {
 		return pInvalidLiteralExp;
 	}
@@ -3900,7 +4094,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//NullLiteralExp:
-	//	{NullLiteralExp} 'null';
+	//	{NullLiteralExp} 'null'
+	//;
 	public NullLiteralExpElements getNullLiteralExpAccess() {
 		return pNullLiteralExp;
 	}
@@ -3911,7 +4106,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	
 	//Expression:
 	//	implies
-	//	| LetExp;
+	//|	LetExp
+	//;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -3920,8 +4116,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getExpressionAccess().getRule();
 	}
 	
-	//implies Expression:
-	//	xor ({InfixExp.source=current} op='implies' argument=(xor | LetExp))*;
+	//implies returns Expression:
+	//	xor
+	//	({InfixExp.source=current} op='implies' argument=(xor|LetExp))*
+	//;
 	public ImpliesElements getImpliesAccess() {
 		return pImplies;
 	}
@@ -3930,8 +4128,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getImpliesAccess().getRule();
 	}
 	
-	//xor Expression:
-	//	or ({InfixExp.source=current} op='xor' argument=(or | LetExp))*;
+	//xor returns Expression:
+	//	or
+	//	({InfixExp.source=current} op='xor' argument=(or|LetExp))*
+	//;
 	public XorElements getXorAccess() {
 		return pXor;
 	}
@@ -3940,8 +4140,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getXorAccess().getRule();
 	}
 	
-	//or Expression:
-	//	and ({InfixExp.source=current} op='or' argument=(and | LetExp))*;
+	//or returns Expression:
+	//	and
+	//	({InfixExp.source=current} op='or' argument=(and|LetExp))*
+	//;
 	public OrElements getOrAccess() {
 		return pOr;
 	}
@@ -3950,8 +4152,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getOrAccess().getRule();
 	}
 	
-	//and Expression:
-	//	equality ({InfixExp.source=current} op='and' argument=(equality | LetExp))*;
+	//and returns Expression:
+	//	equality
+	//	({InfixExp.source=current} op='and' argument=(equality|LetExp))*
+	//;
 	public AndElements getAndAccess() {
 		return pAnd;
 	}
@@ -3960,8 +4164,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getAndAccess().getRule();
 	}
 	
-	//equality Expression:
-	//	relational ({InfixExp.source=current} op=('=' | '<>') argument=(relational | LetExp))*;
+	//equality returns Expression:
+	//	relational
+	//	({InfixExp.source=current} op=('='|'<>') argument=(relational|LetExp))*
+	//;
 	public EqualityElements getEqualityAccess() {
 		return pEquality;
 	}
@@ -3970,8 +4176,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getEqualityAccess().getRule();
 	}
 	
-	//relational Expression:
-	//	additive ({InfixExp.source=current} op=('>' | '<' | '>=' | '<=') argument=(additive | LetExp))*;
+	//relational returns Expression:
+	//	additive
+	//	({InfixExp.source=current} op=('>'|'<'|'>='|'<=') argument=(additive|LetExp))*
+	//;
 	public RelationalElements getRelationalAccess() {
 		return pRelational;
 	}
@@ -3980,8 +4188,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getRelationalAccess().getRule();
 	}
 	
-	//additive Expression:
-	//	multiplicative ({InfixExp.source=current} op=('+' | '-') argument=(multiplicative | LetExp))*;
+	//additive returns Expression:
+	//	multiplicative
+	//	({InfixExp.source=current} op=('+'|'-') argument=(multiplicative|LetExp))*
+	//;
 	public AdditiveElements getAdditiveAccess() {
 		return pAdditive;
 	}
@@ -3990,8 +4200,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getAdditiveAccess().getRule();
 	}
 	
-	//multiplicative Expression:
-	//	unary ({InfixExp.source=current} op=('*' | '/') argument=(unary | LetExp))*;
+	//multiplicative returns Expression:
+	//	unary
+	//	({InfixExp.source=current} op=('*'|'/') argument=(unary|LetExp))*
+	//;
 	public MultiplicativeElements getMultiplicativeAccess() {
 		return pMultiplicative;
 	}
@@ -4000,9 +4212,10 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getMultiplicativeAccess().getRule();
 	}
 	
-	//unary Expression:
+	//unary returns Expression:
 	//	NavigationExp
-	//	| {PrefixExp} op=('-' | 'not') source=unary;
+	//|	({PrefixExp} op=('-'|'not') source=unary)
+	//;
 	public UnaryElements getUnaryAccess() {
 		return pUnary;
 	}
@@ -4011,17 +4224,18 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getUnaryAccess().getRule();
 	}
 	
-	//SubNavigationExp Expression:
+	//SubNavigationExp returns Expression:
 	//	RoundBracketExp
-	//	| SquareBracketExp
-	//	| SelfExp
-	//	| PrimitiveLiteralExp
-	//	| TupleLiteralExp
-	//	| CollectionLiteralExp
-	//	| PreExp
-	//	| TypeExp
-	//	| IfExp
-	//	| '(' {NestedExp} source=Expression ')';
+	//|	SquareBracketExp
+	//|	SelfExp
+	//|	PrimitiveLiteralExp
+	//|	TupleLiteralExp
+	//|	CollectionLiteralExp
+	//|	PreExp
+	//|	TypeExp
+	//|	IfExp
+	//|	'('{NestedExp} source=Expression ')'
+	//;
 	public SubNavigationExpElements getSubNavigationExpAccess() {
 		return pSubNavigationExp;
 	}
@@ -4030,11 +4244,12 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getSubNavigationExpAccess().getRule();
 	}
 	
-	//SubNavigatingExp Expression:
+	//SubNavigatingExp returns Expression:
 	//	RoundBracketExp
-	//	| SquareBracketExp
-	//	| PreExp
-	//	| NameExp;
+	//|	SquareBracketExp
+	//|	PreExp
+	//|	NameExp
+	//;
 	public SubNavigatingExpElements getSubNavigatingExpAccess() {
 		return pSubNavigatingExp;
 	}
@@ -4043,8 +4258,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getSubNavigatingExpAccess().getRule();
 	}
 	
-	//iteratorVariable:
-	//	name=Identifier (':' type=TypeExp)?;
+	//iteratorVariable :
+	//	name=Identifier (':' type=TypeExp)?
+	//;
 	public IteratorVariableElements getIteratorVariableAccess() {
 		return pIteratorVariable;
 	}
@@ -4053,8 +4269,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getIteratorVariableAccess().getRule();
 	}
 	
-	//iteratorAccumulator:
-	//	name=Identifier ':' type=TypeExp '=' initExpression=Expression;
+	//iteratorAccumulator :
+	//	name=Identifier ':' type=TypeExp '=' initExpression=Expression
+	//;
 	public IteratorAccumulatorElements getIteratorAccumulatorAccess() {
 		return pIteratorAccumulator;
 	}
@@ -4063,11 +4280,15 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getIteratorAccumulatorAccess().getRule();
 	}
 	
-	//RoundBracketExp:
-	//	name=NameExp ('@' pre?='pre')? '(' (variable1=iteratorVariable (',' variable2=iteratorVariable | ';'
-	//	variable2=iteratorAccumulator)?
-	//	'|')? (arguments+=Expression (',' arguments+=Expression)*)?
-	//	')';
+	//RoundBracketExp :
+	//	name=NameExp ('@' pre?='pre')? '('
+	//		(variable1=iteratorVariable
+	//	        ((',' variable2=iteratorVariable)
+	//	        |(';' variable2=iteratorAccumulator))?
+	//	        '|')?
+	//	    (arguments+=Expression (',' arguments+=Expression)*)?
+	//	')'
+	//;
 	public RoundBracketExpElements getRoundBracketExpAccess() {
 		return pRoundBracketExp;
 	}
@@ -4076,8 +4297,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getRoundBracketExpAccess().getRule();
 	}
 	
-	//SquareBracketExp:
-	//	name=NameExp '[' arguments+=Expression (',' arguments+=Expression)* ']' ('@' pre?='pre')?;
+	//SquareBracketExp :
+	//	name=NameExp '[' arguments+=Expression (',' arguments+=Expression)* ']' ('@' pre?='pre')?
+	//;
 	public SquareBracketExpElements getSquareBracketExpAccess() {
 		return pSquareBracketExp;
 	}
@@ -4086,8 +4308,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getSquareBracketExpAccess().getRule();
 	}
 	
-	//PreExp:
-	//	name=NameExp '@' 'pre';
+	//PreExp :
+	//	name=NameExp '@' 'pre'
+	//;
 	public PreExpElements getPreExpAccess() {
 		return pPreExp;
 	}
@@ -4096,8 +4319,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getPreExpAccess().getRule();
 	}
 	
-	//SelfExp:
-	//	{SelfExp} 'self';
+	//SelfExp :
+	//	{SelfExp} 'self'
+	//;
 	public SelfExpElements getSelfExpAccess() {
 		return pSelfExp;
 	}
@@ -4106,8 +4330,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getSelfExpAccess().getRule();
 	}
 	
-	//NameExp:
-	//	PathNameExp | SimpleNameExp;
+	//NameExp :
+	//	PathNameExp | SimpleNameExp
+	//;
 	public NameExpElements getNameExpAccess() {
 		return pNameExp;
 	}
@@ -4116,8 +4341,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getNameExpAccess().getRule();
 	}
 	
-	//PathNameExp:
-	//	namespace=Identifier '::' element=NameExp;
+	//PathNameExp :
+	//	namespace=Identifier '::' element=NameExp
+	//;
 	public PathNameExpElements getPathNameExpAccess() {
 		return pPathNameExp;
 	}
@@ -4126,8 +4352,9 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getPathNameExpAccess().getRule();
 	}
 	
-	//SimpleNameExp:
-	//	element=Identifier;
+	//SimpleNameExp :
+	//	element=Identifier
+	//;
 	public SimpleNameExpElements getSimpleNameExpAccess() {
 		return pSimpleNameExp;
 	}
@@ -4140,7 +4367,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	//	'if' condition=Expression
 	//	'then' thenExpression=Expression
 	//	'else' elseExpression=Expression
-	//	'endif';
+	//	'endif'
+	//;
 	public IfExpElements getIfExpAccess() {
 		return pIfExp;
 	}
@@ -4152,7 +4380,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	//LetExp:
 	//	'let'
 	//	variable+=LetVariable (',' variable+=LetVariable)*
-	//	'in' in=Expression;
+	//	'in' in=Expression
+	//;
 	public LetExpElements getLetExpAccess() {
 		return pLetExp;
 	}
@@ -4162,7 +4391,8 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 	}
 	
 	//LetVariable:
-	//	name=Identifier ':' type=TypeExp '=' initExpression=Expression;
+	//	name=Identifier ':' type=TypeExp '=' initExpression=Expression
+	//;
 	public LetVariableElements getLetVariableAccess() {
 		return pLetVariable;
 	}
@@ -4171,45 +4401,40 @@ public class BacktrackingContentAssistTestLanguageGrammarAccess extends Abstract
 		return getLetVariableAccess().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

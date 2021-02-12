@@ -35,22 +35,22 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//	{MyProgram} LT* package=MyPackage LT*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MyProgram} LT* package=MyPackage LT*
+		//	{MyProgram} LT* package=MyPackage LT*
 		public Group getGroup() { return cGroup; }
 		
-		//{MyProgram}
+		//	{MyProgram}
 		public Action getMyProgramAction_0() { return cMyProgramAction_0; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_1() { return cLTTerminalRuleCall_1; }
 		
-		//package=MyPackage
+		// package=MyPackage
 		public Assignment getPackageAssignment_2() { return cPackageAssignment_2; }
 		
 		//MyPackage
 		public RuleCall getPackageMyPackageParserRuleCall_2_0() { return cPackageMyPackageParserRuleCall_2_0; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_3() { return cLTTerminalRuleCall_3; }
 	}
 	public class IdentifierElements extends AbstractParserRuleElementFinder {
@@ -62,7 +62,7 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//	name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID
+		//	name=ID
 		public Assignment getNameAssignment() { return cNameAssignment; }
 		
 		//ID
@@ -82,25 +82,25 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//	ID (LT* '.' LT* ID)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ID (LT* '.' LT* ID)*
+		//	ID (LT* '.' LT* ID)*
 		public Group getGroup() { return cGroup; }
 		
-		//ID
+		//	ID
 		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
 		
-		//(LT* '.' LT* ID)*
+		// (LT* '.' LT* ID)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//LT*
 		public RuleCall getLTTerminalRuleCall_1_0() { return cLTTerminalRuleCall_1_0; }
 		
-		//'.'
+		// '.'
 		public Keyword getFullStopKeyword_1_1() { return cFullStopKeyword_1_1; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_1_2() { return cLTTerminalRuleCall_1_2; }
 		
-		//ID
+		// ID
 		public RuleCall getIDTerminalRuleCall_1_3() { return cIDTerminalRuleCall_1_3; }
 	}
 	public class VirtualSemiElements extends AbstractParserRuleElementFinder {
@@ -113,13 +113,13 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//	';' | LT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//';' | LT
+		//	';' | LT
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//';'
+		//	';'
 		public Keyword getSemicolonKeyword_0() { return cSemicolonKeyword_0; }
 		
-		//LT
+		// LT
 		public RuleCall getLTTerminalRuleCall_1() { return cLTTerminalRuleCall_1; }
 	}
 	public class LiteralElements extends AbstractParserRuleElementFinder {
@@ -138,28 +138,28 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//	num=NUMBER | str=STRING | bool='true' | bool='false';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//num=NUMBER | str=STRING | bool='true' | bool='false'
+		//	num=NUMBER | str=STRING | bool='true' | bool='false'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//num=NUMBER
+		//	num=NUMBER
 		public Assignment getNumAssignment_0() { return cNumAssignment_0; }
 		
 		//NUMBER
 		public RuleCall getNumNUMBERTerminalRuleCall_0_0() { return cNumNUMBERTerminalRuleCall_0_0; }
 		
-		//str=STRING
+		// str=STRING
 		public Assignment getStrAssignment_1() { return cStrAssignment_1; }
 		
 		//STRING
 		public RuleCall getStrSTRINGTerminalRuleCall_1_0() { return cStrSTRINGTerminalRuleCall_1_0; }
 		
-		//bool='true'
+		// bool='true'
 		public Assignment getBoolAssignment_2() { return cBoolAssignment_2; }
 		
 		//'true'
 		public Keyword getBoolTrueKeyword_2_0() { return cBoolTrueKeyword_2_0; }
 		
-		//bool='false'
+		// bool='false'
 		public Assignment getBoolAssignment_3() { return cBoolAssignment_3; }
 		
 		//'false'
@@ -175,13 +175,13 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//	Literal | Identifier;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Literal | Identifier
+		//	Literal | Identifier
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Literal
+		//	Literal
 		public RuleCall getLiteralParserRuleCall_0() { return cLiteralParserRuleCall_0; }
 		
-		//Identifier
+		// Identifier
 		public RuleCall getIdentifierParserRuleCall_1() { return cIdentifierParserRuleCall_1; }
 	}
 	public class MyPackageElements extends AbstractParserRuleElementFinder {
@@ -204,31 +204,31 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//	'package' LT* name=FQN LT* '{' LT* (directives+=MyClass LT*)* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'package' LT* name=FQN LT* '{' LT* (directives+=MyClass LT*)* '}'
+		//	'package' LT* name=FQN LT* '{' LT* (directives+=MyClass LT*)* '}'
 		public Group getGroup() { return cGroup; }
 		
-		//'package'
+		//	'package'
 		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_1() { return cLTTerminalRuleCall_1; }
 		
-		//name=FQN
+		// name=FQN
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//FQN
 		public RuleCall getNameFQNParserRuleCall_2_0() { return cNameFQNParserRuleCall_2_0; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_3() { return cLTTerminalRuleCall_3; }
 		
-		//'{'
+		// '{'
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_5() { return cLTTerminalRuleCall_5; }
 		
-		//(directives+=MyClass LT*)*
+		// (directives+=MyClass LT*)*
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//directives+=MyClass
@@ -237,10 +237,10 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//MyClass
 		public RuleCall getDirectivesMyClassParserRuleCall_6_0_0() { return cDirectivesMyClassParserRuleCall_6_0_0; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_6_1() { return cLTTerminalRuleCall_6_1; }
 		
-		//'}'
+		// '}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class MyClassElements extends AbstractParserRuleElementFinder {
@@ -264,34 +264,34 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//	'public'? 'class' LT* name=ID LT* '{' LT* (directives+=MyField LT*)* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'public'? 'class' LT* name=ID LT* '{' LT* (directives+=MyField LT*)* '}'
+		//	'public'? 'class' LT* name=ID LT* '{' LT* (directives+=MyField LT*)* '}'
 		public Group getGroup() { return cGroup; }
 		
-		//'public'?
+		//	'public'?
 		public Keyword getPublicKeyword_0() { return cPublicKeyword_0; }
 		
-		//'class'
+		// 'class'
 		public Keyword getClassKeyword_1() { return cClassKeyword_1; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_2() { return cLTTerminalRuleCall_2; }
 		
-		//name=ID
+		// name=ID
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_4() { return cLTTerminalRuleCall_4; }
 		
-		//'{'
+		// '{'
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_6() { return cLTTerminalRuleCall_6; }
 		
-		//(directives+=MyField LT*)*
+		// (directives+=MyField LT*)*
 		public Group getGroup_7() { return cGroup_7; }
 		
 		//directives+=MyField
@@ -300,10 +300,10 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//MyField
 		public RuleCall getDirectivesMyFieldParserRuleCall_7_0_0() { return cDirectivesMyFieldParserRuleCall_7_0_0; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_7_1() { return cLTTerminalRuleCall_7_1; }
 		
-		//'}'
+		// '}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class MyAttributeElements extends AbstractParserRuleElementFinder {
@@ -318,16 +318,16 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//	PUBLIC='public' | PRIVATE='private';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//PUBLIC='public' | PRIVATE='private'
+		//	PUBLIC='public' | PRIVATE='private'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//PUBLIC='public'
+		//	PUBLIC='public'
 		public Assignment getPUBLICAssignment_0() { return cPUBLICAssignment_0; }
 		
 		//'public'
 		public Keyword getPUBLICPublicKeyword_0_0() { return cPUBLICPublicKeyword_0_0; }
 		
-		//PRIVATE='private'
+		// PRIVATE='private'
 		public Assignment getPRIVATEAssignment_1() { return cPRIVATEAssignment_1; }
 		
 		//'private'
@@ -341,16 +341,16 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cAttributesMyAttributeParserRuleCall_1_0 = (RuleCall)cAttributesAssignment_1.eContents().get(0);
 		
 		//MyAttributes:
-		//	{MyAttributes} attributes+=MyAttribute*;
+		//	{MyAttributes} (attributes+=MyAttribute)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MyAttributes} attributes+=MyAttribute*
+		//	{MyAttributes} (attributes+=MyAttribute)*
 		public Group getGroup() { return cGroup; }
 		
-		//{MyAttributes}
+		//	{MyAttributes}
 		public Action getMyAttributesAction_0() { return cMyAttributesAction_0; }
 		
-		//attributes+=MyAttribute*
+		// (attributes+=MyAttribute)*
 		public Assignment getAttributesAssignment_1() { return cAttributesAssignment_1; }
 		
 		//MyAttribute
@@ -377,46 +377,46 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//	attr=MyAttributes 'var' LT* bindings+=MyBinding (LT* ',' LT* bindings+=MyBinding)* VirtualSemi;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//attr=MyAttributes 'var' LT* bindings+=MyBinding (LT* ',' LT* bindings+=MyBinding)* VirtualSemi
+		//	attr=MyAttributes 'var' LT* bindings+=MyBinding (LT* ',' LT* bindings+=MyBinding)* VirtualSemi
 		public Group getGroup() { return cGroup; }
 		
-		//attr=MyAttributes
+		//	attr=MyAttributes
 		public Assignment getAttrAssignment_0() { return cAttrAssignment_0; }
 		
 		//MyAttributes
 		public RuleCall getAttrMyAttributesParserRuleCall_0_0() { return cAttrMyAttributesParserRuleCall_0_0; }
 		
-		//'var'
+		// 'var'
 		public Keyword getVarKeyword_1() { return cVarKeyword_1; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_2() { return cLTTerminalRuleCall_2; }
 		
-		//bindings+=MyBinding
+		// bindings+=MyBinding
 		public Assignment getBindingsAssignment_3() { return cBindingsAssignment_3; }
 		
 		//MyBinding
 		public RuleCall getBindingsMyBindingParserRuleCall_3_0() { return cBindingsMyBindingParserRuleCall_3_0; }
 		
-		//(LT* ',' LT* bindings+=MyBinding)*
+		// (LT* ',' LT* bindings+=MyBinding)*
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//LT*
 		public RuleCall getLTTerminalRuleCall_4_0() { return cLTTerminalRuleCall_4_0; }
 		
-		//','
+		// ','
 		public Keyword getCommaKeyword_4_1() { return cCommaKeyword_4_1; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_4_2() { return cLTTerminalRuleCall_4_2; }
 		
-		//bindings+=MyBinding
+		// bindings+=MyBinding
 		public Assignment getBindingsAssignment_4_3() { return cBindingsAssignment_4_3; }
 		
 		//MyBinding
 		public RuleCall getBindingsMyBindingParserRuleCall_4_3_0() { return cBindingsMyBindingParserRuleCall_4_3_0; }
 		
-		//VirtualSemi
+		// VirtualSemi
 		public RuleCall getVirtualSemiParserRuleCall_5() { return cVirtualSemiParserRuleCall_5; }
 	}
 	public class MyBindingElements extends AbstractParserRuleElementFinder {
@@ -441,46 +441,46 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//	name=ID (LT* ':' LT* type=FQN)? (LT* '=' LT* expression=MyPrimary)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID (LT* ':' LT* type=FQN)? (LT* '=' LT* expression=MyPrimary)?
+		//	name=ID (LT* ':' LT* type=FQN)? (LT* '=' LT* expression=MyPrimary)?
 		public Group getGroup() { return cGroup; }
 		
-		//name=ID
+		//	name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//(LT* ':' LT* type=FQN)?
+		// (LT* ':' LT* type=FQN)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//LT*
 		public RuleCall getLTTerminalRuleCall_1_0() { return cLTTerminalRuleCall_1_0; }
 		
-		//':'
+		// ':'
 		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_1_2() { return cLTTerminalRuleCall_1_2; }
 		
-		//type=FQN
+		// type=FQN
 		public Assignment getTypeAssignment_1_3() { return cTypeAssignment_1_3; }
 		
 		//FQN
 		public RuleCall getTypeFQNParserRuleCall_1_3_0() { return cTypeFQNParserRuleCall_1_3_0; }
 		
-		//(LT* '=' LT* expression=MyPrimary)?
+		// (LT* '=' LT* expression=MyPrimary)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//LT*
 		public RuleCall getLTTerminalRuleCall_2_0() { return cLTTerminalRuleCall_2_0; }
 		
-		//'='
+		// '='
 		public Keyword getEqualsSignKeyword_2_1() { return cEqualsSignKeyword_2_1; }
 		
-		//LT*
+		// LT*
 		public RuleCall getLTTerminalRuleCall_2_2() { return cLTTerminalRuleCall_2_2; }
 		
-		//expression=MyPrimary
+		// expression=MyPrimary
 		public Assignment getExpressionAssignment_2_3() { return cExpressionAssignment_2_3; }
 		
 		//MyPrimary
@@ -652,7 +652,7 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//MyAttributes:
-	//	{MyAttributes} attributes+=MyAttribute*;
+	//	{MyAttributes} (attributes+=MyAttribute)*;
 	public MyAttributesElements getMyAttributesAccess() {
 		return pMyAttributes;
 	}
@@ -681,6 +681,7 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getMyBindingAccess().getRule();
 	}
 	
+	//	// terminal rules
 	//terminal ID:
 	//	idPlainChar (idPlainChar | digit)*;
 	public TerminalRule getIDRule() {
@@ -694,7 +695,7 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//terminal WS:
-	//	' ' | '\t'+;
+	//	(' ' | '\t')+;
 	public TerminalRule getWSRule() {
 		return tWS;
 	}
@@ -711,24 +712,28 @@ public class Bug347012TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return tNUMBER;
 	}
 	
+	///* SuppressWarnings[InvalidTerminalRuleName] */
 	//terminal fragment digit:
 	//	'0'..'9';
 	public TerminalRule getDigitRule() {
 		return tDigit;
 	}
 	
+	///* SuppressWarnings[InvalidTerminalRuleName] */
 	//terminal fragment hex:
 	//	digit | 'A'..'F' | 'a'..'f';
 	public TerminalRule getHexRule() {
 		return tHex;
 	}
 	
+	///* SuppressWarnings[InvalidTerminalRuleName] */
 	//terminal fragment escape:
-	//	'b' | 't' | 'n' | 'f' | 'v' | 'r' | '"' | "'" | '\\' | 'u' hex hex hex hex;
+	//	('b' | 't' | 'n' | 'f' | 'v' | 'r' | '"' | "'" | '\\' | 'u' hex hex hex hex);
 	public TerminalRule getEscapeRule() {
 		return tEscape;
 	}
 	
+	///* SuppressWarnings[InvalidTerminalRuleName] */
 	//terminal fragment idPlainChar:
 	//	'$' | 'A'..'Z' | '_' | 'a'..'z';
 	public TerminalRule getIdPlainCharRule() {

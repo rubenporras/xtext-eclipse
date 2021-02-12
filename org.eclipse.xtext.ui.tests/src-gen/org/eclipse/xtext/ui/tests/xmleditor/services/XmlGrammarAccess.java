@@ -30,22 +30,24 @@ public class XmlGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		///*
 		// * This grammar definition is based on the following tutorial:
-		// * https://theantlrguy.atlassian.net/wiki/spaces/ANTLR3/pages/2687107/Parsing+XML 
+		// * https://theantlrguy.atlassian.net/wiki/spaces/ANTLR3/pages/2687107/Parsing+XML
 		// */
 		//XmlDocument:
-		//	{XmlDocument} contents+=Content*;
+		//{XmlDocument}
+		//	contents += Content*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{XmlDocument} contents+=Content*
+		//{XmlDocument}
+		//	contents += Content*
 		public Group getGroup() { return cGroup; }
 		
 		//{XmlDocument}
 		public Action getXmlDocumentAction_0() { return cXmlDocumentAction_0; }
 		
-		//contents+=Content*
+		//	contents += Content*
 		public Assignment getContentsAssignment_1() { return cContentsAssignment_1; }
 		
-		//Content
+		// Content
 		public RuleCall getContentsContentParserRuleCall_1_0() { return cContentsContentParserRuleCall_1_0; }
 	}
 	public class ContentElements extends AbstractParserRuleElementFinder {
@@ -57,19 +59,20 @@ public class XmlGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cTextPCDATATerminalRuleCall_1_0 = (RuleCall)cTextAssignment_1.eContents().get(0);
 		
 		//Content:
-		//	tag=Tag | text=PCDATA;
+		//	tag=Tag | text=PCDATA
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//tag=Tag | text=PCDATA
+		//	tag=Tag | text=PCDATA
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//tag=Tag
+		//	tag=Tag
 		public Assignment getTagAssignment_0() { return cTagAssignment_0; }
 		
 		//Tag
 		public RuleCall getTagTagParserRuleCall_0_0() { return cTagTagParserRuleCall_0_0; }
 		
-		//text=PCDATA
+		// text=PCDATA
 		public Assignment getTextAssignment_1() { return cTextAssignment_1; }
 		
 		//PCDATA
@@ -95,57 +98,67 @@ public class XmlGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cTAG_CLOSETerminalRuleCall_3_1_4 = (RuleCall)cGroup_3_1.eContents().get(4);
 		
 		//Tag hidden(WS):
-		//	TAG_START_OPEN name=ID attributes+=Attribute* (TAG_EMPTY_CLOSE | TAG_CLOSE contents+=Content* TAG_END_OPEN
-		//	closeName=ID TAG_CLOSE);
+		//	TAG_START_OPEN name=ID attributes+=Attribute*
+		//	(
+		//		TAG_EMPTY_CLOSE |
+		//		TAG_CLOSE contents+=Content* TAG_END_OPEN closeName=ID TAG_CLOSE
+		//	)
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//TAG_START_OPEN name=ID attributes+=Attribute* (TAG_EMPTY_CLOSE | TAG_CLOSE contents+=Content* TAG_END_OPEN
-		//closeName=ID TAG_CLOSE)
+		//	TAG_START_OPEN name=ID attributes+=Attribute*
+		//	(
+		//		TAG_EMPTY_CLOSE |
+		//		TAG_CLOSE contents+=Content* TAG_END_OPEN closeName=ID TAG_CLOSE
+		//	)
 		public Group getGroup() { return cGroup; }
 		
-		//TAG_START_OPEN
+		//	TAG_START_OPEN
 		public RuleCall getTAG_START_OPENTerminalRuleCall_0() { return cTAG_START_OPENTerminalRuleCall_0; }
 		
-		//name=ID
+		// name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//attributes+=Attribute*
+		// attributes+=Attribute*
 		public Assignment getAttributesAssignment_2() { return cAttributesAssignment_2; }
 		
 		//Attribute
 		public RuleCall getAttributesAttributeParserRuleCall_2_0() { return cAttributesAttributeParserRuleCall_2_0; }
 		
-		//(TAG_EMPTY_CLOSE | TAG_CLOSE contents+=Content* TAG_END_OPEN closeName=ID TAG_CLOSE)
+		//	(
+		//		TAG_EMPTY_CLOSE |
+		//		TAG_CLOSE contents+=Content* TAG_END_OPEN closeName=ID TAG_CLOSE
+		//	)
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
-		//TAG_EMPTY_CLOSE
+		//		TAG_EMPTY_CLOSE
 		public RuleCall getTAG_EMPTY_CLOSETerminalRuleCall_3_0() { return cTAG_EMPTY_CLOSETerminalRuleCall_3_0; }
 		
-		//TAG_CLOSE contents+=Content* TAG_END_OPEN closeName=ID TAG_CLOSE
+		//		TAG_CLOSE contents+=Content* TAG_END_OPEN closeName=ID TAG_CLOSE
 		public Group getGroup_3_1() { return cGroup_3_1; }
 		
-		//TAG_CLOSE
+		//		TAG_CLOSE
 		public RuleCall getTAG_CLOSETerminalRuleCall_3_1_0() { return cTAG_CLOSETerminalRuleCall_3_1_0; }
 		
-		//contents+=Content*
+		// contents+=Content*
 		public Assignment getContentsAssignment_3_1_1() { return cContentsAssignment_3_1_1; }
 		
 		//Content
 		public RuleCall getContentsContentParserRuleCall_3_1_1_0() { return cContentsContentParserRuleCall_3_1_1_0; }
 		
-		//TAG_END_OPEN
+		// TAG_END_OPEN
 		public RuleCall getTAG_END_OPENTerminalRuleCall_3_1_2() { return cTAG_END_OPENTerminalRuleCall_3_1_2; }
 		
-		//closeName=ID
+		// closeName=ID
 		public Assignment getCloseNameAssignment_3_1_3() { return cCloseNameAssignment_3_1_3; }
 		
 		//ID
 		public RuleCall getCloseNameIDTerminalRuleCall_3_1_3_0() { return cCloseNameIDTerminalRuleCall_3_1_3_0; }
 		
-		//TAG_CLOSE
+		// TAG_CLOSE
 		public RuleCall getTAG_CLOSETerminalRuleCall_3_1_4() { return cTAG_CLOSETerminalRuleCall_3_1_4; }
 	}
 	public class AttributeElements extends AbstractParserRuleElementFinder {
@@ -157,23 +170,22 @@ public class XmlGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
-		//Attribute:
-		//	name=ID ATTR_EQ value=STRING;
+		//Attribute: name=ID ATTR_EQ value=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ATTR_EQ value=STRING
+		// name=ID ATTR_EQ value=STRING
 		public Group getGroup() { return cGroup; }
 		
-		//name=ID
+		// name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//ATTR_EQ
+		// ATTR_EQ
 		public RuleCall getATTR_EQTerminalRuleCall_1() { return cATTR_EQTerminalRuleCall_1; }
 		
-		//value=STRING
+		// value=STRING
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
 		//STRING
@@ -240,10 +252,11 @@ public class XmlGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	///*
 	// * This grammar definition is based on the following tutorial:
-	// * https://theantlrguy.atlassian.net/wiki/spaces/ANTLR3/pages/2687107/Parsing+XML 
+	// * https://theantlrguy.atlassian.net/wiki/spaces/ANTLR3/pages/2687107/Parsing+XML
 	// */
 	//XmlDocument:
-	//	{XmlDocument} contents+=Content*;
+	//{XmlDocument}
+	//	contents += Content*;
 	public XmlDocumentElements getXmlDocumentAccess() {
 		return pXmlDocument;
 	}
@@ -253,7 +266,8 @@ public class XmlGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Content:
-	//	tag=Tag | text=PCDATA;
+	//	tag=Tag | text=PCDATA
+	//;
 	public ContentElements getContentAccess() {
 		return pContent;
 	}
@@ -263,8 +277,12 @@ public class XmlGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Tag hidden(WS):
-	//	TAG_START_OPEN name=ID attributes+=Attribute* (TAG_EMPTY_CLOSE | TAG_CLOSE contents+=Content* TAG_END_OPEN
-	//	closeName=ID TAG_CLOSE);
+	//	TAG_START_OPEN name=ID attributes+=Attribute*
+	//	(
+	//		TAG_EMPTY_CLOSE |
+	//		TAG_CLOSE contents+=Content* TAG_END_OPEN closeName=ID TAG_CLOSE
+	//	)
+	//;
 	public TagElements getTagAccess() {
 		return pTag;
 	}
@@ -273,8 +291,7 @@ public class XmlGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getTagAccess().getRule();
 	}
 	
-	//Attribute:
-	//	name=ID ATTR_EQ value=STRING;
+	//Attribute: name=ID ATTR_EQ value=STRING;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}
@@ -283,57 +300,50 @@ public class XmlGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getAttributeAccess().getRule();
 	}
 	
-	//terminal TAG_START_OPEN:
-	//	'<';
+	//terminal TAG_START_OPEN : '<' ;
 	public TerminalRule getTAG_START_OPENRule() {
 		return tTAG_START_OPEN;
 	}
 	
-	//terminal TAG_END_OPEN:
-	//	'</';
+	//terminal TAG_END_OPEN: '</';
 	public TerminalRule getTAG_END_OPENRule() {
 		return tTAG_END_OPEN;
 	}
 	
-	//terminal TAG_CLOSE:
-	//	'>';
+	//terminal TAG_CLOSE : '>' ;
 	public TerminalRule getTAG_CLOSERule() {
 		return tTAG_CLOSE;
 	}
 	
-	//terminal TAG_EMPTY_CLOSE:
-	//	'/>';
+	//terminal TAG_EMPTY_CLOSE: '/>';
 	public TerminalRule getTAG_EMPTY_CLOSERule() {
 		return tTAG_EMPTY_CLOSE;
 	}
 	
-	//terminal ATTR_EQ:
-	//	'=';
+	//terminal ATTR_EQ: '=';
 	public TerminalRule getATTR_EQRule() {
 		return tATTR_EQ;
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return tID;
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return tSTRING;
 	}
 	
-	//terminal WS:
-	//	' ' | '\r' | '\t' | '\\u000C' | '\n'+;
+	//terminal WS: (' '|'\r'|'\t'|'\u000C'|'\n')+;
 	public TerminalRule getWSRule() {
 		return tWS;
 	}
 	
-	//terminal PCDATA:
-	//	!'<'+;
+	//terminal PCDATA : (!'<')+ ;
 	public TerminalRule getPCDATARule() {
 		return tPCDATA;
 	}

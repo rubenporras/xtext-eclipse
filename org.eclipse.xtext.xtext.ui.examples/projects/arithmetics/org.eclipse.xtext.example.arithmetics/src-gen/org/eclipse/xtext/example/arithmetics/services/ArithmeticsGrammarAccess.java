@@ -42,31 +42,31 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//Module:
 		//	'module' name=ID
-		//	imports+=Import*
-		//	statements+=Statement*;
+		//	(imports+=Import)*
+		//	(statements+=Statement)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'module' name=ID
-		//imports+=Import*
-		//statements+=Statement*
+		//	'module' name=ID
+		//	(imports+=Import)*
+		//	(statements+=Statement)*
 		public Group getGroup() { return cGroup; }
 		
-		//'module'
+		//	'module'
 		public Keyword getModuleKeyword_0() { return cModuleKeyword_0; }
 		
-		//name=ID
+		// name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//imports+=Import*
+		//	(imports+=Import)*
 		public Assignment getImportsAssignment_2() { return cImportsAssignment_2; }
 		
 		//Import
 		public RuleCall getImportsImportParserRuleCall_2_0() { return cImportsImportParserRuleCall_2_0; }
 		
-		//statements+=Statement*
+		//	(statements+=Statement)*
 		public Assignment getStatementsAssignment_3() { return cStatementsAssignment_3; }
 		
 		//Statement
@@ -84,13 +84,13 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		//	'import' module=[Module];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'import' module=[Module]
+		//	'import' module=[Module]
 		public Group getGroup() { return cGroup; }
 		
-		//'import'
+		//	'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 		
-		//module=[Module]
+		// module=[Module]
 		public Assignment getModuleAssignment_1() { return cModuleAssignment_1; }
 		
 		//[Module]
@@ -109,13 +109,13 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		//	Definition | Evaluation;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Definition | Evaluation
+		//	Definition | Evaluation
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Definition
+		//	Definition
 		public RuleCall getDefinitionParserRuleCall_0() { return cDefinitionParserRuleCall_0; }
 		
-		//Evaluation
+		// Evaluation
 		public RuleCall getEvaluationParserRuleCall_1() { return cEvaluationParserRuleCall_1; }
 	}
 	public class DefinitionElements extends AbstractParserRuleElementFinder {
@@ -143,56 +143,56 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		//	':' expr=Expression ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'def' name=ID ('(' args+=DeclaredParameter (',' args+=DeclaredParameter)* ')')?
-		//':' expr=Expression ';'
+		//	'def' name=ID ('(' args+=DeclaredParameter (',' args+=DeclaredParameter)* ')')?
+		//	':' expr=Expression ';'
 		public Group getGroup() { return cGroup; }
 		
-		//'def'
+		//	'def'
 		public Keyword getDefKeyword_0() { return cDefKeyword_0; }
 		
-		//name=ID
+		// name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//('(' args+=DeclaredParameter (',' args+=DeclaredParameter)* ')')?
+		// ('(' args+=DeclaredParameter (',' args+=DeclaredParameter)* ')')?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 		
-		//args+=DeclaredParameter
+		// args+=DeclaredParameter
 		public Assignment getArgsAssignment_2_1() { return cArgsAssignment_2_1; }
 		
 		//DeclaredParameter
 		public RuleCall getArgsDeclaredParameterParserRuleCall_2_1_0() { return cArgsDeclaredParameterParserRuleCall_2_1_0; }
 		
-		//(',' args+=DeclaredParameter)*
+		// (',' args+=DeclaredParameter)*
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//','
 		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
 		
-		//args+=DeclaredParameter
+		// args+=DeclaredParameter
 		public Assignment getArgsAssignment_2_2_1() { return cArgsAssignment_2_2_1; }
 		
 		//DeclaredParameter
 		public RuleCall getArgsDeclaredParameterParserRuleCall_2_2_1_0() { return cArgsDeclaredParameterParserRuleCall_2_2_1_0; }
 		
-		//')'
+		// ')'
 		public Keyword getRightParenthesisKeyword_2_3() { return cRightParenthesisKeyword_2_3; }
 		
-		//':'
+		//	':'
 		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 		
-		//expr=Expression
+		// expr=Expression
 		public Assignment getExprAssignment_4() { return cExprAssignment_4; }
 		
 		//Expression
 		public RuleCall getExprExpressionParserRuleCall_4_0() { return cExprExpressionParserRuleCall_4_0; }
 		
-		//';'
+		// ';'
 		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 	public class DeclaredParameterElements extends AbstractParserRuleElementFinder {
@@ -204,7 +204,7 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		//	name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID
+		//	name=ID
 		public Assignment getNameAssignment() { return cNameAssignment; }
 		
 		//ID
@@ -220,13 +220,13 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		//	Definition | DeclaredParameter;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Definition | DeclaredParameter
+		//	Definition | DeclaredParameter
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Definition
+		//	Definition
 		public RuleCall getDefinitionParserRuleCall_0() { return cDefinitionParserRuleCall_0; }
 		
-		//DeclaredParameter
+		// DeclaredParameter
 		public RuleCall getDeclaredParameterParserRuleCall_1() { return cDeclaredParameterParserRuleCall_1; }
 	}
 	public class EvaluationElements extends AbstractParserRuleElementFinder {
@@ -240,16 +240,16 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		//	expression=Expression ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//expression=Expression ';'
+		//	expression=Expression ';'
 		public Group getGroup() { return cGroup; }
 		
-		//expression=Expression
+		//	expression=Expression
 		public Assignment getExpressionAssignment_0() { return cExpressionAssignment_0; }
 		
 		//Expression
 		public RuleCall getExpressionExpressionParserRuleCall_0_0() { return cExpressionExpressionParserRuleCall_0_0; }
 		
-		//';'
+		// ';'
 		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
@@ -260,7 +260,7 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		//	Addition;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Addition
+		//	Addition
 		public RuleCall getAdditionParserRuleCall() { return cAdditionParserRuleCall; }
 	}
 	public class AdditionElements extends AbstractParserRuleElementFinder {
@@ -278,17 +278,17 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cRightMultiplicationParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
-		//Addition Expression:
+		//Addition returns Expression:
 		//	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*
+		//	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*
 		public Group getGroup() { return cGroup; }
 		
-		//Multiplication
+		//	Multiplication
 		public RuleCall getMultiplicationParserRuleCall_0() { return cMultiplicationParserRuleCall_0; }
 		
-		//(({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*
+		// (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//({Plus.left=current} '+' | {Minus.left=current} '-')
@@ -300,19 +300,19 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		//{Plus.left=current}
 		public Action getPlusLeftAction_1_0_0_0() { return cPlusLeftAction_1_0_0_0; }
 		
-		//'+'
+		// '+'
 		public Keyword getPlusSignKeyword_1_0_0_1() { return cPlusSignKeyword_1_0_0_1; }
 		
-		//{Minus.left=current} '-'
+		// {Minus.left=current} '-'
 		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
 		
-		//{Minus.left=current}
+		// {Minus.left=current}
 		public Action getMinusLeftAction_1_0_1_0() { return cMinusLeftAction_1_0_1_0; }
 		
-		//'-'
+		// '-'
 		public Keyword getHyphenMinusKeyword_1_0_1_1() { return cHyphenMinusKeyword_1_0_1_1; }
 		
-		//right=Multiplication
+		// right=Multiplication
 		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 		
 		//Multiplication
@@ -333,17 +333,17 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cRightPrimaryExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
-		//Multiplication Expression:
+		//Multiplication returns Expression:
 		//	PrimaryExpression (({Multi.left=current} '*' | {Div.left=current} '/') right=PrimaryExpression)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//PrimaryExpression (({Multi.left=current} '*' | {Div.left=current} '/') right=PrimaryExpression)*
+		//	PrimaryExpression (({Multi.left=current} '*' | {Div.left=current} '/') right=PrimaryExpression)*
 		public Group getGroup() { return cGroup; }
 		
-		//PrimaryExpression
+		//	PrimaryExpression
 		public RuleCall getPrimaryExpressionParserRuleCall_0() { return cPrimaryExpressionParserRuleCall_0; }
 		
-		//(({Multi.left=current} '*' | {Div.left=current} '/') right=PrimaryExpression)*
+		// (({Multi.left=current} '*' | {Div.left=current} '/') right=PrimaryExpression)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//({Multi.left=current} '*' | {Div.left=current} '/')
@@ -355,19 +355,19 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		//{Multi.left=current}
 		public Action getMultiLeftAction_1_0_0_0() { return cMultiLeftAction_1_0_0_0; }
 		
-		//'*'
+		// '*'
 		public Keyword getAsteriskKeyword_1_0_0_1() { return cAsteriskKeyword_1_0_0_1; }
 		
-		//{Div.left=current} '/'
+		// {Div.left=current} '/'
 		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
 		
-		//{Div.left=current}
+		// {Div.left=current}
 		public Action getDivLeftAction_1_0_1_0() { return cDivLeftAction_1_0_1_0; }
 		
-		//'/'
+		// '/'
 		public Keyword getSolidusKeyword_1_0_1_1() { return cSolidusKeyword_1_0_1_1; }
 		
-		//right=PrimaryExpression
+		// right=PrimaryExpression
 		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 		
 		//PrimaryExpression
@@ -399,46 +399,48 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cArgsExpressionParserRuleCall_2_2_2_1_0 = (RuleCall)cArgsAssignment_2_2_2_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_2_2_3 = (Keyword)cGroup_2_2.eContents().get(3);
 		
-		//PrimaryExpression Expression:
-		//	'(' Expression ')' | {NumberLiteral} value=NUMBER | {FunctionCall} func=[AbstractDefinition] ('(' args+=Expression (
-		//	',' args+=Expression)* ')')?;
+		//PrimaryExpression returns Expression:
+		//	'(' Expression ')' |
+		//	{NumberLiteral} value=NUMBER |
+		//	{FunctionCall} func=[AbstractDefinition] ('(' args+=Expression (',' args+=Expression)* ')')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' Expression ')' | {NumberLiteral} value=NUMBER | {FunctionCall} func=[AbstractDefinition] ('(' args+=Expression (
-		//',' args+=Expression)* ')')?
+		//	'(' Expression ')' |
+		//	{NumberLiteral} value=NUMBER |
+		//	{FunctionCall} func=[AbstractDefinition] ('(' args+=Expression (',' args+=Expression)* ')')?
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'(' Expression ')'
+		//	'(' Expression ')'
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//'('
+		//	'('
 		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
 		
-		//Expression
+		// Expression
 		public RuleCall getExpressionParserRuleCall_0_1() { return cExpressionParserRuleCall_0_1; }
 		
-		//')'
+		// ')'
 		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
 		
-		//{NumberLiteral} value=NUMBER
+		//	{NumberLiteral} value=NUMBER
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//{NumberLiteral}
+		//	{NumberLiteral}
 		public Action getNumberLiteralAction_1_0() { return cNumberLiteralAction_1_0; }
 		
-		//value=NUMBER
+		// value=NUMBER
 		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
 		
 		//NUMBER
 		public RuleCall getValueNUMBERTerminalRuleCall_1_1_0() { return cValueNUMBERTerminalRuleCall_1_1_0; }
 		
-		//{FunctionCall} func=[AbstractDefinition] ('(' args+=Expression (',' args+=Expression)* ')')?
+		//	{FunctionCall} func=[AbstractDefinition] ('(' args+=Expression (',' args+=Expression)* ')')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//{FunctionCall}
+		//	{FunctionCall}
 		public Action getFunctionCallAction_2_0() { return cFunctionCallAction_2_0; }
 		
-		//func=[AbstractDefinition]
+		// func=[AbstractDefinition]
 		public Assignment getFuncAssignment_2_1() { return cFuncAssignment_2_1; }
 		
 		//[AbstractDefinition]
@@ -447,31 +449,31 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getFuncAbstractDefinitionIDTerminalRuleCall_2_1_0_1() { return cFuncAbstractDefinitionIDTerminalRuleCall_2_1_0_1; }
 		
-		//('(' args+=Expression (',' args+=Expression)* ')')?
+		// ('(' args+=Expression (',' args+=Expression)* ')')?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_2_2_0() { return cLeftParenthesisKeyword_2_2_0; }
 		
-		//args+=Expression
+		// args+=Expression
 		public Assignment getArgsAssignment_2_2_1() { return cArgsAssignment_2_2_1; }
 		
 		//Expression
 		public RuleCall getArgsExpressionParserRuleCall_2_2_1_0() { return cArgsExpressionParserRuleCall_2_2_1_0; }
 		
-		//(',' args+=Expression)*
+		// (',' args+=Expression)*
 		public Group getGroup_2_2_2() { return cGroup_2_2_2; }
 		
 		//','
 		public Keyword getCommaKeyword_2_2_2_0() { return cCommaKeyword_2_2_2_0; }
 		
-		//args+=Expression
+		// args+=Expression
 		public Assignment getArgsAssignment_2_2_2_1() { return cArgsAssignment_2_2_2_1; }
 		
 		//Expression
 		public RuleCall getArgsExpressionParserRuleCall_2_2_2_1_0() { return cArgsExpressionParserRuleCall_2_2_2_1_0; }
 		
-		//')'
+		// ')'
 		public Keyword getRightParenthesisKeyword_2_2_3() { return cRightParenthesisKeyword_2_2_3; }
 	}
 	
@@ -543,8 +545,8 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	//Module:
 	//	'module' name=ID
-	//	imports+=Import*
-	//	statements+=Statement*;
+	//	(imports+=Import)*
+	//	(statements+=Statement)*;
 	public ModuleElements getModuleAccess() {
 		return pModule;
 	}
@@ -624,7 +626,7 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getExpressionAccess().getRule();
 	}
 	
-	//Addition Expression:
+	//Addition returns Expression:
 	//	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
 	public AdditionElements getAdditionAccess() {
 		return pAddition;
@@ -634,7 +636,7 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getAdditionAccess().getRule();
 	}
 	
-	//Multiplication Expression:
+	//Multiplication returns Expression:
 	//	PrimaryExpression (({Multi.left=current} '*' | {Div.left=current} '/') right=PrimaryExpression)*;
 	public MultiplicationElements getMultiplicationAccess() {
 		return pMultiplication;
@@ -644,9 +646,10 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getMultiplicationAccess().getRule();
 	}
 	
-	//PrimaryExpression Expression:
-	//	'(' Expression ')' | {NumberLiteral} value=NUMBER | {FunctionCall} func=[AbstractDefinition] ('(' args+=Expression (
-	//	',' args+=Expression)* ')')?;
+	//PrimaryExpression returns Expression:
+	//	'(' Expression ')' |
+	//	{NumberLiteral} value=NUMBER |
+	//	{FunctionCall} func=[AbstractDefinition] ('(' args+=Expression (',' args+=Expression)* ')')?;
 	public PrimaryExpressionElements getPrimaryExpressionAccess() {
 		return pPrimaryExpression;
 	}
@@ -656,7 +659,7 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//terminal NUMBER returns ecore::EBigDecimal:
-	//	'0'..'9'* ('.' '0'..'9'+)?;
+	//	('0'..'9')* ('.' ('0'..'9')+)?;
 	public TerminalRule getNUMBERRule() {
 		return tNUMBER;
 	}
@@ -668,39 +671,35 @@ public class ArithmeticsGrammarAccess extends AbstractElementFinder.AbstractGram
 		return tINT;
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

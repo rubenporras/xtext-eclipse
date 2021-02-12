@@ -55,46 +55,64 @@ public class Bug286935TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cLabelSTRINGTerminalRuleCall_4_0 = (RuleCall)cLabelAssignment_4.eContents().get(0);
 		
 		//State:
-		//	{State} (isInitial?='init' | isFinal?='final' | stateKind=StateType | isInitial?='init' stateKind=StateType |
-		//	isInitial?='init' stateKind=StateType isFinal?='final')?
-		//	'state'?
-		//	stateName=ID?
-		//	label=STRING?;
+		//	{State}
+		//  (
+		//    (isInitial?='init')
+		//  | (isFinal?='final')
+		//  | (stateKind=StateType)
+		//  | (isInitial?='init' stateKind=StateType)
+		//  | (isInitial?='init' stateKind=StateType isFinal?='final')
+		//  )?
+		//  ('state')?
+		//  (stateName=ID)?
+		//  (label=STRING)?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{State} (isInitial?='init' | isFinal?='final' | stateKind=StateType | isInitial?='init' stateKind=StateType |
-		//isInitial?='init' stateKind=StateType isFinal?='final')?
-		//'state'?
-		//stateName=ID?
-		//label=STRING?
+		//	{State}
+		//  (
+		//    (isInitial?='init')
+		//  | (isFinal?='final')
+		//  | (stateKind=StateType)
+		//  | (isInitial?='init' stateKind=StateType)
+		//  | (isInitial?='init' stateKind=StateType isFinal?='final')
+		//  )?
+		//  ('state')?
+		//  (stateName=ID)?
+		//  (label=STRING)?
 		public Group getGroup() { return cGroup; }
 		
-		//{State}
+		//	{State}
 		public Action getStateAction_0() { return cStateAction_0; }
 		
-		//(isInitial?='init' | isFinal?='final' | stateKind=StateType | isInitial?='init' stateKind=StateType | isInitial?='init'
-		//stateKind=StateType isFinal?='final')?
+		//(
+		//  (isInitial?='init')
+		//| (isFinal?='final')
+		//| (stateKind=StateType)
+		//| (isInitial?='init' stateKind=StateType)
+		//| (isInitial?='init' stateKind=StateType isFinal?='final')
+		//)?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//isInitial?='init'
+		//    (isInitial?='init')
 		public Assignment getIsInitialAssignment_1_0() { return cIsInitialAssignment_1_0; }
 		
 		//'init'
 		public Keyword getIsInitialInitKeyword_1_0_0() { return cIsInitialInitKeyword_1_0_0; }
 		
-		//isFinal?='final'
+		// (isFinal?='final')
 		public Assignment getIsFinalAssignment_1_1() { return cIsFinalAssignment_1_1; }
 		
 		//'final'
 		public Keyword getIsFinalFinalKeyword_1_1_0() { return cIsFinalFinalKeyword_1_1_0; }
 		
-		//stateKind=StateType
+		// (stateKind=StateType)
 		public Assignment getStateKindAssignment_1_2() { return cStateKindAssignment_1_2; }
 		
 		//StateType
 		public RuleCall getStateKindStateTypeEnumRuleCall_1_2_0() { return cStateKindStateTypeEnumRuleCall_1_2_0; }
 		
-		//isInitial?='init' stateKind=StateType
+		// (isInitial?='init' stateKind=StateType)
 		public Group getGroup_1_3() { return cGroup_1_3; }
 		
 		//isInitial?='init'
@@ -103,13 +121,13 @@ public class Bug286935TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//'init'
 		public Keyword getIsInitialInitKeyword_1_3_0_0() { return cIsInitialInitKeyword_1_3_0_0; }
 		
-		//stateKind=StateType
+		// stateKind=StateType
 		public Assignment getStateKindAssignment_1_3_1() { return cStateKindAssignment_1_3_1; }
 		
 		//StateType
 		public RuleCall getStateKindStateTypeEnumRuleCall_1_3_1_0() { return cStateKindStateTypeEnumRuleCall_1_3_1_0; }
 		
-		//isInitial?='init' stateKind=StateType isFinal?='final'
+		// (isInitial?='init' stateKind=StateType isFinal?='final')
 		public Group getGroup_1_4() { return cGroup_1_4; }
 		
 		//isInitial?='init'
@@ -118,28 +136,28 @@ public class Bug286935TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//'init'
 		public Keyword getIsInitialInitKeyword_1_4_0_0() { return cIsInitialInitKeyword_1_4_0_0; }
 		
-		//stateKind=StateType
+		// stateKind=StateType
 		public Assignment getStateKindAssignment_1_4_1() { return cStateKindAssignment_1_4_1; }
 		
 		//StateType
 		public RuleCall getStateKindStateTypeEnumRuleCall_1_4_1_0() { return cStateKindStateTypeEnumRuleCall_1_4_1_0; }
 		
-		//isFinal?='final'
+		// isFinal?='final'
 		public Assignment getIsFinalAssignment_1_4_2() { return cIsFinalAssignment_1_4_2; }
 		
 		//'final'
 		public Keyword getIsFinalFinalKeyword_1_4_2_0() { return cIsFinalFinalKeyword_1_4_2_0; }
 		
-		//'state'?
+		//  ('state')?
 		public Keyword getStateKeyword_2() { return cStateKeyword_2; }
 		
-		//stateName=ID?
+		//  (stateName=ID)?
 		public Assignment getStateNameAssignment_3() { return cStateNameAssignment_3; }
 		
 		//ID
 		public RuleCall getStateNameIDTerminalRuleCall_3_0() { return cStateNameIDTerminalRuleCall_3_0; }
 		
-		//label=STRING?
+		//  (label=STRING)?
 		public Assignment getLabelAssignment_4() { return cLabelAssignment_4; }
 		
 		//STRING
@@ -159,31 +177,31 @@ public class Bug286935TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cTEXTUALTextualKeyword_3_0 = (Keyword)cTEXTUALEnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum StateType:
-		//	NORMAL | PSEUDO='cond' | REFERENCE='reference' | TEXTUAL='textual';
+		//  NORMAL | PSEUDO='cond' | REFERENCE='reference' | TEXTUAL='textual'
+		//;
 		public EnumRule getRule() { return rule; }
 		
-		//NORMAL | PSEUDO='cond' | REFERENCE='reference' | TEXTUAL='textual'
+		//  NORMAL | PSEUDO='cond' | REFERENCE='reference' | TEXTUAL='textual'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//NORMAL
+		//  NORMAL
 		public EnumLiteralDeclaration getNORMALEnumLiteralDeclaration_0() { return cNORMALEnumLiteralDeclaration_0; }
 		
-		//"NORMAL"
 		public Keyword getNORMALNORMALKeyword_0_0() { return cNORMALNORMALKeyword_0_0; }
 		
-		//PSEUDO='cond'
+		// PSEUDO='cond'
 		public EnumLiteralDeclaration getPSEUDOEnumLiteralDeclaration_1() { return cPSEUDOEnumLiteralDeclaration_1; }
 		
 		//'cond'
 		public Keyword getPSEUDOCondKeyword_1_0() { return cPSEUDOCondKeyword_1_0; }
 		
-		//REFERENCE='reference'
+		// REFERENCE='reference'
 		public EnumLiteralDeclaration getREFERENCEEnumLiteralDeclaration_2() { return cREFERENCEEnumLiteralDeclaration_2; }
 		
 		//'reference'
 		public Keyword getREFERENCEReferenceKeyword_2_0() { return cREFERENCEReferenceKeyword_2_0; }
 		
-		//TEXTUAL='textual'
+		// TEXTUAL='textual'
 		public EnumLiteralDeclaration getTEXTUALEnumLiteralDeclaration_3() { return cTEXTUALEnumLiteralDeclaration_3; }
 		
 		//'textual'
@@ -234,11 +252,18 @@ public class Bug286935TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 
 	
 	//State:
-	//	{State} (isInitial?='init' | isFinal?='final' | stateKind=StateType | isInitial?='init' stateKind=StateType |
-	//	isInitial?='init' stateKind=StateType isFinal?='final')?
-	//	'state'?
-	//	stateName=ID?
-	//	label=STRING?;
+	//	{State}
+	//  (
+	//    (isInitial?='init')
+	//  | (isFinal?='final')
+	//  | (stateKind=StateType)
+	//  | (isInitial?='init' stateKind=StateType)
+	//  | (isInitial?='init' stateKind=StateType isFinal?='final')
+	//  )?
+	//  ('state')?
+	//  (stateName=ID)?
+	//  (label=STRING)?
+	//;
 	public StateElements getStateAccess() {
 		return pState;
 	}
@@ -248,7 +273,8 @@ public class Bug286935TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//enum StateType:
-	//	NORMAL | PSEUDO='cond' | REFERENCE='reference' | TEXTUAL='textual';
+	//  NORMAL | PSEUDO='cond' | REFERENCE='reference' | TEXTUAL='textual'
+	//;
 	public StateTypeElements getStateTypeAccess() {
 		return eStateType;
 	}
@@ -257,45 +283,40 @@ public class Bug286935TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getStateTypeAccess().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

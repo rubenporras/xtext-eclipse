@@ -24,10 +24,10 @@ public class EncodingUiTestLanguageGrammarAccess extends AbstractElementFinder.A
 		private final RuleCall cWordsWordParserRuleCall_0 = (RuleCall)cWordsAssignment.eContents().get(0);
 		
 		//Model:
-		//	words+=Word*;
+		//	(words+=Word)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//words+=Word*
+		//	(words+=Word)*
 		public Assignment getWordsAssignment() { return cWordsAssignment; }
 		
 		//Word
@@ -42,7 +42,7 @@ public class EncodingUiTestLanguageGrammarAccess extends AbstractElementFinder.A
 		//	value=LEXEME;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value=LEXEME
+		//	value=LEXEME
 		public Assignment getValueAssignment() { return cValueAssignment; }
 		
 		//LEXEME
@@ -92,7 +92,7 @@ public class EncodingUiTestLanguageGrammarAccess extends AbstractElementFinder.A
 
 	
 	//Model:
-	//	words+=Word*;
+	//	(words+=Word)*;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -111,20 +111,17 @@ public class EncodingUiTestLanguageGrammarAccess extends AbstractElementFinder.A
 		return getWordAccess().getRule();
 	}
 	
-	//terminal LEXEME:
-	//	'a'..'z' | 'A'..'Z' | '0'..'9' | 'ä' | 'ö' | 'ü' | 'ß' | 'Ä' | 'Ö' | 'Ü'*;
+	//terminal LEXEME : ('a'..'z' | 'A'..'Z' | '0'..'9' | 'ä' | 'ö' | 'ü' | 'ß' | 'Ä' | 'Ö' | 'Ü' )*;
 	public TerminalRule getLEXEMERule() {
 		return tLEXEME;
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS	: (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return tWS;
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return tANY_OTHER;
 	}

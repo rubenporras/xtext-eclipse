@@ -28,11 +28,11 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		private final Assignment cElementsAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cElementsAbstractElementParserRuleCall_0 = (RuleCall)cElementsAssignment.eContents().get(0);
 		
-		//Main:
+		//Main :
 		//	elements+=AbstractElement*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//elements+=AbstractElement*
+		//	elements+=AbstractElement*
 		public Assignment getElementsAssignment() { return cElementsAssignment; }
 		
 		//AbstractElement
@@ -48,13 +48,13 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		//	Element | Import;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Element | Import
+		//	Element | Import
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Element
+		//	Element
 		public RuleCall getElementParserRuleCall_0() { return cElementParserRuleCall_0; }
 		
-		//Import
+		// Import
 		public RuleCall getImportParserRuleCall_1() { return cImportParserRuleCall_1; }
 	}
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -68,13 +68,13 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		//	'import' importedNamespace=FQNWithWC;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'import' importedNamespace=FQNWithWC
+		//	'import' importedNamespace=FQNWithWC
 		public Group getGroup() { return cGroup; }
 		
-		//'import'
+		//	'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 		
-		//importedNamespace=FQNWithWC
+		// importedNamespace=FQNWithWC
 		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
 		
 		//FQNWithWC
@@ -98,40 +98,41 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//Element:
-		//	name=ID ('{' (contained+=Element | 'ref' referenced+=[Element|FQN])* '}')?;
+		//	name=ID ('{' ( contained+=Element | 'ref' referenced+=[Element|FQN] )* '}')?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ('{' (contained+=Element | 'ref' referenced+=[Element|FQN])* '}')?
+		//	name=ID ('{' ( contained+=Element | 'ref' referenced+=[Element|FQN] )* '}')?
 		public Group getGroup() { return cGroup; }
 		
-		//name=ID
+		//	name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//('{' (contained+=Element | 'ref' referenced+=[Element|FQN])* '}')?
+		// ('{' ( contained+=Element | 'ref' referenced+=[Element|FQN] )* '}')?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
-		//(contained+=Element | 'ref' referenced+=[Element|FQN])*
+		// ( contained+=Element | 'ref' referenced+=[Element|FQN] )*
 		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
 		
-		//contained+=Element
+		// contained+=Element
 		public Assignment getContainedAssignment_1_1_0() { return cContainedAssignment_1_1_0; }
 		
 		//Element
 		public RuleCall getContainedElementParserRuleCall_1_1_0_0() { return cContainedElementParserRuleCall_1_1_0_0; }
 		
-		//'ref' referenced+=[Element|FQN]
+		// 'ref' referenced+=[Element|FQN]
 		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
 		
-		//'ref'
+		// 'ref'
 		public Keyword getRefKeyword_1_1_1_0() { return cRefKeyword_1_1_1_0; }
 		
-		//referenced+=[Element|FQN]
+		// referenced+=[Element|FQN]
 		public Assignment getReferencedAssignment_1_1_1_1() { return cReferencedAssignment_1_1_1_1; }
 		
 		//[Element|FQN]
@@ -140,7 +141,7 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		//FQN
 		public RuleCall getReferencedElementFQNParserRuleCall_1_1_1_1_0_1() { return cReferencedElementFQNParserRuleCall_1_1_1_1_0_1; }
 		
-		//'}'
+		// '}'
 		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
 	}
 	public class FQNElements extends AbstractParserRuleElementFinder {
@@ -155,19 +156,19 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		//	ID ('.' ID)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ID ('.' ID)*
+		//	ID ('.' ID)*
 		public Group getGroup() { return cGroup; }
 		
-		//ID
+		//	ID
 		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
 		
-		//('.' ID)*
+		// ('.' ID)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 		
-		//ID
+		// ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
 	public class FQNWithWCElements extends AbstractParserRuleElementFinder {
@@ -180,13 +181,13 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		//	FQN '.*'?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//FQN '.*'?
+		//	FQN '.*'?
 		public Group getGroup() { return cGroup; }
 		
-		//FQN
+		//	FQN
 		public RuleCall getFQNParserRuleCall_0() { return cFQNParserRuleCall_0; }
 		
-		//'.*'?
+		// '.*'?
 		public Keyword getFullStopAsteriskKeyword_1() { return cFullStopAsteriskKeyword_1; }
 	}
 	
@@ -242,7 +243,7 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 	}
 
 	
-	//Main:
+	//Main :
 	//	elements+=AbstractElement*;
 	public MainElements getMainAccess() {
 		return pMain;
@@ -273,7 +274,8 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 	}
 	
 	//Element:
-	//	name=ID ('{' (contained+=Element | 'ref' referenced+=[Element|FQN])* '}')?;
+	//	name=ID ('{' ( contained+=Element | 'ref' referenced+=[Element|FQN] )* '}')?
+	//;
 	public ElementElements getElementAccess() {
 		return pElement;
 	}
@@ -302,45 +304,40 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		return getFQNWithWCAccess().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

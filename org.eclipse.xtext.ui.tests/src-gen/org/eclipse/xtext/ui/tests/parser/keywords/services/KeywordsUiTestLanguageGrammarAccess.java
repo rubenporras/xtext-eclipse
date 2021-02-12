@@ -41,57 +41,57 @@ public class KeywordsUiTestLanguageGrammarAccess extends AbstractElementFinder.A
 		private final Keyword cEighthDKeyword_7_0 = (Keyword)cEighthAssignment_7.eContents().get(0);
 		
 		//Model:
-		//	first?="foo\\bar" | second?="foo\\" | third?="\\bar" | forth?="\\" | fifth?="\"a\"" | sixth?='\'b\'' | seventh?=
-		//	"'c'" | eighth?='"d"';
+		//  first?="foo\\bar" | second?="foo\\" | third?="\\bar" | forth?="\\" |
+		//  fifth?="\"a\"" | sixth?='\'b\'' | seventh?="'c'" | eighth?='"d"';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//first?="foo\\bar" | second?="foo\\" | third?="\\bar" | forth?="\\" | fifth?="\"a\"" | sixth?='\'b\'' | seventh?="'c'"
-		//| eighth?='"d"'
+		//first?="foo\\bar" | second?="foo\\" | third?="\\bar" | forth?="\\" |
+		//fifth?="\"a\"" | sixth?='\'b\'' | seventh?="'c'" | eighth?='"d"'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//first?="foo\\bar"
+		//  first?="foo\\bar"
 		public Assignment getFirstAssignment_0() { return cFirstAssignment_0; }
 		
 		//"foo\\bar"
 		public Keyword getFirstFooBarKeyword_0_0() { return cFirstFooBarKeyword_0_0; }
 		
-		//second?="foo\\"
+		// second?="foo\\"
 		public Assignment getSecondAssignment_1() { return cSecondAssignment_1; }
 		
 		//"foo\\"
 		public Keyword getSecondFooKeyword_1_0() { return cSecondFooKeyword_1_0; }
 		
-		//third?="\\bar"
+		// third?="\\bar"
 		public Assignment getThirdAssignment_2() { return cThirdAssignment_2; }
 		
 		//"\\bar"
 		public Keyword getThirdBarKeyword_2_0() { return cThirdBarKeyword_2_0; }
 		
-		//forth?="\\"
+		// forth?="\\"
 		public Assignment getForthAssignment_3() { return cForthAssignment_3; }
 		
 		//"\\"
 		public Keyword getForthBackslashKeyword_3_0() { return cForthBackslashKeyword_3_0; }
 		
-		//fifth?="\"a\""
+		//  fifth?="\"a\""
 		public Assignment getFifthAssignment_4() { return cFifthAssignment_4; }
 		
 		//"\"a\""
 		public Keyword getFifthAKeyword_4_0() { return cFifthAKeyword_4_0; }
 		
-		//sixth?='\'b\''
+		// sixth?='\'b\''
 		public Assignment getSixthAssignment_5() { return cSixthAssignment_5; }
 		
 		//'\'b\''
 		public Keyword getSixthBKeyword_5_0() { return cSixthBKeyword_5_0; }
 		
-		//seventh?="'c'"
+		// seventh?="'c'"
 		public Assignment getSeventhAssignment_6() { return cSeventhAssignment_6; }
 		
 		//"'c'"
 		public Keyword getSeventhCKeyword_6_0() { return cSeventhCKeyword_6_0; }
 		
-		//eighth?='"d"'
+		// eighth?='"d"'
 		public Assignment getEighthAssignment_7() { return cEighthAssignment_7; }
 		
 		//'"d"'
@@ -141,8 +141,8 @@ public class KeywordsUiTestLanguageGrammarAccess extends AbstractElementFinder.A
 
 	
 	//Model:
-	//	first?="foo\\bar" | second?="foo\\" | third?="\\bar" | forth?="\\" | fifth?="\"a\"" | sixth?='\'b\'' | seventh?=
-	//	"'c'" | eighth?='"d"';
+	//  first?="foo\\bar" | second?="foo\\" | third?="\\bar" | forth?="\\" |
+	//  fifth?="\"a\"" | sixth?='\'b\'' | seventh?="'c'" | eighth?='"d"';
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -151,45 +151,40 @@ public class KeywordsUiTestLanguageGrammarAccess extends AbstractElementFinder.A
 		return getModelAccess().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

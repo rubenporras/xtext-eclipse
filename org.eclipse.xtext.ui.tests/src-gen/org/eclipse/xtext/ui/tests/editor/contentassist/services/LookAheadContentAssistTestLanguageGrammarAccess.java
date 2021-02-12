@@ -57,110 +57,115 @@ public class LookAheadContentAssistTestLanguageGrammarAccess extends AbstractEle
 		private final RuleCall cAttributePairParserRuleCall_1_3_2_0 = (RuleCall)cAttributeAssignment_1_3_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_1_3_3 = (Keyword)cGroup_1_3.eContents().get(3);
 		
-		//Model:
-		//	{Model} ('(' attribute+=Attribute* attribute+=Pair* ')'
-		//	| '[' attribute+=Attribute+ attribute+=Pair* ']'
-		//	| '<' attribute+=Attribute* attribute+=Pair+ '>'
-		//	| '{' attribute+=Attribute+ attribute+=Pair+ '}');
+		//Model : {Model} (
+		//		'(' attribute+=Attribute* attribute+=Pair* ')'
+		//	|	'[' attribute+=Attribute+ attribute+=Pair* ']'
+		//	|	'<' attribute+=Attribute* attribute+=Pair+ '>'
+		//	|	'{' attribute+=Attribute+ attribute+=Pair+ '}'
+		//	);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Model} ('(' attribute+=Attribute* attribute+=Pair* ')'
-		//| '[' attribute+=Attribute+ attribute+=Pair* ']'
-		//| '<' attribute+=Attribute* attribute+=Pair+ '>'
-		//| '{' attribute+=Attribute+ attribute+=Pair+ '}')
+		// {Model} (
+		//		'(' attribute+=Attribute* attribute+=Pair* ')'
+		//	|	'[' attribute+=Attribute+ attribute+=Pair* ']'
+		//	|	'<' attribute+=Attribute* attribute+=Pair+ '>'
+		//	|	'{' attribute+=Attribute+ attribute+=Pair+ '}'
+		//	)
 		public Group getGroup() { return cGroup; }
 		
-		//{Model}
+		// {Model}
 		public Action getModelAction_0() { return cModelAction_0; }
 		
-		//('(' attribute+=Attribute* attribute+=Pair* ')'
-		//| '[' attribute+=Attribute+ attribute+=Pair* ']'
-		//| '<' attribute+=Attribute* attribute+=Pair+ '>'
-		//| '{' attribute+=Attribute+ attribute+=Pair+ '}')
+		// (
+		//		'(' attribute+=Attribute* attribute+=Pair* ')'
+		//	|	'[' attribute+=Attribute+ attribute+=Pair* ']'
+		//	|	'<' attribute+=Attribute* attribute+=Pair+ '>'
+		//	|	'{' attribute+=Attribute+ attribute+=Pair+ '}'
+		//	)
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//'(' attribute+=Attribute* attribute+=Pair* ')'
+		//		'(' attribute+=Attribute* attribute+=Pair* ')'
 		public Group getGroup_1_0() { return cGroup_1_0; }
 		
-		//'('
+		//		'('
 		public Keyword getLeftParenthesisKeyword_1_0_0() { return cLeftParenthesisKeyword_1_0_0; }
 		
-		//attribute+=Attribute*
+		// attribute+=Attribute*
 		public Assignment getAttributeAssignment_1_0_1() { return cAttributeAssignment_1_0_1; }
 		
 		//Attribute
 		public RuleCall getAttributeAttributeParserRuleCall_1_0_1_0() { return cAttributeAttributeParserRuleCall_1_0_1_0; }
 		
-		//attribute+=Pair*
+		// attribute+=Pair*
 		public Assignment getAttributeAssignment_1_0_2() { return cAttributeAssignment_1_0_2; }
 		
 		//Pair
 		public RuleCall getAttributePairParserRuleCall_1_0_2_0() { return cAttributePairParserRuleCall_1_0_2_0; }
 		
-		//')'
+		// ')'
 		public Keyword getRightParenthesisKeyword_1_0_3() { return cRightParenthesisKeyword_1_0_3; }
 		
-		//'[' attribute+=Attribute+ attribute+=Pair* ']'
+		//	'[' attribute+=Attribute+ attribute+=Pair* ']'
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
-		//'['
+		//	'['
 		public Keyword getLeftSquareBracketKeyword_1_1_0() { return cLeftSquareBracketKeyword_1_1_0; }
 		
-		//attribute+=Attribute+
+		// attribute+=Attribute+
 		public Assignment getAttributeAssignment_1_1_1() { return cAttributeAssignment_1_1_1; }
 		
 		//Attribute
 		public RuleCall getAttributeAttributeParserRuleCall_1_1_1_0() { return cAttributeAttributeParserRuleCall_1_1_1_0; }
 		
-		//attribute+=Pair*
+		// attribute+=Pair*
 		public Assignment getAttributeAssignment_1_1_2() { return cAttributeAssignment_1_1_2; }
 		
 		//Pair
 		public RuleCall getAttributePairParserRuleCall_1_1_2_0() { return cAttributePairParserRuleCall_1_1_2_0; }
 		
-		//']'
+		// ']'
 		public Keyword getRightSquareBracketKeyword_1_1_3() { return cRightSquareBracketKeyword_1_1_3; }
 		
-		//'<' attribute+=Attribute* attribute+=Pair+ '>'
+		//	'<' attribute+=Attribute* attribute+=Pair+ '>'
 		public Group getGroup_1_2() { return cGroup_1_2; }
 		
-		//'<'
+		//	'<'
 		public Keyword getLessThanSignKeyword_1_2_0() { return cLessThanSignKeyword_1_2_0; }
 		
-		//attribute+=Attribute*
+		// attribute+=Attribute*
 		public Assignment getAttributeAssignment_1_2_1() { return cAttributeAssignment_1_2_1; }
 		
 		//Attribute
 		public RuleCall getAttributeAttributeParserRuleCall_1_2_1_0() { return cAttributeAttributeParserRuleCall_1_2_1_0; }
 		
-		//attribute+=Pair+
+		// attribute+=Pair+
 		public Assignment getAttributeAssignment_1_2_2() { return cAttributeAssignment_1_2_2; }
 		
 		//Pair
 		public RuleCall getAttributePairParserRuleCall_1_2_2_0() { return cAttributePairParserRuleCall_1_2_2_0; }
 		
-		//'>'
+		// '>'
 		public Keyword getGreaterThanSignKeyword_1_2_3() { return cGreaterThanSignKeyword_1_2_3; }
 		
-		//'{' attribute+=Attribute+ attribute+=Pair+ '}'
+		//	'{' attribute+=Attribute+ attribute+=Pair+ '}'
 		public Group getGroup_1_3() { return cGroup_1_3; }
 		
-		//'{'
+		//	'{'
 		public Keyword getLeftCurlyBracketKeyword_1_3_0() { return cLeftCurlyBracketKeyword_1_3_0; }
 		
-		//attribute+=Attribute+
+		// attribute+=Attribute+
 		public Assignment getAttributeAssignment_1_3_1() { return cAttributeAssignment_1_3_1; }
 		
 		//Attribute
 		public RuleCall getAttributeAttributeParserRuleCall_1_3_1_0() { return cAttributeAttributeParserRuleCall_1_3_1_0; }
 		
-		//attribute+=Pair+
+		// attribute+=Pair+
 		public Assignment getAttributeAssignment_1_3_2() { return cAttributeAssignment_1_3_2; }
 		
 		//Pair
 		public RuleCall getAttributePairParserRuleCall_1_3_2_0() { return cAttributePairParserRuleCall_1_3_2_0; }
 		
-		//'}'
+		// '}'
 		public Keyword getRightCurlyBracketKeyword_1_3_3() { return cRightCurlyBracketKeyword_1_3_3; }
 	}
 	public class AttributeElements extends AbstractParserRuleElementFinder {
@@ -169,10 +174,10 @@ public class LookAheadContentAssistTestLanguageGrammarAccess extends AbstractEle
 		private final RuleCall cValueIDTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//Attribute:
-		//	value=ID;
+		//        value=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value=ID
+		//        value=ID
 		public Assignment getValueAssignment() { return cValueAssignment; }
 		
 		//ID
@@ -188,22 +193,22 @@ public class LookAheadContentAssistTestLanguageGrammarAccess extends AbstractEle
 		private final RuleCall cValueIDTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//Pair:
-		//	name=ID "=" value=ID;
+		//        name=ID "=" value=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID "=" value=ID
+		//        name=ID "=" value=ID
 		public Group getGroup() { return cGroup; }
 		
-		//name=ID
+		//        name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//"="
+		// "="
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 		
-		//value=ID
+		// value=ID
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
 		//ID
@@ -256,11 +261,12 @@ public class LookAheadContentAssistTestLanguageGrammarAccess extends AbstractEle
 	}
 
 	
-	//Model:
-	//	{Model} ('(' attribute+=Attribute* attribute+=Pair* ')'
-	//	| '[' attribute+=Attribute+ attribute+=Pair* ']'
-	//	| '<' attribute+=Attribute* attribute+=Pair+ '>'
-	//	| '{' attribute+=Attribute+ attribute+=Pair+ '}');
+	//Model : {Model} (
+	//		'(' attribute+=Attribute* attribute+=Pair* ')'
+	//	|	'[' attribute+=Attribute+ attribute+=Pair* ']'
+	//	|	'<' attribute+=Attribute* attribute+=Pair+ '>'
+	//	|	'{' attribute+=Attribute+ attribute+=Pair+ '}'
+	//	);
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -270,7 +276,7 @@ public class LookAheadContentAssistTestLanguageGrammarAccess extends AbstractEle
 	}
 	
 	//Attribute:
-	//	value=ID;
+	//        value=ID;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}
@@ -280,7 +286,7 @@ public class LookAheadContentAssistTestLanguageGrammarAccess extends AbstractEle
 	}
 	
 	//Pair:
-	//	name=ID "=" value=ID;
+	//        name=ID "=" value=ID;
 	public PairElements getPairAccess() {
 		return pPair;
 	}
@@ -289,45 +295,40 @@ public class LookAheadContentAssistTestLanguageGrammarAccess extends AbstractEle
 		return getPairAccess().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

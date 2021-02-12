@@ -34,21 +34,22 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cQueryMQLqueryParserRuleCall_1_0 = (RuleCall)cQueryAssignment_1.eContents().get(0);
 		
 		//Model:
-		//	imports+=Import*
-		//	query=MQLquery;
+		//	(imports+=Import)*
+		//	query=MQLquery
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//imports+=Import*
-		//query=MQLquery
+		//	(imports+=Import)*
+		//	query=MQLquery
 		public Group getGroup() { return cGroup; }
 		
-		//imports+=Import*
+		//	(imports+=Import)*
 		public Assignment getImportsAssignment_0() { return cImportsAssignment_0; }
 		
 		//Import
 		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
 		
-		//query=MQLquery
+		//	query=MQLquery
 		public Assignment getQueryAssignment_1() { return cQueryAssignment_1; }
 		
 		//MQLquery
@@ -61,17 +62,17 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Assignment cImportURIAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cImportURISTRINGTerminalRuleCall_1_0 = (RuleCall)cImportURIAssignment_1.eContents().get(0);
 		
-		//Import:
+		//Import :
 		//	'import' importURI=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'import' importURI=STRING
+		//	'import' importURI=STRING
 		public Group getGroup() { return cGroup; }
 		
-		//'import'
+		//	'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 		
-		//importURI=STRING
+		// importURI=STRING
 		public Assignment getImportURIAssignment_1() { return cImportURIAssignment_1; }
 		
 		//STRING
@@ -99,64 +100,63 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Assignment cWhereEntriesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cWhereEntriesWhereEntryParserRuleCall_6_1_0 = (RuleCall)cWhereEntriesAssignment_6_1.eContents().get(0);
 		
-		//MQLquery:
-		//	"select" selectEntries+=SelectEntry ("," selectEntries+=SelectEntry)* "from" fromEntries+=FromEntry (","
-		//	fromEntries+=FromEntry)* ("where" whereEntries+=WhereEntry+)?;
+		//MQLquery :
+		//	"select" selectEntries+=SelectEntry ("," selectEntries+=SelectEntry)* "from" fromEntries+=FromEntry ("," fromEntries+=FromEntry)* ("where" (whereEntries+=WhereEntry)+)?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"select" selectEntries+=SelectEntry ("," selectEntries+=SelectEntry)* "from" fromEntries+=FromEntry (","
-		//fromEntries+=FromEntry)* ("where" whereEntries+=WhereEntry+)?
+		//	"select" selectEntries+=SelectEntry ("," selectEntries+=SelectEntry)* "from" fromEntries+=FromEntry ("," fromEntries+=FromEntry)* ("where" (whereEntries+=WhereEntry)+)?
 		public Group getGroup() { return cGroup; }
 		
-		//"select"
+		//	"select"
 		public Keyword getSelectKeyword_0() { return cSelectKeyword_0; }
 		
-		//selectEntries+=SelectEntry
+		// selectEntries+=SelectEntry
 		public Assignment getSelectEntriesAssignment_1() { return cSelectEntriesAssignment_1; }
 		
 		//SelectEntry
 		public RuleCall getSelectEntriesSelectEntryParserRuleCall_1_0() { return cSelectEntriesSelectEntryParserRuleCall_1_0; }
 		
-		//("," selectEntries+=SelectEntry)*
+		// ("," selectEntries+=SelectEntry)*
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//","
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 		
-		//selectEntries+=SelectEntry
+		// selectEntries+=SelectEntry
 		public Assignment getSelectEntriesAssignment_2_1() { return cSelectEntriesAssignment_2_1; }
 		
 		//SelectEntry
 		public RuleCall getSelectEntriesSelectEntryParserRuleCall_2_1_0() { return cSelectEntriesSelectEntryParserRuleCall_2_1_0; }
 		
-		//"from"
+		// "from"
 		public Keyword getFromKeyword_3() { return cFromKeyword_3; }
 		
-		//fromEntries+=FromEntry
+		// fromEntries+=FromEntry
 		public Assignment getFromEntriesAssignment_4() { return cFromEntriesAssignment_4; }
 		
 		//FromEntry
 		public RuleCall getFromEntriesFromEntryParserRuleCall_4_0() { return cFromEntriesFromEntryParserRuleCall_4_0; }
 		
-		//("," fromEntries+=FromEntry)*
+		// ("," fromEntries+=FromEntry)*
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//","
 		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
 		
-		//fromEntries+=FromEntry
+		// fromEntries+=FromEntry
 		public Assignment getFromEntriesAssignment_5_1() { return cFromEntriesAssignment_5_1; }
 		
 		//FromEntry
 		public RuleCall getFromEntriesFromEntryParserRuleCall_5_1_0() { return cFromEntriesFromEntryParserRuleCall_5_1_0; }
 		
-		//("where" whereEntries+=WhereEntry+)?
+		// ("where" (whereEntries+=WhereEntry)+)?
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//"where"
 		public Keyword getWhereKeyword_6_0() { return cWhereKeyword_6_0; }
 		
-		//whereEntries+=WhereEntry+
+		// (whereEntries+=WhereEntry)+
 		public Assignment getWhereEntriesAssignment_6_1() { return cWhereEntriesAssignment_6_1; }
 		
 		//WhereEntry
@@ -175,13 +175,14 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cAttributeEAttributeIDTerminalRuleCall_1_1_0_1 = (RuleCall)cAttributeEAttributeCrossReference_1_1_0.eContents().get(1);
 		
 		//SelectEntry:
-		//	select=[FromEntry] ("." attribute=[ecore::EAttribute])?;
+		//	select=[FromEntry] ("." attribute=[ecore::EAttribute])?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//select=[FromEntry] ("." attribute=[ecore::EAttribute])?
+		//	select=[FromEntry] ("." attribute=[ecore::EAttribute])?
 		public Group getGroup() { return cGroup; }
 		
-		//select=[FromEntry]
+		//	select=[FromEntry]
 		public Assignment getSelectAssignment_0() { return cSelectAssignment_0; }
 		
 		//[FromEntry]
@@ -190,13 +191,13 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getSelectFromEntryIDTerminalRuleCall_0_0_1() { return cSelectFromEntryIDTerminalRuleCall_0_0_1; }
 		
-		//("." attribute=[ecore::EAttribute])?
+		// ("." attribute=[ecore::EAttribute])?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//"."
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 		
-		//attribute=[ecore::EAttribute]
+		// attribute=[ecore::EAttribute]
 		public Assignment getAttributeAssignment_1_1() { return cAttributeAssignment_1_1; }
 		
 		//[ecore::EAttribute]
@@ -220,13 +221,14 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cScopeClauseScopeClauseParserRuleCall_4_0 = (RuleCall)cScopeClauseAssignment_4.eContents().get(0);
 		
 		//FromEntry:
-		//	type=[ecore::EClass] withoutsubtypes?="withoutsubtypes"? "as" alias=ID scopeClause=ScopeClause?;
+		//	type=[ecore::EClass] (withoutsubtypes?="withoutsubtypes")? "as" alias=ID (scopeClause=ScopeClause)?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type=[ecore::EClass] withoutsubtypes?="withoutsubtypes"? "as" alias=ID scopeClause=ScopeClause?
+		//	type=[ecore::EClass] (withoutsubtypes?="withoutsubtypes")? "as" alias=ID (scopeClause=ScopeClause)?
 		public Group getGroup() { return cGroup; }
 		
-		//type=[ecore::EClass]
+		//	type=[ecore::EClass]
 		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
 		
 		//[ecore::EClass]
@@ -235,22 +237,22 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getTypeEClassIDTerminalRuleCall_0_0_1() { return cTypeEClassIDTerminalRuleCall_0_0_1; }
 		
-		//withoutsubtypes?="withoutsubtypes"?
+		// (withoutsubtypes?="withoutsubtypes")?
 		public Assignment getWithoutsubtypesAssignment_1() { return cWithoutsubtypesAssignment_1; }
 		
 		//"withoutsubtypes"
 		public Keyword getWithoutsubtypesWithoutsubtypesKeyword_1_0() { return cWithoutsubtypesWithoutsubtypesKeyword_1_0; }
 		
-		//"as"
+		// "as"
 		public Keyword getAsKeyword_2() { return cAsKeyword_2; }
 		
-		//alias=ID
+		// alias=ID
 		public Assignment getAliasAssignment_3() { return cAliasAssignment_3; }
 		
 		//ID
 		public RuleCall getAliasIDTerminalRuleCall_3_0() { return cAliasIDTerminalRuleCall_3_0; }
 		
-		//scopeClause=ScopeClause?
+		// (scopeClause=ScopeClause)?
 		public Assignment getScopeClauseAssignment_4() { return cScopeClauseAssignment_4; }
 		
 		//ScopeClause
@@ -266,22 +268,23 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cScopeScopeParserRuleCall_2_0 = (RuleCall)cScopeAssignment_2.eContents().get(0);
 		
 		//ScopeClause:
-		//	notIn?="not"? "in" scope=Scope;
+		//	(notIn?="not")? "in" scope=Scope
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//notIn?="not"? "in" scope=Scope
+		//	(notIn?="not")? "in" scope=Scope
 		public Group getGroup() { return cGroup; }
 		
-		//notIn?="not"?
+		//	(notIn?="not")?
 		public Assignment getNotInAssignment_0() { return cNotInAssignment_0; }
 		
 		//"not"
 		public Keyword getNotInNotKeyword_0_0() { return cNotInNotKeyword_0_0; }
 		
-		//"in"
+		// "in"
 		public Keyword getInKeyword_1() { return cInKeyword_1; }
 		
-		//scope=Scope
+		// scope=Scope
 		public Assignment getScopeAssignment_2() { return cScopeAssignment_2; }
 		
 		//Scope
@@ -294,16 +297,17 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cElementScopeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Scope:
-		//	ResourceScope | ElementScope;
+		//	ResourceScope | ElementScope
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ResourceScope | ElementScope
+		//	ResourceScope | ElementScope
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//ResourceScope
+		//	ResourceScope
 		public RuleCall getResourceScopeParserRuleCall_0() { return cResourceScopeParserRuleCall_0; }
 		
-		//ElementScope
+		// ElementScope
 		public RuleCall getElementScopeParserRuleCall_1() { return cElementScopeParserRuleCall_1; }
 	}
 	public class ResourceScopeElements extends AbstractParserRuleElementFinder {
@@ -320,37 +324,38 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ResourceScope:
-		//	"resources" "{" uris+=STRING ("," uris+=STRING)* "}";
+		//	"resources" "{" uris+=STRING ("," uris+=STRING)* "}"
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"resources" "{" uris+=STRING ("," uris+=STRING)* "}"
+		//	"resources" "{" uris+=STRING ("," uris+=STRING)* "}"
 		public Group getGroup() { return cGroup; }
 		
-		//"resources"
+		//	"resources"
 		public Keyword getResourcesKeyword_0() { return cResourcesKeyword_0; }
 		
-		//"{"
+		// "{"
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//uris+=STRING
+		// uris+=STRING
 		public Assignment getUrisAssignment_2() { return cUrisAssignment_2; }
 		
 		//STRING
 		public RuleCall getUrisSTRINGTerminalRuleCall_2_0() { return cUrisSTRINGTerminalRuleCall_2_0; }
 		
-		//("," uris+=STRING)*
+		// ("," uris+=STRING)*
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//","
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
 		
-		//uris+=STRING
+		// uris+=STRING
 		public Assignment getUrisAssignment_3_1() { return cUrisAssignment_3_1; }
 		
 		//STRING
 		public RuleCall getUrisSTRINGTerminalRuleCall_3_1_0() { return cUrisSTRINGTerminalRuleCall_3_1_0; }
 		
-		//"}"
+		// "}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class ElementScopeElements extends AbstractParserRuleElementFinder {
@@ -367,37 +372,38 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ElementScope:
-		//	"elements" "{" uris+=STRING ("," uris+=STRING)* "}";
+		//	"elements" "{" uris+=STRING ("," uris+=STRING)* "}"
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"elements" "{" uris+=STRING ("," uris+=STRING)* "}"
+		//	"elements" "{" uris+=STRING ("," uris+=STRING)* "}"
 		public Group getGroup() { return cGroup; }
 		
-		//"elements"
+		//	"elements"
 		public Keyword getElementsKeyword_0() { return cElementsKeyword_0; }
 		
-		//"{"
+		// "{"
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//uris+=STRING
+		// uris+=STRING
 		public Assignment getUrisAssignment_2() { return cUrisAssignment_2; }
 		
 		//STRING
 		public RuleCall getUrisSTRINGTerminalRuleCall_2_0() { return cUrisSTRINGTerminalRuleCall_2_0; }
 		
-		//("," uris+=STRING)*
+		// ("," uris+=STRING)*
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//","
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
 		
-		//uris+=STRING
+		// uris+=STRING
 		public Assignment getUrisAssignment_3_1() { return cUrisAssignment_3_1; }
 		
 		//STRING
 		public RuleCall getUrisSTRINGTerminalRuleCall_3_1_0() { return cUrisSTRINGTerminalRuleCall_3_1_0; }
 		
-		//"}"
+		// "}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class WhereEntryElements extends AbstractParserRuleElementFinder {
@@ -411,29 +417,33 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Assignment cEntriesAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
 		private final RuleCall cEntriesAndWhereEntryParserRuleCall_1_1_1_0 = (RuleCall)cEntriesAssignment_1_1_1.eContents().get(0);
 		
-		//WhereEntry:
-		//	AndWhereEntry ({OrWhereEntry.entries+=current} ("or" entries+=AndWhereEntry)+)?;
+		//WhereEntry returns WhereEntry:
+		//	AndWhereEntry ({OrWhereEntry.entries+=current}
+		//    	("or" entries+=AndWhereEntry)+)?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//AndWhereEntry ({OrWhereEntry.entries+=current} ("or" entries+=AndWhereEntry)+)?
+		//	AndWhereEntry ({OrWhereEntry.entries+=current}
+		//    	("or" entries+=AndWhereEntry)+)?
 		public Group getGroup() { return cGroup; }
 		
-		//AndWhereEntry
+		//	AndWhereEntry
 		public RuleCall getAndWhereEntryParserRuleCall_0() { return cAndWhereEntryParserRuleCall_0; }
 		
-		//({OrWhereEntry.entries+=current} ("or" entries+=AndWhereEntry)+)?
+		//({OrWhereEntry.entries+=current}
+		//   	("or" entries+=AndWhereEntry)+)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{OrWhereEntry.entries+=current}
 		public Action getOrWhereEntryEntriesAction_1_0() { return cOrWhereEntryEntriesAction_1_0; }
 		
-		//("or" entries+=AndWhereEntry)+
+		//    	("or" entries+=AndWhereEntry)+
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//"or"
 		public Keyword getOrKeyword_1_1_0() { return cOrKeyword_1_1_0; }
 		
-		//entries+=AndWhereEntry
+		// entries+=AndWhereEntry
 		public Assignment getEntriesAssignment_1_1_1() { return cEntriesAssignment_1_1_1; }
 		
 		//AndWhereEntry
@@ -450,29 +460,33 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Assignment cEntriesAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
 		private final RuleCall cEntriesConcreteWhereEntryParserRuleCall_1_1_1_0 = (RuleCall)cEntriesAssignment_1_1_1.eContents().get(0);
 		
-		//AndWhereEntry WhereEntry:
-		//	ConcreteWhereEntry ({AndWhereEntry.entries+=current} ("and" entries+=ConcreteWhereEntry)+)?;
+		//AndWhereEntry returns WhereEntry:
+		//	ConcreteWhereEntry ({AndWhereEntry.entries+=current}
+		//    	("and" entries+=ConcreteWhereEntry)+)?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ConcreteWhereEntry ({AndWhereEntry.entries+=current} ("and" entries+=ConcreteWhereEntry)+)?
+		//	ConcreteWhereEntry ({AndWhereEntry.entries+=current}
+		//    	("and" entries+=ConcreteWhereEntry)+)?
 		public Group getGroup() { return cGroup; }
 		
-		//ConcreteWhereEntry
+		//	ConcreteWhereEntry
 		public RuleCall getConcreteWhereEntryParserRuleCall_0() { return cConcreteWhereEntryParserRuleCall_0; }
 		
-		//({AndWhereEntry.entries+=current} ("and" entries+=ConcreteWhereEntry)+)?
+		//({AndWhereEntry.entries+=current}
+		//   	("and" entries+=ConcreteWhereEntry)+)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{AndWhereEntry.entries+=current}
 		public Action getAndWhereEntryEntriesAction_1_0() { return cAndWhereEntryEntriesAction_1_0; }
 		
-		//("and" entries+=ConcreteWhereEntry)+
+		//    	("and" entries+=ConcreteWhereEntry)+
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//"and"
 		public Keyword getAndKeyword_1_1_0() { return cAndKeyword_1_1_0; }
 		
-		//entries+=ConcreteWhereEntry
+		// entries+=ConcreteWhereEntry
 		public Assignment getEntriesAssignment_1_1_1() { return cEntriesAssignment_1_1_1; }
 		
 		//ConcreteWhereEntry
@@ -488,31 +502,30 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cAliasWhereEntryParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cSubselectWhereEntryParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
-		//ConcreteWhereEntry WhereEntry:
-		//	ParWhereEntry | AttributeWhereEntry | NullWhereEntry | ReferenceAliasWhereEntry | AliasWhereEntry |
-		//	SubselectWhereEntry;
+		//ConcreteWhereEntry returns WhereEntry:
+		//	ParWhereEntry | AttributeWhereEntry | NullWhereEntry | ReferenceAliasWhereEntry | AliasWhereEntry | SubselectWhereEntry
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ParWhereEntry | AttributeWhereEntry | NullWhereEntry | ReferenceAliasWhereEntry | AliasWhereEntry |
-		//SubselectWhereEntry
+		//	ParWhereEntry | AttributeWhereEntry | NullWhereEntry | ReferenceAliasWhereEntry | AliasWhereEntry | SubselectWhereEntry
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//ParWhereEntry
+		//	ParWhereEntry
 		public RuleCall getParWhereEntryParserRuleCall_0() { return cParWhereEntryParserRuleCall_0; }
 		
-		//AttributeWhereEntry
+		// AttributeWhereEntry
 		public RuleCall getAttributeWhereEntryParserRuleCall_1() { return cAttributeWhereEntryParserRuleCall_1; }
 		
-		//NullWhereEntry
+		// NullWhereEntry
 		public RuleCall getNullWhereEntryParserRuleCall_2() { return cNullWhereEntryParserRuleCall_2; }
 		
-		//ReferenceAliasWhereEntry
+		// ReferenceAliasWhereEntry
 		public RuleCall getReferenceAliasWhereEntryParserRuleCall_3() { return cReferenceAliasWhereEntryParserRuleCall_3; }
 		
-		//AliasWhereEntry
+		// AliasWhereEntry
 		public RuleCall getAliasWhereEntryParserRuleCall_4() { return cAliasWhereEntryParserRuleCall_4; }
 		
-		//SubselectWhereEntry
+		// SubselectWhereEntry
 		public RuleCall getSubselectWhereEntryParserRuleCall_5() { return cSubselectWhereEntryParserRuleCall_5; }
 	}
 	public class ParWhereEntryElements extends AbstractParserRuleElementFinder {
@@ -522,20 +535,21 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cWhereEntryParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//ParWhereEntry  WhereEntry:
-		//	"(" WhereEntry ")";
+		//ParWhereEntry  returns WhereEntry:
+		//	"(" WhereEntry ")"
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"(" WhereEntry ")"
+		//	"(" WhereEntry ")"
 		public Group getGroup() { return cGroup; }
 		
-		//"("
+		//	"("
 		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
 		
-		//WhereEntry
+		// WhereEntry
 		public RuleCall getWhereEntryParserRuleCall_1() { return cWhereEntryParserRuleCall_1; }
 		
-		//")"
+		// ")"
 		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
 	}
 	public class AttributeWhereEntryElements extends AbstractParserRuleElementFinder {
@@ -547,22 +561,23 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cVariableWhereEntryParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//AttributeWhereEntry:
-		//	NumericAttributeWhereEntry | StringAttributeWhereEntry | BooleanAttributeWhereEntry | VariableWhereEntry;
+		//	NumericAttributeWhereEntry | StringAttributeWhereEntry | BooleanAttributeWhereEntry | VariableWhereEntry
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//NumericAttributeWhereEntry | StringAttributeWhereEntry | BooleanAttributeWhereEntry | VariableWhereEntry
+		//	NumericAttributeWhereEntry | StringAttributeWhereEntry | BooleanAttributeWhereEntry | VariableWhereEntry
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//NumericAttributeWhereEntry
+		//	NumericAttributeWhereEntry
 		public RuleCall getNumericAttributeWhereEntryParserRuleCall_0() { return cNumericAttributeWhereEntryParserRuleCall_0; }
 		
-		//StringAttributeWhereEntry
+		// StringAttributeWhereEntry
 		public RuleCall getStringAttributeWhereEntryParserRuleCall_1() { return cStringAttributeWhereEntryParserRuleCall_1; }
 		
-		//BooleanAttributeWhereEntry
+		// BooleanAttributeWhereEntry
 		public RuleCall getBooleanAttributeWhereEntryParserRuleCall_2() { return cBooleanAttributeWhereEntryParserRuleCall_2; }
 		
-		//VariableWhereEntry
+		// VariableWhereEntry
 		public RuleCall getVariableWhereEntryParserRuleCall_3() { return cVariableWhereEntryParserRuleCall_3; }
 	}
 	public class NumericAttributeWhereEntryElements extends AbstractParserRuleElementFinder {
@@ -572,16 +587,17 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cLongWhereEntryParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//NumericAttributeWhereEntry:
-		//	DoubleWhereEntry | LongWhereEntry;
+		//	DoubleWhereEntry | LongWhereEntry
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//DoubleWhereEntry | LongWhereEntry
+		//	DoubleWhereEntry | LongWhereEntry
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//DoubleWhereEntry
+		//	DoubleWhereEntry
 		public RuleCall getDoubleWhereEntryParserRuleCall_0() { return cDoubleWhereEntryParserRuleCall_0; }
 		
-		//LongWhereEntry
+		// LongWhereEntry
 		public RuleCall getLongWhereEntryParserRuleCall_1() { return cLongWhereEntryParserRuleCall_1; }
 	}
 	public class DoubleWhereEntryElements extends AbstractParserRuleElementFinder {
@@ -600,13 +616,14 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cValueSIGNED_DOUBLETerminalRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
 		
 		//DoubleWhereEntry:
-		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator value=SIGNED_DOUBLE;
+		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator value=SIGNED_DOUBLE
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator value=SIGNED_DOUBLE
+		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator value=SIGNED_DOUBLE
 		public Group getGroup() { return cGroup; }
 		
-		//alias=[FromEntry]
+		//	alias=[FromEntry]
 		public Assignment getAliasAssignment_0() { return cAliasAssignment_0; }
 		
 		//[FromEntry]
@@ -615,10 +632,10 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAliasFromEntryIDTerminalRuleCall_0_0_1() { return cAliasFromEntryIDTerminalRuleCall_0_0_1; }
 		
-		//"."
+		// "."
 		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
-		//attribute=[ecore::EAttribute]
+		// attribute=[ecore::EAttribute]
 		public Assignment getAttributeAssignment_2() { return cAttributeAssignment_2; }
 		
 		//[ecore::EAttribute]
@@ -627,13 +644,13 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAttributeEAttributeIDTerminalRuleCall_2_0_1() { return cAttributeEAttributeIDTerminalRuleCall_2_0_1; }
 		
-		//operator=NumericOperator
+		// operator=NumericOperator
 		public Assignment getOperatorAssignment_3() { return cOperatorAssignment_3; }
 		
 		//NumericOperator
 		public RuleCall getOperatorNumericOperatorEnumRuleCall_3_0() { return cOperatorNumericOperatorEnumRuleCall_3_0; }
 		
-		//value=SIGNED_DOUBLE
+		// value=SIGNED_DOUBLE
 		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
 		
 		//SIGNED_DOUBLE
@@ -655,13 +672,14 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cValueSINGED_LONGTerminalRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
 		
 		//LongWhereEntry:
-		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator value=SINGED_LONG;
+		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator value=SINGED_LONG
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator value=SINGED_LONG
+		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator value=SINGED_LONG
 		public Group getGroup() { return cGroup; }
 		
-		//alias=[FromEntry]
+		//	alias=[FromEntry]
 		public Assignment getAliasAssignment_0() { return cAliasAssignment_0; }
 		
 		//[FromEntry]
@@ -670,10 +688,10 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAliasFromEntryIDTerminalRuleCall_0_0_1() { return cAliasFromEntryIDTerminalRuleCall_0_0_1; }
 		
-		//"."
+		// "."
 		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
-		//attribute=[ecore::EAttribute]
+		// attribute=[ecore::EAttribute]
 		public Assignment getAttributeAssignment_2() { return cAttributeAssignment_2; }
 		
 		//[ecore::EAttribute]
@@ -682,13 +700,13 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAttributeEAttributeIDTerminalRuleCall_2_0_1() { return cAttributeEAttributeIDTerminalRuleCall_2_0_1; }
 		
-		//operator=NumericOperator
+		// operator=NumericOperator
 		public Assignment getOperatorAssignment_3() { return cOperatorAssignment_3; }
 		
 		//NumericOperator
 		public RuleCall getOperatorNumericOperatorEnumRuleCall_3_0() { return cOperatorNumericOperatorEnumRuleCall_3_0; }
 		
-		//value=SINGED_LONG
+		// value=SINGED_LONG
 		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
 		
 		//SINGED_LONG
@@ -715,15 +733,14 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cRightAttributeEAttributeIDTerminalRuleCall_6_0_1 = (RuleCall)cRightAttributeEAttributeCrossReference_6_0.eContents().get(1);
 		
 		//VariableWhereEntry:
-		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator rightAlias=[FromEntry] "."
-		//	rightAttribute=[ecore::EAttribute];
+		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator rightAlias=[FromEntry]"." rightAttribute=[ecore::EAttribute]
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator rightAlias=[FromEntry] "."
-		//rightAttribute=[ecore::EAttribute]
+		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator rightAlias=[FromEntry]"." rightAttribute=[ecore::EAttribute]
 		public Group getGroup() { return cGroup; }
 		
-		//alias=[FromEntry]
+		//	alias=[FromEntry]
 		public Assignment getAliasAssignment_0() { return cAliasAssignment_0; }
 		
 		//[FromEntry]
@@ -732,10 +749,10 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAliasFromEntryIDTerminalRuleCall_0_0_1() { return cAliasFromEntryIDTerminalRuleCall_0_0_1; }
 		
-		//"."
+		// "."
 		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
-		//attribute=[ecore::EAttribute]
+		// attribute=[ecore::EAttribute]
 		public Assignment getAttributeAssignment_2() { return cAttributeAssignment_2; }
 		
 		//[ecore::EAttribute]
@@ -744,13 +761,13 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAttributeEAttributeIDTerminalRuleCall_2_0_1() { return cAttributeEAttributeIDTerminalRuleCall_2_0_1; }
 		
-		//operator=NumericOperator
+		// operator=NumericOperator
 		public Assignment getOperatorAssignment_3() { return cOperatorAssignment_3; }
 		
 		//NumericOperator
 		public RuleCall getOperatorNumericOperatorEnumRuleCall_3_0() { return cOperatorNumericOperatorEnumRuleCall_3_0; }
 		
-		//rightAlias=[FromEntry]
+		// rightAlias=[FromEntry]
 		public Assignment getRightAliasAssignment_4() { return cRightAliasAssignment_4; }
 		
 		//[FromEntry]
@@ -762,7 +779,7 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//"."
 		public Keyword getFullStopKeyword_5() { return cFullStopKeyword_5; }
 		
-		//rightAttribute=[ecore::EAttribute]
+		// rightAttribute=[ecore::EAttribute]
 		public Assignment getRightAttributeAssignment_6() { return cRightAttributeAssignment_6; }
 		
 		//[ecore::EAttribute]
@@ -787,13 +804,14 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cPatternSTRINGTerminalRuleCall_4_0 = (RuleCall)cPatternAssignment_4.eContents().get(0);
 		
 		//StringAttributeWhereEntry:
-		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=StringOperator pattern=STRING;
+		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=StringOperator pattern=STRING
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=StringOperator pattern=STRING
+		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=StringOperator pattern=STRING
 		public Group getGroup() { return cGroup; }
 		
-		//alias=[FromEntry]
+		//	alias=[FromEntry]
 		public Assignment getAliasAssignment_0() { return cAliasAssignment_0; }
 		
 		//[FromEntry]
@@ -802,10 +820,10 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAliasFromEntryIDTerminalRuleCall_0_0_1() { return cAliasFromEntryIDTerminalRuleCall_0_0_1; }
 		
-		//"."
+		// "."
 		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
-		//attribute=[ecore::EAttribute]
+		// attribute=[ecore::EAttribute]
 		public Assignment getAttributeAssignment_2() { return cAttributeAssignment_2; }
 		
 		//[ecore::EAttribute]
@@ -814,13 +832,13 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAttributeEAttributeIDTerminalRuleCall_2_0_1() { return cAttributeEAttributeIDTerminalRuleCall_2_0_1; }
 		
-		//operator=StringOperator
+		// operator=StringOperator
 		public Assignment getOperatorAssignment_3() { return cOperatorAssignment_3; }
 		
 		//StringOperator
 		public RuleCall getOperatorStringOperatorEnumRuleCall_3_0() { return cOperatorStringOperatorEnumRuleCall_3_0; }
 		
-		//pattern=STRING
+		// pattern=STRING
 		public Assignment getPatternAssignment_4() { return cPatternAssignment_4; }
 		
 		//STRING
@@ -844,13 +862,14 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cFalseKeyword_4_1 = (Keyword)cAlternatives_4.eContents().get(1);
 		
 		//BooleanAttributeWhereEntry:
-		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=BooleanOperator (isTrue?="true" | "false");
+		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=BooleanOperator (isTrue?="true" | "false")
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=BooleanOperator (isTrue?="true" | "false")
+		//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=BooleanOperator (isTrue?="true" | "false")
 		public Group getGroup() { return cGroup; }
 		
-		//alias=[FromEntry]
+		//	alias=[FromEntry]
 		public Assignment getAliasAssignment_0() { return cAliasAssignment_0; }
 		
 		//[FromEntry]
@@ -859,10 +878,10 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAliasFromEntryIDTerminalRuleCall_0_0_1() { return cAliasFromEntryIDTerminalRuleCall_0_0_1; }
 		
-		//"."
+		// "."
 		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
-		//attribute=[ecore::EAttribute]
+		// attribute=[ecore::EAttribute]
 		public Assignment getAttributeAssignment_2() { return cAttributeAssignment_2; }
 		
 		//[ecore::EAttribute]
@@ -871,13 +890,13 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAttributeEAttributeIDTerminalRuleCall_2_0_1() { return cAttributeEAttributeIDTerminalRuleCall_2_0_1; }
 		
-		//operator=BooleanOperator
+		// operator=BooleanOperator
 		public Assignment getOperatorAssignment_3() { return cOperatorAssignment_3; }
 		
 		//BooleanOperator
 		public RuleCall getOperatorBooleanOperatorEnumRuleCall_3_0() { return cOperatorBooleanOperatorEnumRuleCall_3_0; }
 		
-		//(isTrue?="true" | "false")
+		// (isTrue?="true" | "false")
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 		
 		//isTrue?="true"
@@ -886,7 +905,7 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//"true"
 		public Keyword getIsTrueTrueKeyword_4_0_0() { return cIsTrueTrueKeyword_4_0_0; }
 		
-		//"false"
+		// "false"
 		public Keyword getFalseKeyword_4_1() { return cFalseKeyword_4_1; }
 	}
 	public class NullWhereEntryElements extends AbstractParserRuleElementFinder {
@@ -904,13 +923,14 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cNullKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//NullWhereEntry:
-		//	alias=[FromEntry] "." feature=[ecore::EStructuralFeature] operator=BooleanOperator "null";
+		//	alias=[FromEntry] "." feature=[ecore::EStructuralFeature] operator=BooleanOperator "null"
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//alias=[FromEntry] "." feature=[ecore::EStructuralFeature] operator=BooleanOperator "null"
+		//	alias=[FromEntry] "." feature=[ecore::EStructuralFeature] operator=BooleanOperator "null"
 		public Group getGroup() { return cGroup; }
 		
-		//alias=[FromEntry]
+		//	alias=[FromEntry]
 		public Assignment getAliasAssignment_0() { return cAliasAssignment_0; }
 		
 		//[FromEntry]
@@ -919,10 +939,10 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAliasFromEntryIDTerminalRuleCall_0_0_1() { return cAliasFromEntryIDTerminalRuleCall_0_0_1; }
 		
-		//"."
+		// "."
 		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
-		//feature=[ecore::EStructuralFeature]
+		// feature=[ecore::EStructuralFeature]
 		public Assignment getFeatureAssignment_2() { return cFeatureAssignment_2; }
 		
 		//[ecore::EStructuralFeature]
@@ -931,13 +951,13 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getFeatureEStructuralFeatureIDTerminalRuleCall_2_0_1() { return cFeatureEStructuralFeatureIDTerminalRuleCall_2_0_1; }
 		
-		//operator=BooleanOperator
+		// operator=BooleanOperator
 		public Assignment getOperatorAssignment_3() { return cOperatorAssignment_3; }
 		
 		//BooleanOperator
 		public RuleCall getOperatorBooleanOperatorEnumRuleCall_3_0() { return cOperatorBooleanOperatorEnumRuleCall_3_0; }
 		
-		//"null"
+		// "null"
 		public Keyword getNullKeyword_4() { return cNullKeyword_4; }
 	}
 	public class ReferenceAliasWhereEntryElements extends AbstractParserRuleElementFinder {
@@ -956,13 +976,14 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cRightAliasFromEntryIDTerminalRuleCall_4_0_1 = (RuleCall)cRightAliasFromEntryCrossReference_4_0.eContents().get(1);
 		
 		//ReferenceAliasWhereEntry:
-		//	alias=[FromEntry] "." reference=[ecore::EReference] "=" rightAlias=[FromEntry];
+		//	alias=[FromEntry] "." reference=[ecore::EReference] "=" rightAlias=[FromEntry]
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//alias=[FromEntry] "." reference=[ecore::EReference] "=" rightAlias=[FromEntry]
+		//	alias=[FromEntry] "." reference=[ecore::EReference] "=" rightAlias=[FromEntry]
 		public Group getGroup() { return cGroup; }
 		
-		//alias=[FromEntry]
+		//	alias=[FromEntry]
 		public Assignment getAliasAssignment_0() { return cAliasAssignment_0; }
 		
 		//[FromEntry]
@@ -971,10 +992,10 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAliasFromEntryIDTerminalRuleCall_0_0_1() { return cAliasFromEntryIDTerminalRuleCall_0_0_1; }
 		
-		//"."
+		// "."
 		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
-		//reference=[ecore::EReference]
+		// reference=[ecore::EReference]
 		public Assignment getReferenceAssignment_2() { return cReferenceAssignment_2; }
 		
 		//[ecore::EReference]
@@ -983,10 +1004,10 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getReferenceEReferenceIDTerminalRuleCall_2_0_1() { return cReferenceEReferenceIDTerminalRuleCall_2_0_1; }
 		
-		//"="
+		// "="
 		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
 		
-		//rightAlias=[FromEntry]
+		// rightAlias=[FromEntry]
 		public Assignment getRightAliasAssignment_4() { return cRightAliasAssignment_4; }
 		
 		//[FromEntry]
@@ -1014,13 +1035,14 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//SubselectWhereEntry:
-		//	alias=[FromEntry] "." reference=[ecore::EReference] notIn?="not"? "in" "(" subQuery=MQLquery ")";
+		//	alias=[FromEntry] "." reference=[ecore::EReference] (notIn?="not")? "in" "("subQuery=MQLquery")"
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//alias=[FromEntry] "." reference=[ecore::EReference] notIn?="not"? "in" "(" subQuery=MQLquery ")"
+		//	alias=[FromEntry] "." reference=[ecore::EReference] (notIn?="not")? "in" "("subQuery=MQLquery")"
 		public Group getGroup() { return cGroup; }
 		
-		//alias=[FromEntry]
+		//	alias=[FromEntry]
 		public Assignment getAliasAssignment_0() { return cAliasAssignment_0; }
 		
 		//[FromEntry]
@@ -1029,10 +1051,10 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAliasFromEntryIDTerminalRuleCall_0_0_1() { return cAliasFromEntryIDTerminalRuleCall_0_0_1; }
 		
-		//"."
+		// "."
 		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
-		//reference=[ecore::EReference]
+		// reference=[ecore::EReference]
 		public Assignment getReferenceAssignment_2() { return cReferenceAssignment_2; }
 		
 		//[ecore::EReference]
@@ -1041,16 +1063,16 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getReferenceEReferenceIDTerminalRuleCall_2_0_1() { return cReferenceEReferenceIDTerminalRuleCall_2_0_1; }
 		
-		//notIn?="not"?
+		// (notIn?="not")?
 		public Assignment getNotInAssignment_3() { return cNotInAssignment_3; }
 		
 		//"not"
 		public Keyword getNotInNotKeyword_3_0() { return cNotInNotKeyword_3_0; }
 		
-		//"in"
+		// "in"
 		public Keyword getInKeyword_4() { return cInKeyword_4; }
 		
-		//"("
+		// "("
 		public Keyword getLeftParenthesisKeyword_5() { return cLeftParenthesisKeyword_5; }
 		
 		//subQuery=MQLquery
@@ -1074,13 +1096,14 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cRightAliasFromEntryIDTerminalRuleCall_2_0_1 = (RuleCall)cRightAliasFromEntryCrossReference_2_0.eContents().get(1);
 		
 		//AliasWhereEntry:
-		//	alias=[FromEntry] "=" rightAlias=[FromEntry];
+		//	alias=[FromEntry] "=" rightAlias=[FromEntry]
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//alias=[FromEntry] "=" rightAlias=[FromEntry]
+		//	alias=[FromEntry] "=" rightAlias=[FromEntry]
 		public Group getGroup() { return cGroup; }
 		
-		//alias=[FromEntry]
+		//	alias=[FromEntry]
 		public Assignment getAliasAssignment_0() { return cAliasAssignment_0; }
 		
 		//[FromEntry]
@@ -1089,10 +1112,10 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getAliasFromEntryIDTerminalRuleCall_0_0_1() { return cAliasFromEntryIDTerminalRuleCall_0_0_1; }
 		
-		//"="
+		// "="
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 		
-		//rightAlias=[FromEntry]
+		// rightAlias=[FromEntry]
 		public Assignment getRightAliasAssignment_2() { return cRightAliasAssignment_2; }
 		
 		//[FromEntry]
@@ -1119,43 +1142,44 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cNotEqualExclamationMarkEqualsSignKeyword_5_0 = (Keyword)cNotEqualEnumLiteralDeclaration_5.eContents().get(0);
 		
 		//enum NumericOperator:
-		//	lessThen="<" | greaterThen=">" | lessEqual="<=" | greaterEqual=">=" | equal="=" | notEqual="!=";
+		//	lessThen="<" | greaterThen=">" | lessEqual="<=" | greaterEqual=">=" | equal="=" | notEqual="!="
+		//;
 		public EnumRule getRule() { return rule; }
 		
-		//lessThen="<" | greaterThen=">" | lessEqual="<=" | greaterEqual=">=" | equal="=" | notEqual="!="
+		//	lessThen="<" | greaterThen=">" | lessEqual="<=" | greaterEqual=">=" | equal="=" | notEqual="!="
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//lessThen="<"
+		//	lessThen="<"
 		public EnumLiteralDeclaration getLessThenEnumLiteralDeclaration_0() { return cLessThenEnumLiteralDeclaration_0; }
 		
 		//"<"
 		public Keyword getLessThenLessThanSignKeyword_0_0() { return cLessThenLessThanSignKeyword_0_0; }
 		
-		//greaterThen=">"
+		// greaterThen=">"
 		public EnumLiteralDeclaration getGreaterThenEnumLiteralDeclaration_1() { return cGreaterThenEnumLiteralDeclaration_1; }
 		
 		//">"
 		public Keyword getGreaterThenGreaterThanSignKeyword_1_0() { return cGreaterThenGreaterThanSignKeyword_1_0; }
 		
-		//lessEqual="<="
+		// lessEqual="<="
 		public EnumLiteralDeclaration getLessEqualEnumLiteralDeclaration_2() { return cLessEqualEnumLiteralDeclaration_2; }
 		
 		//"<="
 		public Keyword getLessEqualLessThanSignEqualsSignKeyword_2_0() { return cLessEqualLessThanSignEqualsSignKeyword_2_0; }
 		
-		//greaterEqual=">="
+		// greaterEqual=">="
 		public EnumLiteralDeclaration getGreaterEqualEnumLiteralDeclaration_3() { return cGreaterEqualEnumLiteralDeclaration_3; }
 		
 		//">="
 		public Keyword getGreaterEqualGreaterThanSignEqualsSignKeyword_3_0() { return cGreaterEqualGreaterThanSignEqualsSignKeyword_3_0; }
 		
-		//equal="="
+		// equal="="
 		public EnumLiteralDeclaration getEqualEnumLiteralDeclaration_4() { return cEqualEnumLiteralDeclaration_4; }
 		
 		//"="
 		public Keyword getEqualEqualsSignKeyword_4_0() { return cEqualEqualsSignKeyword_4_0; }
 		
-		//notEqual="!="
+		// notEqual="!="
 		public EnumLiteralDeclaration getNotEqualEnumLiteralDeclaration_5() { return cNotEqualEnumLiteralDeclaration_5; }
 		
 		//"!="
@@ -1174,31 +1198,32 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cNotLikeNotlikeKeyword_3_0 = (Keyword)cNotLikeEnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum StringOperator:
-		//	equal="=" | notEqual="!=" | like | notLike="notlike";
+		//	equal="=" | notEqual="!=" | like="like" | notLike="notlike"
+		//;
 		public EnumRule getRule() { return rule; }
 		
-		//equal="=" | notEqual="!=" | like | notLike="notlike"
+		//	equal="=" | notEqual="!=" | like="like" | notLike="notlike"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//equal="="
+		//	equal="="
 		public EnumLiteralDeclaration getEqualEnumLiteralDeclaration_0() { return cEqualEnumLiteralDeclaration_0; }
 		
 		//"="
 		public Keyword getEqualEqualsSignKeyword_0_0() { return cEqualEqualsSignKeyword_0_0; }
 		
-		//notEqual="!="
+		// notEqual="!="
 		public EnumLiteralDeclaration getNotEqualEnumLiteralDeclaration_1() { return cNotEqualEnumLiteralDeclaration_1; }
 		
 		//"!="
 		public Keyword getNotEqualExclamationMarkEqualsSignKeyword_1_0() { return cNotEqualExclamationMarkEqualsSignKeyword_1_0; }
 		
-		//like
+		// like="like"
 		public EnumLiteralDeclaration getLikeEnumLiteralDeclaration_2() { return cLikeEnumLiteralDeclaration_2; }
 		
 		//"like"
 		public Keyword getLikeLikeKeyword_2_0() { return cLikeLikeKeyword_2_0; }
 		
-		//notLike="notlike"
+		// notLike="notlike"
 		public EnumLiteralDeclaration getNotLikeEnumLiteralDeclaration_3() { return cNotLikeEnumLiteralDeclaration_3; }
 		
 		//"notlike"
@@ -1213,19 +1238,20 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cNotEqualExclamationMarkEqualsSignKeyword_1_0 = (Keyword)cNotEqualEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum BooleanOperator:
-		//	equal="=" | notEqual="!=";
+		//	equal="=" | notEqual="!="
+		//;
 		public EnumRule getRule() { return rule; }
 		
-		//equal="=" | notEqual="!="
+		//	equal="=" | notEqual="!="
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//equal="="
+		//	equal="="
 		public EnumLiteralDeclaration getEqualEnumLiteralDeclaration_0() { return cEqualEnumLiteralDeclaration_0; }
 		
 		//"="
 		public Keyword getEqualEqualsSignKeyword_0_0() { return cEqualEqualsSignKeyword_0_0; }
 		
-		//notEqual="!="
+		// notEqual="!="
 		public EnumLiteralDeclaration getNotEqualEnumLiteralDeclaration_1() { return cNotEqualEnumLiteralDeclaration_1; }
 		
 		//"!="
@@ -1332,8 +1358,9 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 
 	
 	//Model:
-	//	imports+=Import*
-	//	query=MQLquery;
+	//	(imports+=Import)*
+	//	query=MQLquery
+	//;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -1342,7 +1369,7 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getModelAccess().getRule();
 	}
 	
-	//Import:
+	//Import :
 	//	'import' importURI=STRING;
 	public ImportElements getImportAccess() {
 		return pImport;
@@ -1352,9 +1379,9 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getImportAccess().getRule();
 	}
 	
-	//MQLquery:
-	//	"select" selectEntries+=SelectEntry ("," selectEntries+=SelectEntry)* "from" fromEntries+=FromEntry (","
-	//	fromEntries+=FromEntry)* ("where" whereEntries+=WhereEntry+)?;
+	//MQLquery :
+	//	"select" selectEntries+=SelectEntry ("," selectEntries+=SelectEntry)* "from" fromEntries+=FromEntry ("," fromEntries+=FromEntry)* ("where" (whereEntries+=WhereEntry)+)?
+	//;
 	public MQLqueryElements getMQLqueryAccess() {
 		return pMQLquery;
 	}
@@ -1364,7 +1391,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//SelectEntry:
-	//	select=[FromEntry] ("." attribute=[ecore::EAttribute])?;
+	//	select=[FromEntry] ("." attribute=[ecore::EAttribute])?
+	//;
 	public SelectEntryElements getSelectEntryAccess() {
 		return pSelectEntry;
 	}
@@ -1374,7 +1402,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//FromEntry:
-	//	type=[ecore::EClass] withoutsubtypes?="withoutsubtypes"? "as" alias=ID scopeClause=ScopeClause?;
+	//	type=[ecore::EClass] (withoutsubtypes?="withoutsubtypes")? "as" alias=ID (scopeClause=ScopeClause)?
+	//;
 	public FromEntryElements getFromEntryAccess() {
 		return pFromEntry;
 	}
@@ -1384,7 +1413,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//ScopeClause:
-	//	notIn?="not"? "in" scope=Scope;
+	//	(notIn?="not")? "in" scope=Scope
+	//;
 	public ScopeClauseElements getScopeClauseAccess() {
 		return pScopeClause;
 	}
@@ -1394,7 +1424,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//Scope:
-	//	ResourceScope | ElementScope;
+	//	ResourceScope | ElementScope
+	//;
 	public ScopeElements getScopeAccess() {
 		return pScope;
 	}
@@ -1404,7 +1435,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//ResourceScope:
-	//	"resources" "{" uris+=STRING ("," uris+=STRING)* "}";
+	//	"resources" "{" uris+=STRING ("," uris+=STRING)* "}"
+	//;
 	public ResourceScopeElements getResourceScopeAccess() {
 		return pResourceScope;
 	}
@@ -1414,7 +1446,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//ElementScope:
-	//	"elements" "{" uris+=STRING ("," uris+=STRING)* "}";
+	//	"elements" "{" uris+=STRING ("," uris+=STRING)* "}"
+	//;
 	public ElementScopeElements getElementScopeAccess() {
 		return pElementScope;
 	}
@@ -1423,8 +1456,10 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getElementScopeAccess().getRule();
 	}
 	
-	//WhereEntry:
-	//	AndWhereEntry ({OrWhereEntry.entries+=current} ("or" entries+=AndWhereEntry)+)?;
+	//WhereEntry returns WhereEntry:
+	//	AndWhereEntry ({OrWhereEntry.entries+=current}
+	//    	("or" entries+=AndWhereEntry)+)?
+	//;
 	public WhereEntryElements getWhereEntryAccess() {
 		return pWhereEntry;
 	}
@@ -1433,8 +1468,10 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getWhereEntryAccess().getRule();
 	}
 	
-	//AndWhereEntry WhereEntry:
-	//	ConcreteWhereEntry ({AndWhereEntry.entries+=current} ("and" entries+=ConcreteWhereEntry)+)?;
+	//AndWhereEntry returns WhereEntry:
+	//	ConcreteWhereEntry ({AndWhereEntry.entries+=current}
+	//    	("and" entries+=ConcreteWhereEntry)+)?
+	//;
 	public AndWhereEntryElements getAndWhereEntryAccess() {
 		return pAndWhereEntry;
 	}
@@ -1443,9 +1480,9 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getAndWhereEntryAccess().getRule();
 	}
 	
-	//ConcreteWhereEntry WhereEntry:
-	//	ParWhereEntry | AttributeWhereEntry | NullWhereEntry | ReferenceAliasWhereEntry | AliasWhereEntry |
-	//	SubselectWhereEntry;
+	//ConcreteWhereEntry returns WhereEntry:
+	//	ParWhereEntry | AttributeWhereEntry | NullWhereEntry | ReferenceAliasWhereEntry | AliasWhereEntry | SubselectWhereEntry
+	//;
 	public ConcreteWhereEntryElements getConcreteWhereEntryAccess() {
 		return pConcreteWhereEntry;
 	}
@@ -1454,8 +1491,9 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getConcreteWhereEntryAccess().getRule();
 	}
 	
-	//ParWhereEntry  WhereEntry:
-	//	"(" WhereEntry ")";
+	//ParWhereEntry  returns WhereEntry:
+	//	"(" WhereEntry ")"
+	//;
 	public ParWhereEntryElements getParWhereEntryAccess() {
 		return pParWhereEntry;
 	}
@@ -1465,7 +1503,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//AttributeWhereEntry:
-	//	NumericAttributeWhereEntry | StringAttributeWhereEntry | BooleanAttributeWhereEntry | VariableWhereEntry;
+	//	NumericAttributeWhereEntry | StringAttributeWhereEntry | BooleanAttributeWhereEntry | VariableWhereEntry
+	//;
 	public AttributeWhereEntryElements getAttributeWhereEntryAccess() {
 		return pAttributeWhereEntry;
 	}
@@ -1475,7 +1514,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//NumericAttributeWhereEntry:
-	//	DoubleWhereEntry | LongWhereEntry;
+	//	DoubleWhereEntry | LongWhereEntry
+	//;
 	public NumericAttributeWhereEntryElements getNumericAttributeWhereEntryAccess() {
 		return pNumericAttributeWhereEntry;
 	}
@@ -1485,7 +1525,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//DoubleWhereEntry:
-	//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator value=SIGNED_DOUBLE;
+	//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator value=SIGNED_DOUBLE
+	//;
 	public DoubleWhereEntryElements getDoubleWhereEntryAccess() {
 		return pDoubleWhereEntry;
 	}
@@ -1495,7 +1536,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//LongWhereEntry:
-	//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator value=SINGED_LONG;
+	//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator value=SINGED_LONG
+	//;
 	public LongWhereEntryElements getLongWhereEntryAccess() {
 		return pLongWhereEntry;
 	}
@@ -1505,8 +1547,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//VariableWhereEntry:
-	//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator rightAlias=[FromEntry] "."
-	//	rightAttribute=[ecore::EAttribute];
+	//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=NumericOperator rightAlias=[FromEntry]"." rightAttribute=[ecore::EAttribute]
+	//;
 	public VariableWhereEntryElements getVariableWhereEntryAccess() {
 		return pVariableWhereEntry;
 	}
@@ -1516,7 +1558,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//enum NumericOperator:
-	//	lessThen="<" | greaterThen=">" | lessEqual="<=" | greaterEqual=">=" | equal="=" | notEqual="!=";
+	//	lessThen="<" | greaterThen=">" | lessEqual="<=" | greaterEqual=">=" | equal="=" | notEqual="!="
+	//;
 	public NumericOperatorElements getNumericOperatorAccess() {
 		return eNumericOperator;
 	}
@@ -1526,7 +1569,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//StringAttributeWhereEntry:
-	//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=StringOperator pattern=STRING;
+	//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=StringOperator pattern=STRING
+	//;
 	public StringAttributeWhereEntryElements getStringAttributeWhereEntryAccess() {
 		return pStringAttributeWhereEntry;
 	}
@@ -1536,7 +1580,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//enum StringOperator:
-	//	equal="=" | notEqual="!=" | like | notLike="notlike";
+	//	equal="=" | notEqual="!=" | like="like" | notLike="notlike"
+	//;
 	public StringOperatorElements getStringOperatorAccess() {
 		return eStringOperator;
 	}
@@ -1546,7 +1591,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//BooleanAttributeWhereEntry:
-	//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=BooleanOperator (isTrue?="true" | "false");
+	//	alias=[FromEntry] "." attribute=[ecore::EAttribute] operator=BooleanOperator (isTrue?="true" | "false")
+	//;
 	public BooleanAttributeWhereEntryElements getBooleanAttributeWhereEntryAccess() {
 		return pBooleanAttributeWhereEntry;
 	}
@@ -1556,7 +1602,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//enum BooleanOperator:
-	//	equal="=" | notEqual="!=";
+	//	equal="=" | notEqual="!="
+	//;
 	public BooleanOperatorElements getBooleanOperatorAccess() {
 		return eBooleanOperator;
 	}
@@ -1566,7 +1613,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//NullWhereEntry:
-	//	alias=[FromEntry] "." feature=[ecore::EStructuralFeature] operator=BooleanOperator "null";
+	//	alias=[FromEntry] "." feature=[ecore::EStructuralFeature] operator=BooleanOperator "null"
+	//;
 	public NullWhereEntryElements getNullWhereEntryAccess() {
 		return pNullWhereEntry;
 	}
@@ -1576,7 +1624,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//ReferenceAliasWhereEntry:
-	//	alias=[FromEntry] "." reference=[ecore::EReference] "=" rightAlias=[FromEntry];
+	//	alias=[FromEntry] "." reference=[ecore::EReference] "=" rightAlias=[FromEntry]
+	//;
 	public ReferenceAliasWhereEntryElements getReferenceAliasWhereEntryAccess() {
 		return pReferenceAliasWhereEntry;
 	}
@@ -1586,7 +1635,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//SubselectWhereEntry:
-	//	alias=[FromEntry] "." reference=[ecore::EReference] notIn?="not"? "in" "(" subQuery=MQLquery ")";
+	//	alias=[FromEntry] "." reference=[ecore::EReference] (notIn?="not")? "in" "("subQuery=MQLquery")"
+	//;
 	public SubselectWhereEntryElements getSubselectWhereEntryAccess() {
 		return pSubselectWhereEntry;
 	}
@@ -1596,7 +1646,8 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//AliasWhereEntry:
-	//	alias=[FromEntry] "=" rightAlias=[FromEntry];
+	//	alias=[FromEntry] "=" rightAlias=[FromEntry]
+	//;
 	public AliasWhereEntryElements getAliasWhereEntryAccess() {
 		return pAliasWhereEntry;
 	}
@@ -1605,45 +1656,40 @@ public class Bug287941TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getAliasWhereEntryAccess().getRule();
 	}
 	
-	//terminal SINGED_LONG returns ecore::ELong:
-	//	'-'? '0'..'9'+;
+	//terminal SINGED_LONG returns ecore::ELong: '-'?('0'..'9')+;
 	public TerminalRule getSINGED_LONGRule() {
 		return tSINGED_LONG;
 	}
 	
-	//terminal SIGNED_DOUBLE returns ecore::EDouble:
-	//	'-'? '0'..'9'+ ('.' '0'..'9'+)?;
+	//terminal SIGNED_DOUBLE returns ecore::EDouble: '-'?('0'..'9')+ ('.' ('0'..'9')+)?;
 	public TerminalRule getSIGNED_DOUBLERule() {
 		return tSIGNED_DOUBLE;
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return tID;
 	}
 	
-	//terminal STRING:
-	//	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | '"' | "'" | '\\') | !('\\' | '"'))* '"' |
-	//	"'" ('\\' ('b' | 't' | 'n' | 'f' | 'r' | '"' | "'" | '\\') | !('\\' | "'"))* "'";
+	//terminal STRING	:
+	//			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return tSTRING;
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT	: '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return tML_COMMENT;
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return tSL_COMMENT;
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS			: (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return tWS;
 	}

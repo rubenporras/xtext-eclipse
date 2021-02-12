@@ -27,11 +27,11 @@ public class TwoContextsTestLanguageGrammarAccess extends AbstractElementFinder.
 		private final Assignment cElementsAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cElementsAnElementParserRuleCall_0 = (RuleCall)cElementsAssignment.eContents().get(0);
 		
-		//MainModel:
-		//	elements+=AnElement*;
+		//MainModel :
+		//	(elements+=AnElement)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//elements+=AnElement*
+		//	(elements+=AnElement)*
 		public Assignment getElementsAssignment() { return cElementsAssignment; }
 		
 		//AnElement
@@ -49,26 +49,26 @@ public class TwoContextsTestLanguageGrammarAccess extends AbstractElementFinder.
 		private final RuleCall cReferredAnElementIDTerminalRuleCall_1_1_0_1 = (RuleCall)cReferredAnElementCrossReference_1_1_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//AnElement:
+		//AnElement :
 		//	name=ID ('refersTo' referred=[AnElement])? ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ('refersTo' referred=[AnElement])? ';'
+		//	name=ID ('refersTo' referred=[AnElement])? ';'
 		public Group getGroup() { return cGroup; }
 		
-		//name=ID
+		//	name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//('refersTo' referred=[AnElement])?
+		// ('refersTo' referred=[AnElement])?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'refersTo'
 		public Keyword getRefersToKeyword_1_0() { return cRefersToKeyword_1_0; }
 		
-		//referred=[AnElement]
+		// referred=[AnElement]
 		public Assignment getReferredAssignment_1_1() { return cReferredAssignment_1_1; }
 		
 		//[AnElement]
@@ -77,7 +77,7 @@ public class TwoContextsTestLanguageGrammarAccess extends AbstractElementFinder.
 		//ID
 		public RuleCall getReferredAnElementIDTerminalRuleCall_1_1_0_1() { return cReferredAnElementIDTerminalRuleCall_1_1_0_1; }
 		
-		//';'
+		// ';'
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 	
@@ -125,8 +125,8 @@ public class TwoContextsTestLanguageGrammarAccess extends AbstractElementFinder.
 	}
 
 	
-	//MainModel:
-	//	elements+=AnElement*;
+	//MainModel :
+	//	(elements+=AnElement)*;
 	public MainModelElements getMainModelAccess() {
 		return pMainModel;
 	}
@@ -135,7 +135,7 @@ public class TwoContextsTestLanguageGrammarAccess extends AbstractElementFinder.
 		return getMainModelAccess().getRule();
 	}
 	
-	//AnElement:
+	//AnElement :
 	//	name=ID ('refersTo' referred=[AnElement])? ';';
 	public AnElementElements getAnElementAccess() {
 		return pAnElement;
@@ -145,45 +145,40 @@ public class TwoContextsTestLanguageGrammarAccess extends AbstractElementFinder.
 		return getAnElementAccess().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

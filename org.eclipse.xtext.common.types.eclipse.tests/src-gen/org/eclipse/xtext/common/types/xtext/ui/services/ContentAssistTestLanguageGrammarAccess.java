@@ -34,9 +34,10 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		private final RuleCall cReferenceHolderReferenceHolderParserRuleCall_2_0 = (RuleCall)cReferenceHolderAssignment_2.eContents().get(0);
 		
 		//Model:
-		//	imports+=Import*
-		//	generateDirective=GenerateDirective?
-		//	referenceHolder=ReferenceHolder?;
+		//  imports+=Import*
+		//  generateDirective=GenerateDirective?
+		//  referenceHolder=ReferenceHolder?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//imports+=Import*
@@ -44,19 +45,19 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		//referenceHolder=ReferenceHolder?
 		public Group getGroup() { return cGroup; }
 		
-		//imports+=Import*
+		//  imports+=Import*
 		public Assignment getImportsAssignment_0() { return cImportsAssignment_0; }
 		
 		//Import
 		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
 		
-		//generateDirective=GenerateDirective?
+		//  generateDirective=GenerateDirective?
 		public Assignment getGenerateDirectiveAssignment_1() { return cGenerateDirectiveAssignment_1; }
 		
 		//GenerateDirective
 		public RuleCall getGenerateDirectiveGenerateDirectiveParserRuleCall_1_0() { return cGenerateDirectiveGenerateDirectiveParserRuleCall_1_0; }
 		
-		//referenceHolder=ReferenceHolder?
+		//  referenceHolder=ReferenceHolder?
 		public Assignment getReferenceHolderAssignment_2() { return cReferenceHolderAssignment_2; }
 		
 		//ReferenceHolder
@@ -82,21 +83,28 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		private final RuleCall cSubtypeReferenceJvmTypeFQNParserRuleCall_2_1_0_1 = (RuleCall)cSubtypeReferenceJvmTypeCrossReference_2_1_0.eContents().get(1);
 		
 		//ReferenceHolder:
-		//	'default' defaultReference=[types::JvmType|FQN] | 'custom' customizedReference=[types::JvmType|FQN] | 'subtype'
-		//	subtypeReference=[types::JvmType|FQN];
+		//  (
+		//    'default' defaultReference=[types::JvmType|FQN]
+		//  | 'custom' customizedReference=[types::JvmType|FQN]
+		//  | 'subtype' subtypeReference=[types::JvmType|FQN]
+		//  )
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'default' defaultReference=[types::JvmType|FQN] | 'custom' customizedReference=[types::JvmType|FQN] | 'subtype'
-		//subtypeReference=[types::JvmType|FQN]
+		//(
+		//  'default' defaultReference=[types::JvmType|FQN]
+		//| 'custom' customizedReference=[types::JvmType|FQN]
+		//| 'subtype' subtypeReference=[types::JvmType|FQN]
+		//)
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'default' defaultReference=[types::JvmType|FQN]
+		//    'default' defaultReference=[types::JvmType|FQN]
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//'default'
+		//    'default'
 		public Keyword getDefaultKeyword_0_0() { return cDefaultKeyword_0_0; }
 		
-		//defaultReference=[types::JvmType|FQN]
+		// defaultReference=[types::JvmType|FQN]
 		public Assignment getDefaultReferenceAssignment_0_1() { return cDefaultReferenceAssignment_0_1; }
 		
 		//[types::JvmType|FQN]
@@ -105,13 +113,13 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		//FQN
 		public RuleCall getDefaultReferenceJvmTypeFQNParserRuleCall_0_1_0_1() { return cDefaultReferenceJvmTypeFQNParserRuleCall_0_1_0_1; }
 		
-		//'custom' customizedReference=[types::JvmType|FQN]
+		// 'custom' customizedReference=[types::JvmType|FQN]
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//'custom'
+		// 'custom'
 		public Keyword getCustomKeyword_1_0() { return cCustomKeyword_1_0; }
 		
-		//customizedReference=[types::JvmType|FQN]
+		// customizedReference=[types::JvmType|FQN]
 		public Assignment getCustomizedReferenceAssignment_1_1() { return cCustomizedReferenceAssignment_1_1; }
 		
 		//[types::JvmType|FQN]
@@ -120,13 +128,13 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		//FQN
 		public RuleCall getCustomizedReferenceJvmTypeFQNParserRuleCall_1_1_0_1() { return cCustomizedReferenceJvmTypeFQNParserRuleCall_1_1_0_1; }
 		
-		//'subtype' subtypeReference=[types::JvmType|FQN]
+		// 'subtype' subtypeReference=[types::JvmType|FQN]
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//'subtype'
+		// 'subtype'
 		public Keyword getSubtypeKeyword_2_0() { return cSubtypeKeyword_2_0; }
 		
-		//subtypeReference=[types::JvmType|FQN]
+		// subtypeReference=[types::JvmType|FQN]
 		public Assignment getSubtypeReferenceAssignment_2_1() { return cSubtypeReferenceAssignment_2_1; }
 		
 		//[types::JvmType|FQN]
@@ -143,16 +151,17 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		private final RuleCall cTypeNameQNParserRuleCall_1_0 = (RuleCall)cTypeNameAssignment_1.eContents().get(0);
 		
 		//GenerateDirective:
-		//	'generate' typeName=QN;
+		//	'generate' typeName=QN
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'generate' typeName=QN
+		//	'generate' typeName=QN
 		public Group getGroup() { return cGroup; }
 		
-		//'generate'
+		//	'generate'
 		public Keyword getGenerateKeyword_0() { return cGenerateKeyword_0; }
 		
-		//typeName=QN
+		// typeName=QN
 		public Assignment getTypeNameAssignment_1() { return cTypeNameAssignment_1; }
 		
 		//QN
@@ -166,16 +175,17 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		private final RuleCall cImportedNamespaceImportedFQNParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
 		
 		//Import:
-		//	'import' importedNamespace=ImportedFQN;
+		//	'import' importedNamespace=ImportedFQN
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'import' importedNamespace=ImportedFQN
+		//	'import' importedNamespace=ImportedFQN
 		public Group getGroup() { return cGroup; }
 		
-		//'import'
+		//	'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 		
-		//importedNamespace=ImportedFQN
+		// importedNamespace=ImportedFQN
 		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
 		
 		//ImportedFQN
@@ -187,17 +197,16 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		private final RuleCall cFQNParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Keyword cFullStopAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//ImportedFQN:
-		//	FQN '.*'?;
+		//ImportedFQN: FQN '.*'?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//FQN '.*'?
+		// FQN '.*'?
 		public Group getGroup() { return cGroup; }
 		
-		//FQN
+		// FQN
 		public RuleCall getFQNParserRuleCall_0() { return cFQNParserRuleCall_0; }
 		
-		//'.*'?
+		// '.*'?
 		public Keyword getFullStopAsteriskKeyword_1() { return cFullStopAsteriskKeyword_1; }
 	}
 	public class FQNElements extends AbstractParserRuleElementFinder {
@@ -208,23 +217,22 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		private final Keyword cDollarSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
-		//FQN:
-		//	QN ('$' ID)*;
+		//FQN: QN ('$' ID)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//QN ('$' ID)*
+		// QN ('$' ID)*
 		public Group getGroup() { return cGroup; }
 		
-		//QN
+		// QN
 		public RuleCall getQNParserRuleCall_0() { return cQNParserRuleCall_0; }
 		
-		//('$' ID)*
+		// ('$' ID)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'$'
 		public Keyword getDollarSignKeyword_1_0() { return cDollarSignKeyword_1_0; }
 		
-		//ID
+		// ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
 	public class QNElements extends AbstractParserRuleElementFinder {
@@ -235,23 +243,22 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
-		//QN:
-		//	ID ('.' ID)*;
+		//QN: ID ('.' ID)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ID ('.' ID)*
+		// ID ('.' ID)*
 		public Group getGroup() { return cGroup; }
 		
-		//ID
+		// ID
 		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
 		
-		//('.' ID)*
+		// ('.' ID)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 		
-		//ID
+		// ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
 	
@@ -310,9 +317,10 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 
 	
 	//Model:
-	//	imports+=Import*
-	//	generateDirective=GenerateDirective?
-	//	referenceHolder=ReferenceHolder?;
+	//  imports+=Import*
+	//  generateDirective=GenerateDirective?
+	//  referenceHolder=ReferenceHolder?
+	//;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -322,8 +330,12 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 	}
 	
 	//ReferenceHolder:
-	//	'default' defaultReference=[types::JvmType|FQN] | 'custom' customizedReference=[types::JvmType|FQN] | 'subtype'
-	//	subtypeReference=[types::JvmType|FQN];
+	//  (
+	//    'default' defaultReference=[types::JvmType|FQN]
+	//  | 'custom' customizedReference=[types::JvmType|FQN]
+	//  | 'subtype' subtypeReference=[types::JvmType|FQN]
+	//  )
+	//;
 	public ReferenceHolderElements getReferenceHolderAccess() {
 		return pReferenceHolder;
 	}
@@ -333,7 +345,8 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 	}
 	
 	//GenerateDirective:
-	//	'generate' typeName=QN;
+	//	'generate' typeName=QN
+	//;
 	public GenerateDirectiveElements getGenerateDirectiveAccess() {
 		return pGenerateDirective;
 	}
@@ -343,7 +356,8 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 	}
 	
 	//Import:
-	//	'import' importedNamespace=ImportedFQN;
+	//	'import' importedNamespace=ImportedFQN
+	//;
 	public ImportElements getImportAccess() {
 		return pImport;
 	}
@@ -352,8 +366,7 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		return getImportAccess().getRule();
 	}
 	
-	//ImportedFQN:
-	//	FQN '.*'?;
+	//ImportedFQN: FQN '.*'?;
 	public ImportedFQNElements getImportedFQNAccess() {
 		return pImportedFQN;
 	}
@@ -362,8 +375,7 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		return getImportedFQNAccess().getRule();
 	}
 	
-	//FQN:
-	//	QN ('$' ID)*;
+	//FQN: QN ('$' ID)*;
 	public FQNElements getFQNAccess() {
 		return pFQN;
 	}
@@ -372,8 +384,7 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		return getFQNAccess().getRule();
 	}
 	
-	//QN:
-	//	ID ('.' ID)*;
+	//QN: ID ('.' ID)*;
 	public QNElements getQNAccess() {
 		return pQN;
 	}
@@ -382,45 +393,40 @@ public class ContentAssistTestLanguageGrammarAccess extends AbstractElementFinde
 		return getQNAccess().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

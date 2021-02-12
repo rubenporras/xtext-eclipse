@@ -28,10 +28,10 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		private final RuleCall cReferenceHolderReferenceHolderParserRuleCall_0 = (RuleCall)cReferenceHolderAssignment.eContents().get(0);
 		
 		//Model:
-		//	referenceHolder+=ReferenceHolder*;
+		//   	referenceHolder+=ReferenceHolder*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//referenceHolder+=ReferenceHolder*
+		//   	referenceHolder+=ReferenceHolder*
 		public Assignment getReferenceHolderAssignment() { return cReferenceHolderAssignment; }
 		
 		//ReferenceHolder
@@ -47,19 +47,20 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		private final RuleCall cDefaultReferenceJvmTypeFQNParserRuleCall_1_0_1 = (RuleCall)cDefaultReferenceJvmTypeCrossReference_1_0.eContents().get(1);
 		
 		//ReferenceHolder:
-		//	name=ID defaultReference=[types::JvmType|FQN];
+		//    name=ID defaultReference=[types::JvmType|FQN]
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID defaultReference=[types::JvmType|FQN]
+		//    name=ID defaultReference=[types::JvmType|FQN]
 		public Group getGroup() { return cGroup; }
 		
-		//name=ID
+		//    name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//defaultReference=[types::JvmType|FQN]
+		// defaultReference=[types::JvmType|FQN]
 		public Assignment getDefaultReferenceAssignment_1() { return cDefaultReferenceAssignment_1; }
 		
 		//[types::JvmType|FQN]
@@ -79,32 +80,31 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		private final Keyword cDollarSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		
-		//FQN:
-		//	ID ('.' ID)* ('$' ID)*;
+		//FQN: ID ('.' ID)* ('$' ID)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ID ('.' ID)* ('$' ID)*
+		// ID ('.' ID)* ('$' ID)*
 		public Group getGroup() { return cGroup; }
 		
-		//ID
+		// ID
 		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
 		
-		//('.' ID)*
+		// ('.' ID)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 		
-		//ID
+		// ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 		
-		//('$' ID)*
+		// ('$' ID)*
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//'$'
 		public Keyword getDollarSignKeyword_2_0() { return cDollarSignKeyword_2_0; }
 		
-		//ID
+		// ID
 		public RuleCall getIDTerminalRuleCall_2_1() { return cIDTerminalRuleCall_2_1; }
 	}
 	
@@ -155,7 +155,7 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 
 	
 	//Model:
-	//	referenceHolder+=ReferenceHolder*;
+	//   	referenceHolder+=ReferenceHolder*;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -165,7 +165,8 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 	}
 	
 	//ReferenceHolder:
-	//	name=ID defaultReference=[types::JvmType|FQN];
+	//    name=ID defaultReference=[types::JvmType|FQN]
+	//;
 	public ReferenceHolderElements getReferenceHolderAccess() {
 		return pReferenceHolder;
 	}
@@ -174,8 +175,7 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		return getReferenceHolderAccess().getRule();
 	}
 	
-	//FQN:
-	//	ID ('.' ID)* ('$' ID)*;
+	//FQN: ID ('.' ID)* ('$' ID)*;
 	public FQNElements getFQNAccess() {
 		return pFQN;
 	}
@@ -184,45 +184,40 @@ public class RefactoringTestLanguageGrammarAccess extends AbstractElementFinder.
 		return getFQNAccess().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

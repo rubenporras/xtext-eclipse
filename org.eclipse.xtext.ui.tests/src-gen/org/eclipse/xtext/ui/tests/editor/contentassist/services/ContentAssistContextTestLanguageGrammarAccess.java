@@ -30,22 +30,22 @@ public class ContentAssistContextTestLanguageGrammarAccess extends AbstractEleme
 		private final Assignment cSecondLevelBAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cSecondLevelBSecondLevelBParserRuleCall_1_0 = (RuleCall)cSecondLevelBAssignment_1.eContents().get(0);
 		
-		//FirstLevel:
-		//	secondLevelA+=SecondLevelA*
-		//	secondLevelB+=SecondLevelB*;
+		//FirstLevel :
+		//	(secondLevelA+=SecondLevelA)*
+		//	(secondLevelB+=SecondLevelB)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//secondLevelA+=SecondLevelA*
-		//secondLevelB+=SecondLevelB*
+		//	(secondLevelA+=SecondLevelA)*
+		//	(secondLevelB+=SecondLevelB)*
 		public Group getGroup() { return cGroup; }
 		
-		//secondLevelA+=SecondLevelA*
+		//	(secondLevelA+=SecondLevelA)*
 		public Assignment getSecondLevelAAssignment_0() { return cSecondLevelAAssignment_0; }
 		
 		//SecondLevelA
 		public RuleCall getSecondLevelASecondLevelAParserRuleCall_0_0() { return cSecondLevelASecondLevelAParserRuleCall_0_0; }
 		
-		//secondLevelB+=SecondLevelB*
+		//	(secondLevelB+=SecondLevelB)*
 		public Assignment getSecondLevelBAssignment_1() { return cSecondLevelBAssignment_1; }
 		
 		//SecondLevelB
@@ -59,22 +59,22 @@ public class ContentAssistContextTestLanguageGrammarAccess extends AbstractEleme
 		private final Assignment cThirdLevelA2Assignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cThirdLevelA2ThirdLevelA2ParserRuleCall_1_0 = (RuleCall)cThirdLevelA2Assignment_1.eContents().get(0);
 		
-		//SecondLevelA:
-		//	thirdLevelA1+=ThirdLevelA1+
-		//	thirdLevelA2+=ThirdLevelA2+;
+		//SecondLevelA :
+		//	(thirdLevelA1+=ThirdLevelA1)+
+		//	(thirdLevelA2+=ThirdLevelA2)+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//thirdLevelA1+=ThirdLevelA1+
-		//thirdLevelA2+=ThirdLevelA2+
+		//	(thirdLevelA1+=ThirdLevelA1)+
+		//	(thirdLevelA2+=ThirdLevelA2)+
 		public Group getGroup() { return cGroup; }
 		
-		//thirdLevelA1+=ThirdLevelA1+
+		//	(thirdLevelA1+=ThirdLevelA1)+
 		public Assignment getThirdLevelA1Assignment_0() { return cThirdLevelA1Assignment_0; }
 		
 		//ThirdLevelA1
 		public RuleCall getThirdLevelA1ThirdLevelA1ParserRuleCall_0_0() { return cThirdLevelA1ThirdLevelA1ParserRuleCall_0_0; }
 		
-		//thirdLevelA2+=ThirdLevelA2+
+		//	(thirdLevelA2+=ThirdLevelA2)+
 		public Assignment getThirdLevelA2Assignment_1() { return cThirdLevelA2Assignment_1; }
 		
 		//ThirdLevelA2
@@ -88,22 +88,22 @@ public class ContentAssistContextTestLanguageGrammarAccess extends AbstractEleme
 		private final Assignment cThirdLevelB2Assignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cThirdLevelB2ThirdLevelB2ParserRuleCall_1_0 = (RuleCall)cThirdLevelB2Assignment_1.eContents().get(0);
 		
-		//SecondLevelB:
-		//	thirdLevelB1+=ThirdLevelB1+
-		//	thirdLevelB2+=ThirdLevelB2+;
+		//SecondLevelB :
+		//	(thirdLevelB1+=ThirdLevelB1)+
+		//	(thirdLevelB2+=ThirdLevelB2)+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//thirdLevelB1+=ThirdLevelB1+
-		//thirdLevelB2+=ThirdLevelB2+
+		//	(thirdLevelB1+=ThirdLevelB1)+
+		//	(thirdLevelB2+=ThirdLevelB2)+
 		public Group getGroup() { return cGroup; }
 		
-		//thirdLevelB1+=ThirdLevelB1+
+		//	(thirdLevelB1+=ThirdLevelB1)+
 		public Assignment getThirdLevelB1Assignment_0() { return cThirdLevelB1Assignment_0; }
 		
 		//ThirdLevelB1
 		public RuleCall getThirdLevelB1ThirdLevelB1ParserRuleCall_0_0() { return cThirdLevelB1ThirdLevelB1ParserRuleCall_0_0; }
 		
-		//thirdLevelB2+=ThirdLevelB2+
+		//	(thirdLevelB2+=ThirdLevelB2)+
 		public Assignment getThirdLevelB2Assignment_1() { return cThirdLevelB2Assignment_1; }
 		
 		//ThirdLevelB2
@@ -121,16 +121,16 @@ public class ContentAssistContextTestLanguageGrammarAccess extends AbstractEleme
 		//	'A1' {ThirdLevelA1} name=ID?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'A1' {ThirdLevelA1} name=ID?
+		//	'A1' {ThirdLevelA1} name=ID?
 		public Group getGroup() { return cGroup; }
 		
-		//'A1'
+		//	'A1'
 		public Keyword getA1Keyword_0() { return cA1Keyword_0; }
 		
-		//{ThirdLevelA1}
+		// {ThirdLevelA1}
 		public Action getThirdLevelA1Action_1() { return cThirdLevelA1Action_1; }
 		
-		//name=ID?
+		// name=ID?
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
@@ -148,16 +148,16 @@ public class ContentAssistContextTestLanguageGrammarAccess extends AbstractEleme
 		//	'A2' {ThirdLevelA2} name=ID?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'A2' {ThirdLevelA2} name=ID?
+		//	'A2' {ThirdLevelA2} name=ID?
 		public Group getGroup() { return cGroup; }
 		
-		//'A2'
+		//	'A2'
 		public Keyword getA2Keyword_0() { return cA2Keyword_0; }
 		
-		//{ThirdLevelA2}
+		// {ThirdLevelA2}
 		public Action getThirdLevelA2Action_1() { return cThirdLevelA2Action_1; }
 		
-		//name=ID?
+		// name=ID?
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
@@ -175,16 +175,16 @@ public class ContentAssistContextTestLanguageGrammarAccess extends AbstractEleme
 		//	'B1' {ThirdLevelB1} name=ID?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'B1' {ThirdLevelB1} name=ID?
+		//	'B1' {ThirdLevelB1} name=ID?
 		public Group getGroup() { return cGroup; }
 		
-		//'B1'
+		//	'B1'
 		public Keyword getB1Keyword_0() { return cB1Keyword_0; }
 		
-		//{ThirdLevelB1}
+		// {ThirdLevelB1}
 		public Action getThirdLevelB1Action_1() { return cThirdLevelB1Action_1; }
 		
-		//name=ID?
+		// name=ID?
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
@@ -202,16 +202,16 @@ public class ContentAssistContextTestLanguageGrammarAccess extends AbstractEleme
 		//	'B2' {ThirdLevelB2} name=ID?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'B2' {ThirdLevelB2} name=ID?
+		//	'B2' {ThirdLevelB2} name=ID?
 		public Group getGroup() { return cGroup; }
 		
-		//'B2'
+		//	'B2'
 		public Keyword getB2Keyword_0() { return cB2Keyword_0; }
 		
-		//{ThirdLevelB2}
+		// {ThirdLevelB2}
 		public Action getThirdLevelB2Action_1() { return cThirdLevelB2Action_1; }
 		
-		//name=ID?
+		// name=ID?
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
@@ -272,9 +272,9 @@ public class ContentAssistContextTestLanguageGrammarAccess extends AbstractEleme
 	}
 
 	
-	//FirstLevel:
-	//	secondLevelA+=SecondLevelA*
-	//	secondLevelB+=SecondLevelB*;
+	//FirstLevel :
+	//	(secondLevelA+=SecondLevelA)*
+	//	(secondLevelB+=SecondLevelB)*;
 	public FirstLevelElements getFirstLevelAccess() {
 		return pFirstLevel;
 	}
@@ -283,9 +283,9 @@ public class ContentAssistContextTestLanguageGrammarAccess extends AbstractEleme
 		return getFirstLevelAccess().getRule();
 	}
 	
-	//SecondLevelA:
-	//	thirdLevelA1+=ThirdLevelA1+
-	//	thirdLevelA2+=ThirdLevelA2+;
+	//SecondLevelA :
+	//	(thirdLevelA1+=ThirdLevelA1)+
+	//	(thirdLevelA2+=ThirdLevelA2)+;
 	public SecondLevelAElements getSecondLevelAAccess() {
 		return pSecondLevelA;
 	}
@@ -294,9 +294,9 @@ public class ContentAssistContextTestLanguageGrammarAccess extends AbstractEleme
 		return getSecondLevelAAccess().getRule();
 	}
 	
-	//SecondLevelB:
-	//	thirdLevelB1+=ThirdLevelB1+
-	//	thirdLevelB2+=ThirdLevelB2+;
+	//SecondLevelB :
+	//	(thirdLevelB1+=ThirdLevelB1)+
+	//	(thirdLevelB2+=ThirdLevelB2)+;
 	public SecondLevelBElements getSecondLevelBAccess() {
 		return pSecondLevelB;
 	}
@@ -345,45 +345,40 @@ public class ContentAssistContextTestLanguageGrammarAccess extends AbstractEleme
 		return getThirdLevelB2Access().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

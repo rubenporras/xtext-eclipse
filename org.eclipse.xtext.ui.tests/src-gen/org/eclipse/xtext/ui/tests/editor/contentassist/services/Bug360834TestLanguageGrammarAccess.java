@@ -38,34 +38,35 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Assignment cElementAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cElementUnorderedParserRuleCall_1_1_0 = (RuleCall)cElementAssignment_1_1.eContents().get(0);
 		
-		//Model:
-		//	'alternative' element=Alternative
-		//	| 'unordered' element=Unordered;
+		//Model :
+		//	  'alternative' element=Alternative
+		//	| 'unordered' element=Unordered
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'alternative' element=Alternative
-		//| 'unordered' element=Unordered
+		//	  'alternative' element=Alternative
+		//	| 'unordered' element=Unordered
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'alternative' element=Alternative
+		//	  'alternative' element=Alternative
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//'alternative'
+		//	  'alternative'
 		public Keyword getAlternativeKeyword_0_0() { return cAlternativeKeyword_0_0; }
 		
-		//element=Alternative
+		// element=Alternative
 		public Assignment getElementAssignment_0_1() { return cElementAssignment_0_1; }
 		
 		//Alternative
 		public RuleCall getElementAlternativeParserRuleCall_0_1_0() { return cElementAlternativeParserRuleCall_0_1_0; }
 		
-		//'unordered' element=Unordered
+		// 'unordered' element=Unordered
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//'unordered'
+		// 'unordered'
 		public Keyword getUnorderedKeyword_1_0() { return cUnorderedKeyword_1_0; }
 		
-		//element=Unordered
+		// element=Unordered
 		public Assignment getElementAssignment_1_1() { return cElementAssignment_1_1; }
 		
 		//Unordered
@@ -82,27 +83,28 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cRootDeclarationRecursiveClassDeclarationParserRuleCall_3_0 = (RuleCall)cRootDeclarationAssignment_3.eContents().get(0);
 		
 		//Alternative:
-		//	'package' name=FQN ';'
-		//	rootDeclaration=RecursiveClassDeclaration;
+		//    'package' name = FQN ';'
+		//    rootDeclaration=RecursiveClassDeclaration
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'package' name=FQN ';'
+		//'package' name = FQN ';'
 		//rootDeclaration=RecursiveClassDeclaration
 		public Group getGroup() { return cGroup; }
 		
-		//'package'
+		//    'package'
 		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
 		
-		//name=FQN
+		// name = FQN
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//FQN
+		// FQN
 		public RuleCall getNameFQNParserRuleCall_1_0() { return cNameFQNParserRuleCall_1_0; }
 		
-		//';'
+		// ';'
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 		
-		//rootDeclaration=RecursiveClassDeclaration
+		//    rootDeclaration=RecursiveClassDeclaration
 		public Assignment getRootDeclarationAssignment_3() { return cRootDeclarationAssignment_3; }
 		
 		//RecursiveClassDeclaration
@@ -117,22 +119,23 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//FQN:
-		//	ID ('.' ID)*;
+		//    ID ('.' ID)*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ID ('.' ID)*
+		//    ID ('.' ID)*
 		public Group getGroup() { return cGroup; }
 		
-		//ID
+		//    ID
 		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
 		
-		//('.' ID)*
+		// ('.' ID)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 		
-		//ID
+		// ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
 	public class RecursiveClassDeclarationElements extends AbstractParserRuleElementFinder {
@@ -149,41 +152,42 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//RecursiveClassDeclaration:
-		//	modifiers=AlternativeClassModifiers 'class' name=ID '{'
-		//	members+=RecursiveClassDeclaration*
-		//	'}';
+		//    modifiers=AlternativeClassModifiers 'class' name=ID '{'
+		//        members+=RecursiveClassDeclaration*
+		//    '}'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//modifiers=AlternativeClassModifiers 'class' name=ID '{'
-		//members+=RecursiveClassDeclaration*
+		//    members+=RecursiveClassDeclaration*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//modifiers=AlternativeClassModifiers
+		//    modifiers=AlternativeClassModifiers
 		public Assignment getModifiersAssignment_0() { return cModifiersAssignment_0; }
 		
 		//AlternativeClassModifiers
 		public RuleCall getModifiersAlternativeClassModifiersParserRuleCall_0_0() { return cModifiersAlternativeClassModifiersParserRuleCall_0_0; }
 		
-		//'class'
+		// 'class'
 		public Keyword getClassKeyword_1() { return cClassKeyword_1; }
 		
-		//name=ID
+		// name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
-		//'{'
+		// '{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//members+=RecursiveClassDeclaration*
+		//        members+=RecursiveClassDeclaration*
 		public Assignment getMembersAssignment_4() { return cMembersAssignment_4; }
 		
 		//RecursiveClassDeclaration
 		public RuleCall getMembersRecursiveClassDeclarationParserRuleCall_4_0() { return cMembersRecursiveClassDeclarationParserRuleCall_4_0; }
 		
-		//'}'
+		//    '}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class AlternativeClassModifiersElements extends AbstractParserRuleElementFinder {
@@ -200,47 +204,65 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Assignment cVisibilityAssignment_1_3 = (Assignment)cAlternatives_1.eContents().get(3);
 		private final RuleCall cVisibilityVisibilityEnumRuleCall_1_3_0 = (RuleCall)cVisibilityAssignment_1_3.eContents().get(0);
 		
-		//AlternativeClassModifiers Modifiers:
-		//	{Modifiers} (final?='final'
-		//	| abstract?='abstract'
-		//	| extern?='extern'
-		//	| visibility=Visibility?);
+		//AlternativeClassModifiers returns Modifiers:
+		//    {Modifiers}
+		//    (
+		//        final?='final'
+		//        |
+		//        abstract?='abstract'
+		//        |
+		//        extern?='extern'
+		//        |
+		//        visibility=Visibility?
+		//    )
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Modifiers} (final?='final'
-		//| abstract?='abstract'
-		//| extern?='extern'
-		//| visibility=Visibility?)
+		//{Modifiers}
+		//(
+		//    final?='final'
+		//    |
+		//    abstract?='abstract'
+		//    |
+		//    extern?='extern'
+		//    |
+		//    visibility=Visibility?
+		//)
 		public Group getGroup() { return cGroup; }
 		
-		//{Modifiers}
+		//    {Modifiers}
 		public Action getModifiersAction_0() { return cModifiersAction_0; }
 		
-		//(final?='final'
-		//| abstract?='abstract'
-		//| extern?='extern'
-		//| visibility=Visibility?)
+		//(
+		//    final?='final'
+		//    |
+		//    abstract?='abstract'
+		//    |
+		//    extern?='extern'
+		//    |
+		//    visibility=Visibility?
+		//)
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//final?='final'
+		//        final?='final'
 		public Assignment getFinalAssignment_1_0() { return cFinalAssignment_1_0; }
 		
 		//'final'
 		public Keyword getFinalFinalKeyword_1_0_0() { return cFinalFinalKeyword_1_0_0; }
 		
-		//abstract?='abstract'
+		//        abstract?='abstract'
 		public Assignment getAbstractAssignment_1_1() { return cAbstractAssignment_1_1; }
 		
 		//'abstract'
 		public Keyword getAbstractAbstractKeyword_1_1_0() { return cAbstractAbstractKeyword_1_1_0; }
 		
-		//extern?='extern'
+		//        extern?='extern'
 		public Assignment getExternAssignment_1_2() { return cExternAssignment_1_2; }
 		
 		//'extern'
 		public Keyword getExternExternKeyword_1_2_0() { return cExternExternKeyword_1_2_0; }
 		
-		//visibility=Visibility?
+		//        visibility=Visibility?
 		public Assignment getVisibilityAssignment_1_3() { return cVisibilityAssignment_1_3; }
 		
 		//Visibility
@@ -257,27 +279,28 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cRootDeclarationSimpleClassDeclarationParserRuleCall_3_0 = (RuleCall)cRootDeclarationAssignment_3.eContents().get(0);
 		
 		//Unordered:
-		//	'package' name=FQN ';'
-		//	rootDeclaration=SimpleClassDeclaration;
+		//    'package' name = FQN ';'
+		//    rootDeclaration=SimpleClassDeclaration
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'package' name=FQN ';'
+		//'package' name = FQN ';'
 		//rootDeclaration=SimpleClassDeclaration
 		public Group getGroup() { return cGroup; }
 		
-		//'package'
+		//    'package'
 		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
 		
-		//name=FQN
+		// name = FQN
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//FQN
+		// FQN
 		public RuleCall getNameFQNParserRuleCall_1_0() { return cNameFQNParserRuleCall_1_0; }
 		
-		//';'
+		// ';'
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 		
-		//rootDeclaration=SimpleClassDeclaration
+		//    rootDeclaration=SimpleClassDeclaration
 		public Assignment getRootDeclarationAssignment_3() { return cRootDeclarationAssignment_3; }
 		
 		//SimpleClassDeclaration
@@ -297,41 +320,42 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SimpleClassDeclaration:
-		//	modifiers=UnorderedModifiers 'class' name=ID '{'
-		//	members+=ClassMember*
-		//	'}';
+		//    modifiers=UnorderedModifiers 'class' name=ID '{'
+		//        members+=ClassMember*
+		//    '}'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//modifiers=UnorderedModifiers 'class' name=ID '{'
-		//members+=ClassMember*
+		//    members+=ClassMember*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//modifiers=UnorderedModifiers
+		//    modifiers=UnorderedModifiers
 		public Assignment getModifiersAssignment_0() { return cModifiersAssignment_0; }
 		
 		//UnorderedModifiers
 		public RuleCall getModifiersUnorderedModifiersParserRuleCall_0_0() { return cModifiersUnorderedModifiersParserRuleCall_0_0; }
 		
-		//'class'
+		// 'class'
 		public Keyword getClassKeyword_1() { return cClassKeyword_1; }
 		
-		//name=ID
+		// name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
-		//'{'
+		// '{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//members+=ClassMember*
+		//        members+=ClassMember*
 		public Assignment getMembersAssignment_4() { return cMembersAssignment_4; }
 		
 		//ClassMember
 		public RuleCall getMembersClassMemberParserRuleCall_4_0() { return cMembersClassMemberParserRuleCall_4_0; }
 		
-		//'}'
+		//    '}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class ClassMemberElements extends AbstractParserRuleElementFinder {
@@ -345,28 +369,29 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//ClassMember:
-		//	modifiers=UnorderedModifiers 'var' name=ID ';';
+		//	modifiers=UnorderedModifiers 'var' name=ID ';'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//modifiers=UnorderedModifiers 'var' name=ID ';'
+		//	modifiers=UnorderedModifiers 'var' name=ID ';'
 		public Group getGroup() { return cGroup; }
 		
-		//modifiers=UnorderedModifiers
+		//	modifiers=UnorderedModifiers
 		public Assignment getModifiersAssignment_0() { return cModifiersAssignment_0; }
 		
 		//UnorderedModifiers
 		public RuleCall getModifiersUnorderedModifiersParserRuleCall_0_0() { return cModifiersUnorderedModifiersParserRuleCall_0_0; }
 		
-		//'var'
+		// 'var'
 		public Keyword getVarKeyword_1() { return cVarKeyword_1; }
 		
-		//name=ID
+		// name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
-		//';'
+		// ';'
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 	public class UnorderedModifiersElements extends AbstractParserRuleElementFinder {
@@ -384,37 +409,64 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cVisibilityVisibilityEnumRuleCall_1_3_0 = (RuleCall)cVisibilityAssignment_1_3.eContents().get(0);
 		
 		//UnorderedModifiers:
-		//	{Modifiers} (final?='final'? & abstract?='abstract'? & extern?='extern'? & visibility=Visibility?);
+		//    {Modifiers}
+		//    (
+		//        final?='final'?
+		//        &
+		//        abstract?='abstract'?
+		//        &
+		//        extern?='extern'?
+		//        &
+		//        visibility=Visibility?
+		//    )
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Modifiers} (final?='final'? & abstract?='abstract'? & extern?='extern'? & visibility=Visibility?)
+		//{Modifiers}
+		//(
+		//    final?='final'?
+		//    &
+		//    abstract?='abstract'?
+		//    &
+		//    extern?='extern'?
+		//    &
+		//    visibility=Visibility?
+		//)
 		public Group getGroup() { return cGroup; }
 		
-		//{Modifiers}
+		//    {Modifiers}
 		public Action getModifiersAction_0() { return cModifiersAction_0; }
 		
-		//(final?='final'? & abstract?='abstract'? & extern?='extern'? & visibility=Visibility?)
+		//(
+		//    final?='final'?
+		//    &
+		//    abstract?='abstract'?
+		//    &
+		//    extern?='extern'?
+		//    &
+		//    visibility=Visibility?
+		//)
 		public UnorderedGroup getUnorderedGroup_1() { return cUnorderedGroup_1; }
 		
-		//final?='final'?
+		//        final?='final'?
 		public Assignment getFinalAssignment_1_0() { return cFinalAssignment_1_0; }
 		
 		//'final'
 		public Keyword getFinalFinalKeyword_1_0_0() { return cFinalFinalKeyword_1_0_0; }
 		
-		//abstract?='abstract'?
+		//        abstract?='abstract'?
 		public Assignment getAbstractAssignment_1_1() { return cAbstractAssignment_1_1; }
 		
 		//'abstract'
 		public Keyword getAbstractAbstractKeyword_1_1_0() { return cAbstractAbstractKeyword_1_1_0; }
 		
-		//extern?='extern'?
+		//        extern?='extern'?
 		public Assignment getExternAssignment_1_2() { return cExternAssignment_1_2; }
 		
 		//'extern'
 		public Keyword getExternExternKeyword_1_2_0() { return cExternExternKeyword_1_2_0; }
 		
-		//visibility=Visibility?
+		//        visibility=Visibility?
 		public Assignment getVisibilityAssignment_1_3() { return cVisibilityAssignment_1_3; }
 		
 		//Visibility
@@ -432,25 +484,26 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cPRIVATEPrivateKeyword_2_0 = (Keyword)cPRIVATEEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum Visibility:
-		//	PUBLIC='public' | PROTECTED='protected' | PRIVATE='private';
+		//    PUBLIC='public' | PROTECTED='protected' | PRIVATE='private'
+		//;
 		public EnumRule getRule() { return rule; }
 		
-		//PUBLIC='public' | PROTECTED='protected' | PRIVATE='private'
+		//    PUBLIC='public' | PROTECTED='protected' | PRIVATE='private'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//PUBLIC='public'
+		//    PUBLIC='public'
 		public EnumLiteralDeclaration getPUBLICEnumLiteralDeclaration_0() { return cPUBLICEnumLiteralDeclaration_0; }
 		
 		//'public'
 		public Keyword getPUBLICPublicKeyword_0_0() { return cPUBLICPublicKeyword_0_0; }
 		
-		//PROTECTED='protected'
+		// PROTECTED='protected'
 		public EnumLiteralDeclaration getPROTECTEDEnumLiteralDeclaration_1() { return cPROTECTEDEnumLiteralDeclaration_1; }
 		
 		//'protected'
 		public Keyword getPROTECTEDProtectedKeyword_1_0() { return cPROTECTEDProtectedKeyword_1_0; }
 		
-		//PRIVATE='private'
+		// PRIVATE='private'
 		public EnumLiteralDeclaration getPRIVATEEnumLiteralDeclaration_2() { return cPRIVATEEnumLiteralDeclaration_2; }
 		
 		//'private'
@@ -516,9 +569,10 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 
 	
-	//Model:
-	//	'alternative' element=Alternative
-	//	| 'unordered' element=Unordered;
+	//Model :
+	//	  'alternative' element=Alternative
+	//	| 'unordered' element=Unordered
+	//;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -528,8 +582,9 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//Alternative:
-	//	'package' name=FQN ';'
-	//	rootDeclaration=RecursiveClassDeclaration;
+	//    'package' name = FQN ';'
+	//    rootDeclaration=RecursiveClassDeclaration
+	//;
 	public AlternativeElements getAlternativeAccess() {
 		return pAlternative;
 	}
@@ -539,7 +594,8 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//FQN:
-	//	ID ('.' ID)*;
+	//    ID ('.' ID)*
+	//;
 	public FQNElements getFQNAccess() {
 		return pFQN;
 	}
@@ -549,9 +605,10 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//RecursiveClassDeclaration:
-	//	modifiers=AlternativeClassModifiers 'class' name=ID '{'
-	//	members+=RecursiveClassDeclaration*
-	//	'}';
+	//    modifiers=AlternativeClassModifiers 'class' name=ID '{'
+	//        members+=RecursiveClassDeclaration*
+	//    '}'
+	//;
 	public RecursiveClassDeclarationElements getRecursiveClassDeclarationAccess() {
 		return pRecursiveClassDeclaration;
 	}
@@ -561,7 +618,8 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//enum Visibility:
-	//	PUBLIC='public' | PROTECTED='protected' | PRIVATE='private';
+	//    PUBLIC='public' | PROTECTED='protected' | PRIVATE='private'
+	//;
 	public VisibilityElements getVisibilityAccess() {
 		return eVisibility;
 	}
@@ -570,11 +628,18 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getVisibilityAccess().getRule();
 	}
 	
-	//AlternativeClassModifiers Modifiers:
-	//	{Modifiers} (final?='final'
-	//	| abstract?='abstract'
-	//	| extern?='extern'
-	//	| visibility=Visibility?);
+	//AlternativeClassModifiers returns Modifiers:
+	//    {Modifiers}
+	//    (
+	//        final?='final'
+	//        |
+	//        abstract?='abstract'
+	//        |
+	//        extern?='extern'
+	//        |
+	//        visibility=Visibility?
+	//    )
+	//;
 	public AlternativeClassModifiersElements getAlternativeClassModifiersAccess() {
 		return pAlternativeClassModifiers;
 	}
@@ -584,8 +649,9 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//Unordered:
-	//	'package' name=FQN ';'
-	//	rootDeclaration=SimpleClassDeclaration;
+	//    'package' name = FQN ';'
+	//    rootDeclaration=SimpleClassDeclaration
+	//;
 	public UnorderedElements getUnorderedAccess() {
 		return pUnordered;
 	}
@@ -595,9 +661,10 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//SimpleClassDeclaration:
-	//	modifiers=UnorderedModifiers 'class' name=ID '{'
-	//	members+=ClassMember*
-	//	'}';
+	//    modifiers=UnorderedModifiers 'class' name=ID '{'
+	//        members+=ClassMember*
+	//    '}'
+	//;
 	public SimpleClassDeclarationElements getSimpleClassDeclarationAccess() {
 		return pSimpleClassDeclaration;
 	}
@@ -607,7 +674,8 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//ClassMember:
-	//	modifiers=UnorderedModifiers 'var' name=ID ';';
+	//	modifiers=UnorderedModifiers 'var' name=ID ';'
+	//;
 	public ClassMemberElements getClassMemberAccess() {
 		return pClassMember;
 	}
@@ -617,7 +685,17 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//UnorderedModifiers:
-	//	{Modifiers} (final?='final'? & abstract?='abstract'? & extern?='extern'? & visibility=Visibility?);
+	//    {Modifiers}
+	//    (
+	//        final?='final'?
+	//        &
+	//        abstract?='abstract'?
+	//        &
+	//        extern?='extern'?
+	//        &
+	//        visibility=Visibility?
+	//    )
+	//;
 	public UnorderedModifiersElements getUnorderedModifiersAccess() {
 		return pUnorderedModifiers;
 	}
@@ -626,45 +704,40 @@ public class Bug360834TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getUnorderedModifiersAccess().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

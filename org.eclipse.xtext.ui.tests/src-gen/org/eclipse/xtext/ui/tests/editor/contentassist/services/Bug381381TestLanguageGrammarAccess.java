@@ -31,7 +31,7 @@ public class Bug381381TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//	stmt=CopyFieldNameToVariableStmt;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//stmt=CopyFieldNameToVariableStmt
+		//	stmt=CopyFieldNameToVariableStmt
 		public Assignment getStmtAssignment() { return cStmtAssignment; }
 		
 		//CopyFieldNameToVariableStmt
@@ -66,84 +66,88 @@ public class Bug381381TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cREPLACEKeyword_1_2_3 = (Keyword)cGroup_1_2.eContents().get(3);
 		
 		//CopyFieldNameToVariableStmt:
-		//	'FIELD-NAME-TO-VARIABLE' (',' 'SCREEN' '=' '(' line=INT ',' column=INT ')' & ',' 'VAR' '=' name=ID & (',' 'TYPE' '='
-		//	'REPLACE')?);
+		//  'FIELD-NAME-TO-VARIABLE' ((',' 'SCREEN' '=' '(' line=INT ',' column=INT ')') &
+		//                            (',' 'VAR' '=' name=ID) &
+		//                            (',' 'TYPE' '=' 'REPLACE')?);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'FIELD-NAME-TO-VARIABLE' (',' 'SCREEN' '=' '(' line=INT ',' column=INT ')' & ',' 'VAR' '=' name=ID & (',' 'TYPE' '='
-		//'REPLACE')?)
+		//'FIELD-NAME-TO-VARIABLE' ((',' 'SCREEN' '=' '(' line=INT ',' column=INT ')') &
+		//                          (',' 'VAR' '=' name=ID) &
+		//                          (',' 'TYPE' '=' 'REPLACE')?)
 		public Group getGroup() { return cGroup; }
 		
-		//'FIELD-NAME-TO-VARIABLE'
+		//  'FIELD-NAME-TO-VARIABLE'
 		public Keyword getFIELDNAMETOVARIABLEKeyword_0() { return cFIELDNAMETOVARIABLEKeyword_0; }
 		
-		//(',' 'SCREEN' '=' '(' line=INT ',' column=INT ')' & ',' 'VAR' '=' name=ID & (',' 'TYPE' '=' 'REPLACE')?)
+		//((',' 'SCREEN' '=' '(' line=INT ',' column=INT ')') &
+		//                           (',' 'VAR' '=' name=ID) &
+		//                           (',' 'TYPE' '=' 'REPLACE')?)
 		public UnorderedGroup getUnorderedGroup_1() { return cUnorderedGroup_1; }
 		
-		//',' 'SCREEN' '=' '(' line=INT ',' column=INT ')'
+		//(',' 'SCREEN' '=' '(' line=INT ',' column=INT ')')
 		public Group getGroup_1_0() { return cGroup_1_0; }
 		
 		//','
 		public Keyword getCommaKeyword_1_0_0() { return cCommaKeyword_1_0_0; }
 		
-		//'SCREEN'
+		// 'SCREEN'
 		public Keyword getSCREENKeyword_1_0_1() { return cSCREENKeyword_1_0_1; }
 		
-		//'='
+		// '='
 		public Keyword getEqualsSignKeyword_1_0_2() { return cEqualsSignKeyword_1_0_2; }
 		
-		//'('
+		// '('
 		public Keyword getLeftParenthesisKeyword_1_0_3() { return cLeftParenthesisKeyword_1_0_3; }
 		
-		//line=INT
+		// line=INT
 		public Assignment getLineAssignment_1_0_4() { return cLineAssignment_1_0_4; }
 		
 		//INT
 		public RuleCall getLineINTTerminalRuleCall_1_0_4_0() { return cLineINTTerminalRuleCall_1_0_4_0; }
 		
-		//','
+		// ','
 		public Keyword getCommaKeyword_1_0_5() { return cCommaKeyword_1_0_5; }
 		
-		//column=INT
+		// column=INT
 		public Assignment getColumnAssignment_1_0_6() { return cColumnAssignment_1_0_6; }
 		
 		//INT
 		public RuleCall getColumnINTTerminalRuleCall_1_0_6_0() { return cColumnINTTerminalRuleCall_1_0_6_0; }
 		
-		//')'
+		// ')'
 		public Keyword getRightParenthesisKeyword_1_0_7() { return cRightParenthesisKeyword_1_0_7; }
 		
-		//',' 'VAR' '=' name=ID
+		//                            (',' 'VAR' '=' name=ID)
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//','
 		public Keyword getCommaKeyword_1_1_0() { return cCommaKeyword_1_1_0; }
 		
-		//'VAR'
+		// 'VAR'
 		public Keyword getVARKeyword_1_1_1() { return cVARKeyword_1_1_1; }
 		
-		//'='
+		// '='
 		public Keyword getEqualsSignKeyword_1_1_2() { return cEqualsSignKeyword_1_1_2; }
 		
-		//name=ID
+		// name=ID
 		public Assignment getNameAssignment_1_1_3() { return cNameAssignment_1_1_3; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_1_3_0() { return cNameIDTerminalRuleCall_1_1_3_0; }
 		
-		//(',' 'TYPE' '=' 'REPLACE')?
+		//                            (',' 'TYPE' '=' 'REPLACE')?
 		public Group getGroup_1_2() { return cGroup_1_2; }
 		
 		//','
 		public Keyword getCommaKeyword_1_2_0() { return cCommaKeyword_1_2_0; }
 		
-		//'TYPE'
+		// 'TYPE'
 		public Keyword getTYPEKeyword_1_2_1() { return cTYPEKeyword_1_2_1; }
 		
-		//'='
+		// '='
 		public Keyword getEqualsSignKeyword_1_2_2() { return cEqualsSignKeyword_1_2_2; }
 		
-		//'REPLACE'
+		// 'REPLACE'
 		public Keyword getREPLACEKeyword_1_2_3() { return cREPLACEKeyword_1_2_3; }
 	}
 	
@@ -202,8 +206,9 @@ public class Bug381381TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//CopyFieldNameToVariableStmt:
-	//	'FIELD-NAME-TO-VARIABLE' (',' 'SCREEN' '=' '(' line=INT ',' column=INT ')' & ',' 'VAR' '=' name=ID & (',' 'TYPE' '='
-	//	'REPLACE')?);
+	//  'FIELD-NAME-TO-VARIABLE' ((',' 'SCREEN' '=' '(' line=INT ',' column=INT ')') &
+	//                            (',' 'VAR' '=' name=ID) &
+	//                            (',' 'TYPE' '=' 'REPLACE')?);
 	public CopyFieldNameToVariableStmtElements getCopyFieldNameToVariableStmtAccess() {
 		return pCopyFieldNameToVariableStmt;
 	}
@@ -212,45 +217,40 @@ public class Bug381381TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getCopyFieldNameToVariableStmtAccess().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

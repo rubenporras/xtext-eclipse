@@ -31,10 +31,11 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cClassesClassParserRuleCall_0 = (RuleCall)cClassesAssignment.eContents().get(0);
 		
 		//Model:
-		//	classes+=Class*;
+		//    classes+=Class*
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//classes+=Class*
+		//    classes+=Class*
 		public Assignment getClassesAssignment() { return cClassesAssignment; }
 		
 		//Class
@@ -89,54 +90,67 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//Class:
-		//	abstract?='abstract'?
-		//	transient?='transient'?
-		//	'class' name=ID ('extends' superClass=[Class])? ('implements' implementedInterfaces+=[Class] (',' 'implements'
-		//	implementedInterfaces+=[Class])*)?
-		//	'{' ('classNumber' '=' classNumber=INT)? ('quid' '=' quid=INT)? ('documentation' '=' documentation=STRING)?
-		//	attributes+=Attribute*
-		//	operations+=Operation*
-		//	'}';
+		//    (abstract?='abstract')?
+		//    (transient?='transient')?
+		//    'class' name=ID
+		//        ('extends' superClass=[Class])?
+		//        ('implements' implementedInterfaces+=[Class]
+		//            (',' 'implements' implementedInterfaces+=[Class])*
+		//        )?
+		//    '{'
+		//        ('classNumber' '=' classNumber=INT)?
+		//        ('quid' '=' quid=INT)?
+		//        ('documentation' '=' documentation=STRING)?
+		//        attributes+=Attribute*
+		//        operations+=Operation*
+		//    '}'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//abstract?='abstract'?
-		//transient?='transient'?
-		//'class' name=ID ('extends' superClass=[Class])? ('implements' implementedInterfaces+=[Class] (',' 'implements'
-		//implementedInterfaces+=[Class])*)?
-		//'{' ('classNumber' '=' classNumber=INT)? ('quid' '=' quid=INT)? ('documentation' '=' documentation=STRING)?
-		//attributes+=Attribute*
-		//operations+=Operation*
+		//(abstract?='abstract')?
+		//(transient?='transient')?
+		//'class' name=ID
+		//    ('extends' superClass=[Class])?
+		//    ('implements' implementedInterfaces+=[Class]
+		//        (',' 'implements' implementedInterfaces+=[Class])*
+		//    )?
+		//'{'
+		//    ('classNumber' '=' classNumber=INT)?
+		//    ('quid' '=' quid=INT)?
+		//    ('documentation' '=' documentation=STRING)?
+		//    attributes+=Attribute*
+		//    operations+=Operation*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//abstract?='abstract'?
+		//    (abstract?='abstract')?
 		public Assignment getAbstractAssignment_0() { return cAbstractAssignment_0; }
 		
 		//'abstract'
 		public Keyword getAbstractAbstractKeyword_0_0() { return cAbstractAbstractKeyword_0_0; }
 		
-		//transient?='transient'?
+		//    (transient?='transient')?
 		public Assignment getTransientAssignment_1() { return cTransientAssignment_1; }
 		
 		//'transient'
 		public Keyword getTransientTransientKeyword_1_0() { return cTransientTransientKeyword_1_0; }
 		
-		//'class'
+		//    'class'
 		public Keyword getClassKeyword_2() { return cClassKeyword_2; }
 		
-		//name=ID
+		// name=ID
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 		
-		//('extends' superClass=[Class])?
+		//        ('extends' superClass=[Class])?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'extends'
 		public Keyword getExtendsKeyword_4_0() { return cExtendsKeyword_4_0; }
 		
-		//superClass=[Class]
+		// superClass=[Class]
 		public Assignment getSuperClassAssignment_4_1() { return cSuperClassAssignment_4_1; }
 		
 		//[Class]
@@ -145,13 +159,15 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getSuperClassClassIDTerminalRuleCall_4_1_0_1() { return cSuperClassClassIDTerminalRuleCall_4_1_0_1; }
 		
-		//('implements' implementedInterfaces+=[Class] (',' 'implements' implementedInterfaces+=[Class])*)?
+		//('implements' implementedInterfaces+=[Class]
+		//    (',' 'implements' implementedInterfaces+=[Class])*
+		//)?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//'implements'
 		public Keyword getImplementsKeyword_5_0() { return cImplementsKeyword_5_0; }
 		
-		//implementedInterfaces+=[Class]
+		// implementedInterfaces+=[Class]
 		public Assignment getImplementedInterfacesAssignment_5_1() { return cImplementedInterfacesAssignment_5_1; }
 		
 		//[Class]
@@ -160,16 +176,16 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getImplementedInterfacesClassIDTerminalRuleCall_5_1_0_1() { return cImplementedInterfacesClassIDTerminalRuleCall_5_1_0_1; }
 		
-		//(',' 'implements' implementedInterfaces+=[Class])*
+		//            (',' 'implements' implementedInterfaces+=[Class])*
 		public Group getGroup_5_2() { return cGroup_5_2; }
 		
 		//','
 		public Keyword getCommaKeyword_5_2_0() { return cCommaKeyword_5_2_0; }
 		
-		//'implements'
+		// 'implements'
 		public Keyword getImplementsKeyword_5_2_1() { return cImplementsKeyword_5_2_1; }
 		
-		//implementedInterfaces+=[Class]
+		// implementedInterfaces+=[Class]
 		public Assignment getImplementedInterfacesAssignment_5_2_2() { return cImplementedInterfacesAssignment_5_2_2; }
 		
 		//[Class]
@@ -178,67 +194,67 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		//ID
 		public RuleCall getImplementedInterfacesClassIDTerminalRuleCall_5_2_2_0_1() { return cImplementedInterfacesClassIDTerminalRuleCall_5_2_2_0_1; }
 		
-		//'{'
+		//    '{'
 		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
 		
-		//('classNumber' '=' classNumber=INT)?
+		//        ('classNumber' '=' classNumber=INT)?
 		public Group getGroup_7() { return cGroup_7; }
 		
 		//'classNumber'
 		public Keyword getClassNumberKeyword_7_0() { return cClassNumberKeyword_7_0; }
 		
-		//'='
+		// '='
 		public Keyword getEqualsSignKeyword_7_1() { return cEqualsSignKeyword_7_1; }
 		
-		//classNumber=INT
+		// classNumber=INT
 		public Assignment getClassNumberAssignment_7_2() { return cClassNumberAssignment_7_2; }
 		
 		//INT
 		public RuleCall getClassNumberINTTerminalRuleCall_7_2_0() { return cClassNumberINTTerminalRuleCall_7_2_0; }
 		
-		//('quid' '=' quid=INT)?
+		//        ('quid' '=' quid=INT)?
 		public Group getGroup_8() { return cGroup_8; }
 		
 		//'quid'
 		public Keyword getQuidKeyword_8_0() { return cQuidKeyword_8_0; }
 		
-		//'='
+		// '='
 		public Keyword getEqualsSignKeyword_8_1() { return cEqualsSignKeyword_8_1; }
 		
-		//quid=INT
+		// quid=INT
 		public Assignment getQuidAssignment_8_2() { return cQuidAssignment_8_2; }
 		
 		//INT
 		public RuleCall getQuidINTTerminalRuleCall_8_2_0() { return cQuidINTTerminalRuleCall_8_2_0; }
 		
-		//('documentation' '=' documentation=STRING)?
+		//        ('documentation' '=' documentation=STRING)?
 		public Group getGroup_9() { return cGroup_9; }
 		
 		//'documentation'
 		public Keyword getDocumentationKeyword_9_0() { return cDocumentationKeyword_9_0; }
 		
-		//'='
+		// '='
 		public Keyword getEqualsSignKeyword_9_1() { return cEqualsSignKeyword_9_1; }
 		
-		//documentation=STRING
+		// documentation=STRING
 		public Assignment getDocumentationAssignment_9_2() { return cDocumentationAssignment_9_2; }
 		
 		//STRING
 		public RuleCall getDocumentationSTRINGTerminalRuleCall_9_2_0() { return cDocumentationSTRINGTerminalRuleCall_9_2_0; }
 		
-		//attributes+=Attribute*
+		//        attributes+=Attribute*
 		public Assignment getAttributesAssignment_10() { return cAttributesAssignment_10; }
 		
 		//Attribute
 		public RuleCall getAttributesAttributeParserRuleCall_10_0() { return cAttributesAttributeParserRuleCall_10_0; }
 		
-		//operations+=Operation*
+		//        operations+=Operation*
 		public Assignment getOperationsAssignment_11() { return cOperationsAssignment_11; }
 		
 		//Operation
 		public RuleCall getOperationsOperationParserRuleCall_11_0() { return cOperationsOperationParserRuleCall_11_0; }
 		
-		//'}'
+		//    '}'
 		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 	public class AttributeElements extends AbstractParserRuleElementFinder {
@@ -251,22 +267,23 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//Attribute:
-		//	visibility=Visibility? 'attribute' name=ID;
+		//    (visibility=Visibility)? 'attribute' name=ID
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//visibility=Visibility? 'attribute' name=ID
+		//    (visibility=Visibility)? 'attribute' name=ID
 		public Group getGroup() { return cGroup; }
 		
-		//visibility=Visibility?
+		//    (visibility=Visibility)?
 		public Assignment getVisibilityAssignment_0() { return cVisibilityAssignment_0; }
 		
 		//Visibility
 		public RuleCall getVisibilityVisibilityEnumRuleCall_0_0() { return cVisibilityVisibilityEnumRuleCall_0_0; }
 		
-		//'attribute'
+		// 'attribute'
 		public Keyword getAttributeKeyword_1() { return cAttributeKeyword_1; }
 		
-		//name=ID
+		// name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
@@ -282,22 +299,23 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//Operation:
-		//	visibility=Visibility? 'operation' name=ID;
+		//    (visibility=Visibility)? 'operation' name=ID
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//visibility=Visibility? 'operation' name=ID
+		//    (visibility=Visibility)? 'operation' name=ID
 		public Group getGroup() { return cGroup; }
 		
-		//visibility=Visibility?
+		//    (visibility=Visibility)?
 		public Assignment getVisibilityAssignment_0() { return cVisibilityAssignment_0; }
 		
 		//Visibility
 		public RuleCall getVisibilityVisibilityEnumRuleCall_0_0() { return cVisibilityVisibilityEnumRuleCall_0_0; }
 		
-		//'operation'
+		// 'operation'
 		public Keyword getOperationKeyword_1() { return cOperationKeyword_1; }
 		
-		//name=ID
+		// name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
@@ -317,34 +335,30 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		private final Keyword cPUBLICPUBLICKeyword_3_0 = (Keyword)cPUBLICEnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum Visibility:
-		//	PRIVATE | PROTECTED | PACKAGE_PRIVATE | PUBLIC;
+		//    PRIVATE | PROTECTED | PACKAGE_PRIVATE | PUBLIC;
 		public EnumRule getRule() { return rule; }
 		
-		//PRIVATE | PROTECTED | PACKAGE_PRIVATE | PUBLIC
+		//    PRIVATE | PROTECTED | PACKAGE_PRIVATE | PUBLIC
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//PRIVATE
+		//    PRIVATE
 		public EnumLiteralDeclaration getPRIVATEEnumLiteralDeclaration_0() { return cPRIVATEEnumLiteralDeclaration_0; }
 		
-		//"PRIVATE"
 		public Keyword getPRIVATEPRIVATEKeyword_0_0() { return cPRIVATEPRIVATEKeyword_0_0; }
 		
-		//PROTECTED
+		// PROTECTED
 		public EnumLiteralDeclaration getPROTECTEDEnumLiteralDeclaration_1() { return cPROTECTEDEnumLiteralDeclaration_1; }
 		
-		//"PROTECTED"
 		public Keyword getPROTECTEDPROTECTEDKeyword_1_0() { return cPROTECTEDPROTECTEDKeyword_1_0; }
 		
-		//PACKAGE_PRIVATE
+		// PACKAGE_PRIVATE
 		public EnumLiteralDeclaration getPACKAGE_PRIVATEEnumLiteralDeclaration_2() { return cPACKAGE_PRIVATEEnumLiteralDeclaration_2; }
 		
-		//"PACKAGE_PRIVATE"
 		public Keyword getPACKAGE_PRIVATEPACKAGE_PRIVATEKeyword_2_0() { return cPACKAGE_PRIVATEPACKAGE_PRIVATEKeyword_2_0; }
 		
-		//PUBLIC
+		// PUBLIC
 		public EnumLiteralDeclaration getPUBLICEnumLiteralDeclaration_3() { return cPUBLICEnumLiteralDeclaration_3; }
 		
-		//"PUBLIC"
 		public Keyword getPUBLICPUBLICKeyword_3_0() { return cPUBLICPUBLICKeyword_3_0; }
 	}
 	
@@ -398,7 +412,8 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 
 	
 	//Model:
-	//	classes+=Class*;
+	//    classes+=Class*
+	//    ;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -408,14 +423,21 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//Class:
-	//	abstract?='abstract'?
-	//	transient?='transient'?
-	//	'class' name=ID ('extends' superClass=[Class])? ('implements' implementedInterfaces+=[Class] (',' 'implements'
-	//	implementedInterfaces+=[Class])*)?
-	//	'{' ('classNumber' '=' classNumber=INT)? ('quid' '=' quid=INT)? ('documentation' '=' documentation=STRING)?
-	//	attributes+=Attribute*
-	//	operations+=Operation*
-	//	'}';
+	//    (abstract?='abstract')?
+	//    (transient?='transient')?
+	//    'class' name=ID
+	//        ('extends' superClass=[Class])?
+	//        ('implements' implementedInterfaces+=[Class]
+	//            (',' 'implements' implementedInterfaces+=[Class])*
+	//        )?
+	//    '{'
+	//        ('classNumber' '=' classNumber=INT)?
+	//        ('quid' '=' quid=INT)?
+	//        ('documentation' '=' documentation=STRING)?
+	//        attributes+=Attribute*
+	//        operations+=Operation*
+	//    '}'
+	//    ;
 	public ClassElements getClassAccess() {
 		return pClass;
 	}
@@ -425,7 +447,8 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//Attribute:
-	//	visibility=Visibility? 'attribute' name=ID;
+	//    (visibility=Visibility)? 'attribute' name=ID
+	//    ;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}
@@ -435,7 +458,8 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//Operation:
-	//	visibility=Visibility? 'operation' name=ID;
+	//    (visibility=Visibility)? 'operation' name=ID
+	//    ;
 	public OperationElements getOperationAccess() {
 		return pOperation;
 	}
@@ -445,7 +469,7 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 	}
 	
 	//enum Visibility:
-	//	PRIVATE | PROTECTED | PACKAGE_PRIVATE | PUBLIC;
+	//    PRIVATE | PROTECTED | PACKAGE_PRIVATE | PUBLIC;
 	public VisibilityElements getVisibilityAccess() {
 		return eVisibility;
 	}
@@ -454,45 +478,40 @@ public class Bug289187TestLanguageGrammarAccess extends AbstractElementFinder.Ab
 		return getVisibilityAccess().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//		;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}
